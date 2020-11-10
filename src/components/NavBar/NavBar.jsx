@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <nav className="nav-bar">
-      <div className="container fila">
+    <nav className="nav-bar seccion">
+      <div className="contenedor fila ">
         <div>
           <a href="/" class="brand">
             <small>Electro Hack 🖥</small>
           </a>
         </div>
         <div>
-          <a href="/categorias/imagen&sonido">Imagen y Sonido</a>
-          <a href="/categorias/climatizacion">Climatización</a>
-          <a href="/categorias/limpieza">Limpieza</a>
-          <a href="/categoria/cocina">Cocina</a>
-          <a href="/categoria/otros">Otros</a>
+          <Link to="/categorias/imagen&sonido">Imagen y Sonido</Link>
+          <Link to="/categorias/climatizacion">Climatización</Link>
+          <Link to="/categorias/limpieza">Limpieza</Link>
+          <Link to="/categoria/cocina">Cocina</Link>
+          <Link to="/categoria/otros">Otros</Link>
         </div>
         <div>
           <a href="/">
