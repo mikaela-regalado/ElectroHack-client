@@ -1,0 +1,25 @@
+nav {
+  background-color: #ef6c00;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 1rem;
+}
+a:hover {
+  color: #000000;
+}
+a.brand {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row.center {
+  justify-content: center;
+}
