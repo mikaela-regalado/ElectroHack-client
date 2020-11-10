@@ -10,15 +10,17 @@ export default function NavBar() {
         </a>
       </div>
       <div>
-        <a href="/">Imagen y Sonido</a>
-        <a href="/">Climatización</a>
-        <a href="/">Limpieza</a>
-        <a href="/">Cocina</a>
-        <a href="/">Otros</a>
+        <a href="/categorias/imagen&sonido">Imagen y Sonido</a>
+        <a href="/categorias/climatizacion">Climatización</a>
+        <a href="/categorias/limpieza">Limpieza</a>
+        <a href="/categoria/cocina">Cocina</a>
+        <a href="/categoria/otros">Otros</a>
       </div>
       <div>
         <a href="/">Ingresar</a>
-        <a href="/">Carrito</a>
+        <a href="/">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
       </div>
     </nav>
   );
