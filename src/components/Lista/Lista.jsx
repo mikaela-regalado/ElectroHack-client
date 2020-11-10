@@ -4,62 +4,110 @@ import "./Lista.css";
 
 export default function Lista() {
   return (
-    <div className="seccion">
-      <div className="contenedor">
-        <div className="fila centrado ">
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+    <div className="background">
+      <div className="container">
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
-          <div className="producto-card">
-            <img src={producto} alt="product" />
-            <h4>TV SMART PANAVOX 32 led smart</h4>
-            <small>TV & monitor LED SMART</small>
-            <h4>$7550</h4>
-            <h4>$650 x 15 cuotas</h4>
-            <small>Stock disponible</small>
-            <button>AGREGAR AL CARRITO</button>
+          <div class="col mb-4">
+            <div class="card">
+              <img src={producto} alt="product" />
+              <div class="card-body d-flex justify-content-center">
+                <div>
+                  <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
+                  <small>TV & monitor LED SMART</small>
+                  <h4>$7550</h4>
+                  <h4>$650 x 15 cuotas</h4>
+                  <small>Stock disponible</small>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-center">
+                <button>AGREGAR AL CARRITO</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

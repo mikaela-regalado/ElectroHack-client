@@ -11,17 +11,9 @@ body {
 .fila {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .fila.centrado {
-  justify-content: center;
-}
-
-.contenedor {
-  width: 75%;
-}
-.seccion {
-  display: flex;
   justify-content: center;
 }

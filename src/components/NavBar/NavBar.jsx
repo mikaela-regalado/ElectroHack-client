@@ -4,11 +4,13 @@ import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <nav className="nav-bar seccion">
-      <div className="contenedor fila ">
+    <nav className="nav-bar">
+      <div className="container fila ">
         <div>
           <a href="/" class="brand">
-            <small>Electro Hack 🖥</small>
+            <small>
+              Electro Hack <i class="fas fa-desktop"></i>
+            </small>
           </a>
         </div>
         <div>
