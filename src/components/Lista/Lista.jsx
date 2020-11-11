@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import producto from "./img/producto1.jpg";
 import "./Lista.css";
 
@@ -13,7 +14,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
@@ -30,7 +32,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
@@ -47,7 +50,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
@@ -64,7 +68,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
@@ -81,7 +86,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
@@ -98,7 +104,8 @@ export default function Lista() {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">TV SMART PANAVOX 32 led smart</h5>
-                  <small>TV & monitor LED SMART</small>
+                  <Link className="link-producto">TV & monitor LED SMART</Link>
+
                   <h4>$7550</h4>
                   <h4>$650 x 15 cuotas</h4>
                   <small>Stock disponible</small>
