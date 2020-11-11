@@ -7,9 +7,9 @@ export default function NavBar() {
     <nav className="nav-bar">
       <div className="container fila ">
         <div>
-          <Link to="/" class="brand">
+          <Link to="/" className="brand">
             <small>
-              Electro Hack <i class="fas fa-desktop"></i>
+              Electro Hack <i className="fas fa-desktop"></i>
             </small>
           </Link>
         </div>
@@ -22,10 +22,10 @@ export default function NavBar() {
         </div>
         <div>
           <Link to="/">
-            <i class="fas fa-user-circle"></i> Ingresar
+            <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/">
-            <i class="fas fa-shopping-cart"></i>
+            <i className="fas fa-shopping-cart"></i>
           </Link>
         </div>
       </div>

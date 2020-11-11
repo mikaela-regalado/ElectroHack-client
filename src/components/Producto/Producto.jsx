@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
 //import producto from "../../img/producto1.jpg";
 import Footer from "../Footer/Footer";
@@ -25,10 +25,14 @@ useEffect(() => {
         {producto.image && <div className="container">
           <div className="row p-3">
             <div className="col-lg-9">
-              <div class="card mb-3 producto">
-                <img src={producto.image} class="card-img-top img" alt="..." />
-                <div class="card-body descripcion">
-                  <h2 class="card-title ">Características</h2>
+              <div className="card mb-3 producto">
+                <img
+                  src={producto.image}
+                  className="card-img-top img"
+                  alt="..."
+                />
+                <div className="card-body descripcion">
+                  <h2 className="card-title ">Características</h2>
                   <p>{producto.description}</p>
                 </div>
               </div>
@@ -38,7 +42,11 @@ useEffect(() => {
                 {/* <h5>PANAVOX</h5> */}
                 <h4>{producto.name}</h4>
                 <div className="stock">
-                  {producto.stock > 0 ? <small> {producto.stock} Stock disponible</small> : <small>No hay Stock</small>}
+                  {producto.stock > 0 ? (
+                    <small> {producto.stock} Stock disponible</small>
+                  ) : (
+                    <small>No hay Stock</small>
+                  )}
                 </div>
               </div>
               <div className="comprar-body">
@@ -46,7 +54,7 @@ useEffect(() => {
                   ${producto.price} <small>Contado</small>
                 </h2>
               </div>
-              <div class="comprar-footer">
+              <div className="comprar-footer">
                 <button>AGREGAR AL CARRITO</button>
               </div>
             </div>

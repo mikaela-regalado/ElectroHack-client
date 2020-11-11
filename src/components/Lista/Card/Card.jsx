@@ -23,15 +23,15 @@ export default function Card ({producto}) {
                     {producto.description}
                   </Link>
 
-                  <h4>{producto.price}</h4>
+            <h4>{producto.price}</h4>
 
-                    <small>{producto.stock}</small>
-                </div>
-              </div>
-              <div class="card-footer d-flex justify-content-center">
-                <button type="button" onClick={e => handleAddItem(e, producto.slug)}>AGREGAR AL CARRITO</button>
-              </div>
-            </div>
+            <small>{producto.stock}</small>
+          </div>
         </div>
-    )
+        <div className="card-footer d-flex justify-content-center">
+          <button>AGREGAR AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  );
 }
