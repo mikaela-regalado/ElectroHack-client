@@ -14,11 +14,11 @@ export default function NavBar() {
           </Link>
         </div>
         <div>
-          <Link to="/catalogo/imagen&sonido">Imagen y Sonido</Link>
-          <Link to="/catalogo/climatizacion">Climatización</Link>
-          <Link to="/catalogo/limpieza">Limpieza</Link>
-          <Link to="/caalogo/cocina">Cocina</Link>
-          <Link to="/caalogo/otros">Otros</Link>
+          <Link to="/catalogo/imagen&sonido/0">Imagen y Sonido</Link>
+          <Link to="/catalogo/climatizacion/1">Climatización</Link>
+          <Link to="/catalogo/limpieza/2">Limpieza</Link>
+          <Link to="/catalogo/cocina/3">Cocina</Link>
+          <Link to="/catalogo/otros/4">Otros</Link>
         </div>
         <div>
           <Link to="/">

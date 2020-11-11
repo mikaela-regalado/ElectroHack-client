@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
-//import producto from "../../img/producto1.jpg";
 import Footer from "../Footer/Footer";
 import "./Producto.css";
 import axios from "axios";

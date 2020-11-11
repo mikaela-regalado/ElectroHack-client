@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Catalogo.css";
 import axiosCall from "../../utils/axiosCall";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import { useParams } from "react-router-dom";
+var qs = require('qs');
 
 export default function Catalogo() {
+  const params = useParams();
+  const query = qs.parse(`category.code=${params.code}`)
+
+  useEffect(() => {   
+    axiosCall("/products", "get", null, query)
+    .then((res) => console.log(res))  
+  }, [params])
+
   return (
     <div>
       <header className="background">
