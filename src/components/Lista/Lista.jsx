@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import producto from "./img/producto1.jpg";
+import producto from "../../img/producto1.jpg";
 import "./Lista.css";
 
 export default function Lista() {
   return (
     <div className="background">
       <div className="container">
-        <div class="row row-cols-1 row-cols-md-3">
+        <div class="row row-cols- row-cols-md-3">
           <div class="col mb-4">
             <div class="card">
               <img src={producto} alt="product" />
