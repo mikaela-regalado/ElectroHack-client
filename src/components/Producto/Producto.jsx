@@ -1,20 +1,16 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
-import Banner from "../Banner/Banner";
-import Lista from "../Lista/Lista";
+
 import Footer from "../Footer/Footer";
 
-export default function Home() {
+export default function Producto() {
   return (
-    <>
+    <div>
       <header>
         <NavBar />
       </header>
-      <main>
-        <Banner />
-        <Lista />
-      </main>
+      <main></main>
       <Footer />
-    </>
+    </div>
   );
 }
