@@ -4,7 +4,7 @@ import axiosCall from "../../utils/axiosCall";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
-var qs = require('qs');
+const qs = require('qs');
 
 export default function Catalogo() {
   const params = useParams();
@@ -13,7 +13,7 @@ export default function Catalogo() {
   useEffect(() => {   
     axiosCall("/products", "get", null, query)
     .then((res) => console.log(res))  
-  }, [params])
+  }, [query])
 
   return (
     <div>
