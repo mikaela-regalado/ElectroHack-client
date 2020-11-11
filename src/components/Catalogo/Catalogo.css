@@ -1,0 +1,11 @@
+.titulo {
+  padding: 3rem 0;
+}
+.links {
+  padding: 3rem 0;
+}
+.link {
+  margin-right: 1rem;
+  width: 150px;
+  height: 50px;
+}
