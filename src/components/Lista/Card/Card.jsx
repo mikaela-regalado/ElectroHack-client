@@ -1,7 +1,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import carritoActions from "../../../redux/Actions/carritoActions"
+import {useDispatch} from "react-redux"
 
 export default function Card ({producto}) {
+    const dispatch = useDispatch();
+
+
+    function handleAddItem(event, item) {
+        event.preventDefault();
+        dispatch(carritoActions.addItem(item));
+    }
+
     return(
         <div class="col mb-4">
             <div class="card">
@@ -19,7 +29,7 @@ export default function Card ({producto}) {
                 </div>
               </div>
               <div class="card-footer d-flex justify-content-center">
-                <button>AGREGAR AL CARRITO</button>
+                <button type="button" onClick={e => handleAddItem(e, producto.slug)}>AGREGAR AL CARRITO</button>
               </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ export default function Lista({ productos }) {
       <div className="container">
         <div class="row row-cols-1 row-cols-md-3">
           {productos.map((producto) => {
-            return <Card producto={producto} />;
+            return <Card key={producto._id} producto={producto} />;
           })}
         </div>
       </div>

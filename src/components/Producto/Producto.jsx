@@ -5,16 +5,15 @@ import Footer from "../Footer/Footer";
 import "./Producto.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import axiosCall from "../../utils/axiosCall"
 
 export default function Producto() {
   const [producto, setProducto] = useState([])
-  const params = useParams()
+  const params = useParams();
 
 useEffect(() => {
-  axios({
-    method: 'get',
-    url: `http://localhost:8000/products/${params.slug}`,
-  }).then((res) => setProducto(res.data))
+  axiosCall(`/products/${params.slug}`, "get")
+  .then((res) => setProducto(res.data))
 }, [])
 
   return (
@@ -23,7 +22,7 @@ useEffect(() => {
         <NavBar />
       </header>
       <main>
-        <div className="container">
+        {producto.image && <div className="container">
           <div className="row p-3">
             <div className="col-lg-9">
               <div class="card mb-3 producto">
@@ -52,7 +51,7 @@ useEffect(() => {
               </div>
             </div>
           </div>
-        </div>
+        </div>}
       </main>
       <Footer />
     </div>
