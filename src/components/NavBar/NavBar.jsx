@@ -4,12 +4,12 @@ import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <nav classNameName="nav-bar">
-      <div classNameName="container fila ">
+    <nav className="nav-bar">
+      <div className="container fila ">
         <div>
-          <Link to="/" className="brand">
+          <Link to="/" class="brand">
             <small>
-              Electro Hack <i className="fas fa-desktop"></i>
+              Electro Hack <i class="fas fa-desktop"></i>
             </small>
           </Link>
         </div>
@@ -22,10 +22,10 @@ export default function NavBar() {
         </div>
         <div>
           <Link to="/">
-            <i className="fas fa-user-circle"></i> Ingresar
+            <i class="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/">
-            <i className="fas fa-shopping-cart"></i>
+            <i class="fas fa-shopping-cart"></i>
           </Link>
         </div>
       </div>

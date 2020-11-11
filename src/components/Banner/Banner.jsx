@@ -4,7 +4,7 @@ import "./Banner.css";
 
 export default function Banner() {
   return (
-    <div classNameName="banner">
+    <div className="banner">
       <img src={image} alt="banner" />
     </div>
   );
