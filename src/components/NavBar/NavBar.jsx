@@ -7,11 +7,11 @@ export default function NavBar() {
     <nav className="nav-bar">
       <div className="container fila ">
         <div>
-          <a href="/" class="brand">
+          <Link to="/" class="brand">
             <small>
               Electro Hack <i class="fas fa-desktop"></i>
             </small>
-          </a>
+          </Link>
         </div>
         <div>
           <Link to="/categorias/imagen&sonido">Imagen y Sonido</Link>
@@ -21,12 +21,12 @@ export default function NavBar() {
           <Link to="/categoria/otros">Otros</Link>
         </div>
         <div>
-          <a href="/">
+          <Link to="/">
             <i class="fas fa-user-circle"></i> Ingresar
-          </a>
-          <a href="/">
+          </Link>
+          <Link to="/">
             <i class="fas fa-shopping-cart"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

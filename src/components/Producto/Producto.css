@@ -1,0 +1,35 @@
+.producto {
+  border: none;
+}
+.img {
+  border-bottom: 1px solid #2f2f2f;
+}
+.descripcion {
+  padding: 10px 0;
+}
+.stock small {
+  display: inline-block;
+  padding: 3px;
+  border: 1px solid #2f2f2f;
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #2f2f2f;
+}
+
+.comprar-header {
+  padding: 2rem;
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+.comprar-body {
+  padding: 2rem;
+  border: 1px solid #2f2f2f;
+}
+.comprar-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.comprar-footer button {
+  width: 100%;
+}
