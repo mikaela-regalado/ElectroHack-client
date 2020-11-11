@@ -1,8 +1,16 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import axiosCall from "../../utils/axiosCall"
 
 export default function NavBar() {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    axiosCall("/categories", "get" )
+    .then((res) => setCategories(res.data))
+  }, [])
+
   return (
     <nav className="nav-bar">
       <div className="container fila ">
@@ -14,11 +22,9 @@ export default function NavBar() {
           </Link>
         </div>
         <div>
-          <Link to="/catalogo/0/imagen&sonido">Imagen y Sonido</Link>
-          <Link to="/catalogo/1/climatizacion">Climatización</Link>
-          <Link to="/catalogo/2/limpieza">Limpieza</Link>
-          <Link to="/catalogo/3/cocina">Cocina</Link>
-          <Link to="/catalogo/4/otros">Otros</Link>
+          {categories.map(category => {
+            return(<Link key={category._id} to={`/catalogo/${category.slug}`}>{category.type}</Link>)
+          })}
         </div>
         <div>
           <Link to="/">
