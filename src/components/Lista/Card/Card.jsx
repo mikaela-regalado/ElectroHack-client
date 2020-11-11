@@ -9,8 +9,8 @@ export default function Card ({producto}) {
               <div class="card-body d-flex justify-content-center">
                 <div>
                   <h5 class="card-title">{producto.name}</h5>
-                  <Link to="/producto/${producto.slug}" className="link-producto">
-                    {producto.decription}
+                  <Link to={`/producto/${producto.slug}`} className="link-producto">
+                    {producto.description}
                   </Link>
 
                   <h4>{producto.price}</h4>
