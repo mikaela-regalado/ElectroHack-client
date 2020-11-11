@@ -11,10 +11,12 @@ const [productos, setProductos] = useState([])
 useEffect(() => {
   axios({
     method: 'get',
-    url: `http://localhost:8000/products`
+    url: `http://localhost:8000/products`,
+    params: { outstanding: true}
   }).then((res) => setProductos(res.data))
 }, [])
 
+//console.log(productos)
   return (
     <>
       <header>

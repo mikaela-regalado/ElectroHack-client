@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import producto from "./img/producto1.jpg";
 import Card from "./Card/Card";
 import "./Lista.css";
 
