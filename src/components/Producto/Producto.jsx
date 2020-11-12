@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import "./Producto.css";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import carritoActions from "../../redux/Actions/carritoActions";
 import axiosCall from "../../utils/axiosCall"
 
 export default function Producto() {
+  const dispatch = useDispatch();
   const [producto, setProducto] = useState([])
   const params = useParams();
+
+  function handleAddItem(event, item) {
+    event.preventDefault();
+    dispatch(carritoActions.addItem(item));
+  }
 
 useEffect(() => {
   axiosCall(`/products/${params.slug}`, "get")
@@ -54,7 +61,10 @@ useEffect(() => {
                 </h2>
               </div>
               <div className="comprar-footer">
-                <button>AGREGAR AL CARRITO</button>
+                <button
+                type="button"
+                onClick={(e) => handleAddItem(e, producto._id)}>
+                  AGREGAR AL CARRITO</button>
               </div>
             </div>
           </div>

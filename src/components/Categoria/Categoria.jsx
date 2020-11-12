@@ -7,14 +7,18 @@ import Lista from "../Lista/Lista";
 import { useParams } from "react-router-dom";
 
 export default function Catalogo() {
+  const [categoria, setCategoria] = useState({});
   const [productos, setProductos] = useState([]);
   const params = useParams();
 
   useEffect(() => {
-    axiosCall("/products", "get", null, params).then((res) =>
-      setProductos(res.data)
+    axiosCall(`/categories/${params.slug}`, "get").then((res) => {
+      setCategoria(res.data);
+      setProductos(res.data.productList)
+    }
+    
     );
-  }, [params]);
+  }, [params.slug]);
 
   return (
     <div>
