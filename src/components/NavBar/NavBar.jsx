@@ -13,7 +13,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar ">
       <div className="container fila ">
         <div>
           <Link to="/" className="brand">
@@ -32,7 +32,7 @@ export default function NavBar() {
           })}
         </div>
         <div>
-          <Link to="/">
+          <Link to="/registro">
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/pedidos">

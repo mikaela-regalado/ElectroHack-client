@@ -14,3 +14,12 @@ a.brand {
   font-size: 3rem;
   font-weight: bold;
 }
+
+.cartCount {
+  font-size: 12px;
+  background: #000000;
+  border-radius: 50%;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+}

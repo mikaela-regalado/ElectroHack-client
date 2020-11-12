@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer footerLogin">
       <div className="container pt-5">
         <div className="row">
           <div className="col-md-3">
@@ -26,7 +26,7 @@ export default function Footer() {
             <h4>Servicio al cliente</h4>
           </div>
           <div className="col-md-3">
-            <h4>Tel.: "Algún Número"</h4>
+            <h4>Tel.: 097345678</h4>
           </div>
         </div>
         <div className="d-flex justify-content-center">

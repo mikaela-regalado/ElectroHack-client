@@ -7,14 +7,18 @@ import Lista from "../Lista/Lista";
 import { useParams } from "react-router-dom";
 
 export default function Catalogo() {
+  const [categoria, setCategoria] = useState({});
   const [productos, setProductos] = useState([]);
   const params = useParams();
 
   useEffect(() => {
-    axiosCall("/products", "get", null, params).then((res) =>
-      setProductos(res.data)
+    axiosCall(`/categories/${params.slug}`, "get").then((res) => {
+      setCategoria(res.data);
+      setProductos(res.data.productList)
+    }
+    
     );
-  }, [params]);
+  }, [params.slug]);
 
   return (
     <div>
@@ -22,9 +26,12 @@ export default function Catalogo() {
         <NavBar class="container" />
       </header>
       <main>
-        <div className="container">
+        {categoria.type && <div className="container">
           <div className="titulo">
             <h1>Catálogo</h1>
+            <h2>{categoria.type}</h2>
+            <h3>{categoria.description}</h3>
+            <img src={categoria.image} alt="Imagen de la categoria"/>
           </div>
           <div className="links">
             <button className="link">Todos</button>
@@ -36,7 +43,7 @@ export default function Catalogo() {
           <div className="lista background">
             <Lista productos={productos} />
           </div>
-        </div>
+        </div>}
       </main>
       <Footer />
     </div>
