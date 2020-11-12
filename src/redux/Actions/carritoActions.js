@@ -1,9 +1,9 @@
-const addItem = (slug) => {
+const addItem = (itemId) => {
   return {
     type: "ADD_ITEM",
-    payload: slug,
+    payload: itemId,
   };
 };
 
-const actions = { addItem };
+const actions = { addItem }; //, countItems };
 export default actions;
