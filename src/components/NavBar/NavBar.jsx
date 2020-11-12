@@ -1,18 +1,17 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import axiosCall from "../../utils/axiosCall"
+import axiosCall from "../../utils/axiosCall";
 
 export default function NavBar() {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axiosCall("/categories", "get" )
-    .then((res) => setCategories(res.data))
-  }, [])
+    axiosCall("/categories", "get").then((res) => setCategories(res.data));
+  }, []);
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar ">
       <div className="container fila ">
         <div>
           <Link to="/" className="brand">
@@ -22,12 +21,16 @@ export default function NavBar() {
           </Link>
         </div>
         <div>
-          {categories.map(category => {
-            return(<Link key={category._id} to={`/catalogo/${category.slug}`}>{category.type}</Link>)
+          {categories.map((category) => {
+            return (
+              <Link key={category._id} to={`/catalogo/${category.slug}`}>
+                {category.type}
+              </Link>
+            );
           })}
         </div>
         <div>
-          <Link to="/">
+          <Link to="/registro">
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/">
