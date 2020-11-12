@@ -40,14 +40,14 @@ export default function Login() {
               <div class="form-group">
                 <input
                   type="email"
-                  class="form-input"
+                  className="form-input"
                   name="email"
                   id="email"
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="password"
                   class="form-input"
@@ -58,7 +58,7 @@ export default function Login() {
                 />
                 <span
                   toggle="#password"
-                  class="zmdi zmdi-eye field-icon toggle-password"
+                  className="zmdi zmdi-eye field-icon toggle-password"
                 ></span>
               </div>
 
