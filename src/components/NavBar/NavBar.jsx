@@ -1,17 +1,16 @@
-import React,{useState, useEffect} from "react";
-import {useSelector, useDispatch} from "react-redux"
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import axiosCall from "../../utils/axiosCall"
+import axiosCall from "../../utils/axiosCall";
 
 export default function NavBar() {
-  const [categories, setCategories] = useState([])
-  const cantItems = useSelector(state => state.cantItems)
+  const [categories, setCategories] = useState([]);
+  const cantItems = useSelector((state) => state.cantItems);
 
   useEffect(() => {
-    axiosCall("/categories", "get" )
-    .then((res) => setCategories(res.data))
-  }, [])
+    axiosCall("/categories", "get").then((res) => setCategories(res.data));
+  }, []);
 
   return (
     <nav className="nav-bar">
@@ -24,8 +23,12 @@ export default function NavBar() {
           </Link>
         </div>
         <div>
-          {categories.map(category => {
-            return(<Link key={category._id} to={`/catalogo/${category.slug}`}>{category.type}</Link>)
+          {categories.map((category) => {
+            return (
+              <Link key={category._id} to={`/categoria/${category.slug}`}>
+                {category.type}
+              </Link>
+            );
           })}
         </div>
         <div>

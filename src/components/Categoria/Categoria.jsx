@@ -1,19 +1,20 @@
-import React, {useEffect, useState} from "react";
-import "./Catalogo.css";
+import React, { useEffect, useState } from "react";
+import "./Categoria.css";
 import axiosCall from "../../utils/axiosCall";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import Lista from "../Lista/Lista"
+import Lista from "../Lista/Lista";
 import { useParams } from "react-router-dom";
 
 export default function Catalogo() {
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
   const params = useParams();
 
-  useEffect(() => {   
-    axiosCall("/products", "get", null, params)
-    .then((res) => setProductos(res.data))  
-  }, [params])
+  useEffect(() => {
+    axiosCall("/products", "get", null, params).then((res) =>
+      setProductos(res.data)
+    );
+  }, [params]);
 
   return (
     <div>
@@ -33,7 +34,7 @@ export default function Catalogo() {
             <button className="link">Todos</button>
           </div>
           <div className="lista background">
-          <Lista productos={productos} />
+            <Lista productos={productos} />
           </div>
         </div>
       </main>
