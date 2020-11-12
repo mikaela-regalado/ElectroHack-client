@@ -25,7 +25,7 @@ export default function NavBar() {
         <div>
           {categories.map((category) => {
             return (
-              <Link key={category._id} to={`/catalogo/${category.slug}`}>
+              <Link key={category._id} to={`/categoria/${category.slug}`}>
                 {category.type}
               </Link>
             );

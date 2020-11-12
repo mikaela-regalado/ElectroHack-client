@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "./loginRegistro.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
+import axiosCall from "../../utils/axiosCall"
 
 export default function Registro() {
   const history = useHistory();
