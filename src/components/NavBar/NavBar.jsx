@@ -8,11 +8,10 @@ export default function NavBar() {
   const [categories, setCategories] = useState([]);
   const items = useSelector((state) => state.carrito.items);
 
-  const invoiceItems = items;
-  const sumItems = (invoiceAmount, nextItem) =>
-    invoiceAmount + nextItem.cantidad;
+  const cantidadItems = items;
+  const sumItems = (totalItems, nextItem) => totalItems + nextItem.cantidad;
 
-  const invoiceAmount = invoiceItems.reduce(sumItems, 0);
+  const totalItems = cantidadItems.reduce(sumItems, 0);
 
   useEffect(() => {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
@@ -42,7 +41,7 @@ export default function NavBar() {
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/pedidos">
-            <i className="fas fa-shopping-cart">{items && invoiceAmount}</i>
+            <i className="fas fa-shopping-cart">{items && totalItems}</i>
           </Link>
         </div>
       </div>
