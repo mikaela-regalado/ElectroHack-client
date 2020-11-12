@@ -2,18 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import carritoActions from "../../redux/Actions/carritoActions";
 import { useDispatch } from "react-redux";
+import "./Card.css";
 
 export default function Card({ producto }) {
   const dispatch = useDispatch();
+  let cantidad = 0;
 
-  function handleAddItem(event, item) {
+  function handleAddItem(event, item, cantidad) {
     event.preventDefault();
-    dispatch(carritoActions.addItem(item));
+    dispatch(carritoActions.addItem(item, cantidad));
   }
 
   return (
     <div class="col mb-4">
-      <div class="card">
+      <div class="card contenedor">
         <img src={producto.image} alt="product" />
         <div class="card-body d-flex justify-content-center">
           <div>
@@ -30,7 +32,7 @@ export default function Card({ producto }) {
         <div className="card-footer d-flex justify-content-center">
           <button
             type="button"
-            onClick={(e) => handleAddItem(e, producto._id)}
+            onClick={(e) => handleAddItem(e, producto, cantidad)}
           >
             AGREGAR AL CARRITO
           </button>

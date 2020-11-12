@@ -1,7 +1,7 @@
-const addItem = (itemId) => {
+const addItem = (item) => {
   return {
     type: "ADD_ITEM",
-    payload: itemId,
+    payload: item,
   };
 };
 

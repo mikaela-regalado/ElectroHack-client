@@ -6,7 +6,7 @@ import axiosCall from "../../utils/axiosCall";
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
-  const cantItems = useSelector((state) => state.cantItems);
+  const items = useSelector((state) => state.carrito.items);
 
   useEffect(() => {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
@@ -35,8 +35,8 @@ export default function NavBar() {
           <Link to="/">
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
-          <Link to="/">
-            <i className="fas fa-shopping-cart">{cantItems}</i>
+          <Link to="/pedidos">
+            <i className="fas fa-shopping-cart">{items && items.length}</i>
           </Link>
         </div>
       </div>

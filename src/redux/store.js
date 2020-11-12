@@ -1,9 +1,13 @@
 import { createStore } from "redux";
+import { combineReducers } from "redux";
 import carrito from "./Reducers/carritoReducer";
 
-const store = createStore(
+const rootReducer = combineReducers({
   carrito,
-  { user: [], items: [], cantItems: 0, estado: "Sin Pagar" },
+});
+
+const store = createStore(
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
