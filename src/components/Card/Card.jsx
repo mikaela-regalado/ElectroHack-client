@@ -30,7 +30,7 @@ export default function Card({ producto }) {
         <div className="card-footer d-flex justify-content-center">
           <button
             type="button"
-            onClick={(e) => handleAddItem(e, producto.slug)}
+            onClick={(e) => handleAddItem(e, producto._id)}
           >
             AGREGAR AL CARRITO
           </button>

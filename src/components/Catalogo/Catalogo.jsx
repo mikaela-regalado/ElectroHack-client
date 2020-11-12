@@ -5,15 +5,13 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Lista from "../Lista/Lista"
 import { useParams } from "react-router-dom";
-const qs = require('qs');
 
 export default function Catalogo() {
   const [productos, setProductos] = useState([])
   const params = useParams();
-  const query = qs.parse(`category.code=${params.code}`)
 
   useEffect(() => {   
-    axiosCall("/products", "get", null, query)
+    axiosCall("/products", "get", null, params)
     .then((res) => setProductos(res.data))  
   }, [params])
 
