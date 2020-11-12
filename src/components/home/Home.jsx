@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import Lista from "../Lista/Lista";
 import Footer from "../Footer/Footer";
 import axiosCall from "../../utils/axiosCall";
+import "./Home.css";
 
 export default function Home() {
   const [productos, setProductos] = useState([]);
