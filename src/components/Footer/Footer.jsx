@@ -13,7 +13,7 @@ export default function Footer() {
             </small>
             <br />
 
-            <small>Lun. a Vie. 9:00 - 19:00hs Sab. 9:00 - 13:00hs</small>
+            <small>Lun. a Vie. 9:00 - 19:00hs </small>
           </div>
           <div className="col-md-3">
             <h4>Nuestra empresa</h4>

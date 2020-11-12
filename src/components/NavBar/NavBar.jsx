@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import axiosCall from "../../utils/axiosCall";
@@ -25,7 +25,7 @@ export default function NavBar() {
         <div>
           {categories.map((category) => {
             return (
-              <Link key={category._id} to={`/catalogo/${category.slug}`}>
+              <Link key={category._id} to={`/categoria/${category.slug}`}>
                 {category.type}
               </Link>
             );
@@ -36,7 +36,9 @@ export default function NavBar() {
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/">
-            <i className="fas fa-shopping-cart "><span className="cartCount">{cantItems}</span></i>
+            <i className="fas fa-shopping-cart ">
+              <span className="cartCount">{cantItems}</span>
+            </i>
           </Link>
         </div>
       </div>
