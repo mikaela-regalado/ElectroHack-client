@@ -1,88 +1,81 @@
-/* export default function Registro() {
+import React, { useState } from "react";
+import "./loginRegistro.css";
+import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axiosCall from "../../utils/axiosCall";
+import actionLogin from "../../redux/Actions/userActions";
+export default function Login() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  async function handleLogin(e) {
+    e.preventDefault();
+    const user = { email: email, password: password };
+    /* console.log(user); */
+    axiosCall("/token", "post", null, null, user).then((res) => {
+      console.log(res.data);
+      dispatch(actionLogin(res.data));
+      history.push("/");
+    });
+  }
   return (
-    <div className="main">
-      <section className="signup">
-        <div className="container">
-          <div className="signup-content">
-            <form method="POST" id="signup-form" className="signup-form">
-              <h2 className="form-title">Create account</h2>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-input"
-                  name="name"
-                  id="name"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div className="form-group">
+    <div class="main">
+      <NavBar />
+      <section class="signup">
+        <div class="containerLogin">
+          <div class="signup-content">
+            <form
+              id="signup-form"
+              class="signup-form"
+              onSubmit={(e) => {
+                handleLogin(e);
+              }}
+            >
+              <h2 class="form-title">Ingresa a tu cuenta</h2>
+
+              <div class="form-group">
                 <input
                   type="email"
                   className="form-input"
                   name="email"
                   id="email"
-                  placeholder="Your Email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <input
-                  type="text"
-                  className="form-input"
+                  type="password"
+                  class="form-input"
                   name="password"
                   id="password"
                   placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <span
                   toggle="#password"
                   className="zmdi zmdi-eye field-icon toggle-password"
                 ></span>
               </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  className="form-input"
-                  name="re_password"
-                  id="re_password"
-                  placeholder="Repeat your password"
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="checkbox"
-                  name="agree-term"
-                  id="agree-term"
-                  className="agree-term"
-                />
-                <label for="agree-term" className="label-agree-term">
-                  <span>
-                    <span></span>
-                  </span>
-                  I agree all statements in{" "}
-                  <a href="#" className="term-service">
-                    Terms of service
-                  </a>
-                </label>
-              </div>
-              <div className="form-group">
+
+              <div class="form-group">
                 <input
                   type="submit"
                   name="submit"
                   id="submit"
-                  className="form-submit"
-                  value="Sign up"
+                  class="form-submit"
+                  value="Iniciar sesión"
                 />
               </div>
             </form>
-            <p className="loginhere">
-              Have already an account ?{" "}
-              <a href="#" className="loginhere-link">
-                Login here
-              </a>
-            </p>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
- */

@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import Producto from "./components/Producto/Producto";
 import Registro from "./components/LoginRegistro/Registro";
 import Categoria from "./components/Categoria/Categoria";
+import Login from "./components/LoginRegistro/Login";
 import Pedidos from "./components/Pedidos/Pedidos";
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/producto/:slug" component={Producto} />
         <Route exact path="/pedidos" component={Pedidos} />
         <Route exact path="/registro" component={Registro} />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </Router>
   );

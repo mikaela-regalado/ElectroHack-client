@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "./loginRegistro.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import axiosCall from "../../utils/axiosCall";
-
 export default function Registro() {
   const history = useHistory();
 
@@ -25,7 +24,7 @@ export default function Registro() {
       userAddress: userAddress,
       cellPhone: cellPhone,
     };
-    axiosCall("/users", "post", user).then((res) => {
+    axiosCall("/users", "post", null, null, user).then((res) => {
       history.push("/");
     });
   }
@@ -36,7 +35,13 @@ export default function Registro() {
       <section className="signup">
         <div className="containerLogin">
           <div className="signup-content">
-            <form id="signup-form" className="signup-form">
+            <form
+              id="signup-form"
+              className="signup-form"
+              onSubmit={(e) => {
+                handleRegistro(e);
+              }}
+            >
               <h2 className="form-title">Crear Cuenta</h2>
               <div className="form-group">
                 <input
@@ -103,29 +108,21 @@ export default function Registro() {
                 />
               </div>
 
-              {/* <div className="form-group">
+              <div className="form-group">
                 <input
                   type="submit"
                   name="submit"
                   id="submit"
                   className="form-submit"
                   value="Registrarse"
-
                 />
-              </div> */}
-              <button
-                type="submit"
-                onClick={handleRegistro}
-                className="mb-1 mt-2"
-              >
-                Registrarse
-              </button>
+              </div>
             </form>
             <p className="loginhere">
               ¿Tienes una cuenta?{" "}
-              <a href="#" className="loginhere-link">
+              <Link to="/login" className="loginhere-link">
                 Ingresar
-              </a>
+              </Link>
             </p>
           </div>
         </div>
