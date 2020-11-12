@@ -4,6 +4,7 @@ import "./Pedidos.css";
 import { useSelector, useDispatch } from "react-redux";
 
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
 export default function Pedidos() {
   const items = useSelector((state) => state.carrito.items);
@@ -43,10 +44,22 @@ export default function Pedidos() {
                 </tbody>
               </table>
             </div>
-            <div className="col-md-3">Chua</div>
+            <div className="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title">Resumen</h2>
+                  <p>Subtotal (X productios)</p>
+                  <p>$32.3323</p>
+                </div>
+                <div className="card-footer d-flex justify-content-center">
+                  <button type="button">AGREGAR AL CARRITO</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
