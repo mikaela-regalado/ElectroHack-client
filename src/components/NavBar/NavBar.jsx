@@ -42,7 +42,7 @@ export default function NavBar() {
             <i className="fas fa-user-circle"></i> Ingresar
           </Link>
           <Link to="/pedidos">
-            <i className="fas fa-shopping-cart">{items && invoiceAmount}</i>
+            <i className="fas fa-shopping-cart"><span className="cartCount">{items && invoiceAmount}</span></i>
           </Link>
         </div>
       </div>
