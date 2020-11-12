@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./loginRegistro.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
-import axiosCall from "../../utils/axiosCall"
+import axiosCall from "../../utils/axiosCall";
 
 export default function Registro() {
   const history = useHistory();
@@ -31,47 +31,47 @@ export default function Registro() {
   }
 
   return (
-    <div class="main">
+    <div className="main">
       <NavBar />
-      <section class="signup">
-        <div class="containerLogin">
-          <div class="signup-content">
-            <form id="signup-form" class="signup-form">
-              <h2 class="form-title">Crear Cuenta</h2>
-              <div class="form-group">
+      <section className="signup">
+        <div className="containerLogin">
+          <div className="signup-content">
+            <form id="signup-form" className="signup-form">
+              <h2 className="form-title">Crear Cuenta</h2>
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-input"
+                  className="form-input"
                   name="name"
                   id="name"
                   placeholder="Nombre"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-input"
+                  className="form-input"
                   name="lastname"
                   id="lastname"
                   placeholder="Apellido"
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="email"
-                  class="form-input"
+                  className="form-input"
                   name="email"
                   id="email"
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="password"
-                  class="form-input"
+                  className="form-input"
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -79,23 +79,23 @@ export default function Registro() {
                 />
                 <span
                   toggle="#password"
-                  class="zmdi zmdi-eye field-icon toggle-password"
+                  className="zmdi zmdi-eye field-icon toggle-password"
                 ></span>
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="text"
-                  class="form-input"
+                  className="form-input"
                   name="adress"
                   id="adress"
                   placeholder="Dirección"
                   onChange={(e) => setUserAddress(e.target.value)}
                 />
               </div>
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="number"
-                  class="form-input"
+                  className="form-input"
                   name="cellphone"
                   id="cellphone"
                   placeholder="Celular"
@@ -103,12 +103,12 @@ export default function Registro() {
                 />
               </div>
 
-              {/* <div class="form-group">
+              {/* <div className="form-group">
                 <input
                   type="submit"
                   name="submit"
                   id="submit"
-                  class="form-submit"
+                  className="form-submit"
                   value="Registrarse"
 
                 />
@@ -121,9 +121,9 @@ export default function Registro() {
                 Registrarse
               </button>
             </form>
-            <p class="loginhere">
+            <p className="loginhere">
               ¿Tienes una cuenta?{" "}
-              <a href="#" class="loginhere-link">
+              <a href="#" className="loginhere-link">
                 Ingresar
               </a>
             </p>
