@@ -14,36 +14,36 @@ export default function Catalogo() {
   useEffect(() => {
     axiosCall(`/categories/${params.slug}`, "get").then((res) => {
       setCategoria(res.data);
-      setProductos(res.data.productList)
-    }
-    
-    );
+      setProductos(res.data.productList);
+    });
   }, [params.slug]);
 
   return (
     <div>
       <header className="background">
-        <NavBar class="container" />
+        <NavBar className="container" />
       </header>
       <main>
-        {categoria.type && <div className="container">
-          <div className="titulo">
-            <h1>Catálogo</h1>
-            <h2>{categoria.type}</h2>
-            <h3>{categoria.description}</h3>
-            <img src={categoria.image} alt="Imagen de la categoria"/>
+        {categoria.type && (
+          <div className="container">
+            <div className="titulo">
+              <h1>Catálogo</h1>
+              <h2>{categoria.type}</h2>
+              <h3>{categoria.description}</h3>
+              <img src={categoria.image} alt="Imagen de la categoria" />
+            </div>
+            <div className="links">
+              <button className="link">Todos</button>
+              <button className="link">Todos</button>
+              <button className="link">Todos</button>
+              <button className="link">Todos</button>
+              <button className="link">Todos</button>
+            </div>
+            <div className="lista background">
+              <Lista productos={productos} />
+            </div>
           </div>
-          <div className="links">
-            <button className="link">Todos</button>
-            <button className="link">Todos</button>
-            <button className="link">Todos</button>
-            <button className="link">Todos</button>
-            <button className="link">Todos</button>
-          </div>
-          <div className="lista background">
-            <Lista productos={productos} />
-          </div>
-        </div>}
+        )}
       </main>
       <Footer />
     </div>

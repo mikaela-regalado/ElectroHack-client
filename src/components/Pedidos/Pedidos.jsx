@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 
 export default function Pedidos() {
   const items = useSelector((state) => state.carrito.items);
-  console.log(items);
+
   return (
     <>
       <NavBar />
@@ -17,7 +17,7 @@ export default function Pedidos() {
           <h1>Carrito</h1>
           <div className="row fila ">
             <div className="col-md-9 ">
-              <table class="table table-striped">
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col-8">Articulos ({items.length})</th>
@@ -45,9 +45,9 @@ export default function Pedidos() {
               </table>
             </div>
             <div className="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h2 class="card-title">Resumen</h2>
+              <div className="card">
+                <div className="card-body">
+                  <h2 className="card-title">Resumen</h2>
                   <p>Subtotal (X productios)</p>
                   <p>$32.3323</p>
                 </div>
