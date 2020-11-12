@@ -26,9 +26,12 @@ export default function Catalogo() {
         <NavBar class="container" />
       </header>
       <main>
-        <div className="container">
+        {categoria.type && <div className="container">
           <div className="titulo">
             <h1>Catálogo</h1>
+            <h2>{categoria.type}</h2>
+            <h3>{categoria.description}</h3>
+            <img src={categoria.image} alt="Imagen de la categoria"/>
           </div>
           <div className="links">
             <button className="link">Todos</button>
@@ -40,7 +43,7 @@ export default function Catalogo() {
           <div className="lista background">
             <Lista productos={productos} />
           </div>
-        </div>
+        </div>}
       </main>
       <Footer />
     </div>
