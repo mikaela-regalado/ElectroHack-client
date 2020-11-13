@@ -4,6 +4,12 @@ const addItem = (item) => {
     payload: item,
   };
 };
+const removeItem = (item) => {
+  return {
+    type: "REMOVE_ITEM",
+    payload: item,
+  };
+};
 
-const actions = { addItem }; //, countItems };
+const actions = { addItem, removeItem }; //, countItems };
 export default actions;

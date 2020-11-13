@@ -2,13 +2,28 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Pedidos.css";
 import { useSelector, useDispatch } from "react-redux";
-
-import axios from "axios";
+import carritoActions from "../../redux/Actions/carritoActions";
 import Footer from "../Footer/Footer";
 
 export default function Pedidos() {
   const items = useSelector((state) => state.carrito.items);
+  const dispatch = useDispatch();
 
+  /* function handleRemoveItem(e, item) {
+    e.preventDefault();
+    dispatch(carritoActions.removeItem(item));
+  } */
+  const totalPrice = () => {
+    return Math.round(
+      items
+        .map((item) => item.price * item.cantidad)
+        .reduce(
+          (sumaDetodos, itemMultiplicado) => sumaDetodos + itemMultiplicado,
+          0
+        )
+    );
+  };
+  console.log(totalPrice());
   return (
     <>
       <NavBar />
@@ -37,8 +52,17 @@ export default function Pedidos() {
                           />
                         </div>
                       </th>
-                      <td>$ {item.price}</td>
+                      <td>$ {item.price * item.cantidad}</td>
                       <td>{item.cantidad}</td>
+                      <td>
+                        {" "}
+                        <i
+                          class=" mt-2 fas fa-trash-alt"
+                          onClick={() => {
+                            dispatch(carritoActions.removeItem(item));
+                          }}
+                        ></i>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -49,7 +73,7 @@ export default function Pedidos() {
                 <div className="card-body">
                   <h2 className="card-title">Resumen</h2>
                   <p>Subtotal (X productios)</p>
-                  <p>$32.3323</p>
+                  <h3> ${totalPrice()} </h3>
                 </div>
                 <div className="card-footer d-flex justify-content-center">
                   <button type="button">AGREGAR AL CARRITO</button>
