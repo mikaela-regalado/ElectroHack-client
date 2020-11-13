@@ -7,6 +7,9 @@ function userReducer(state = {}, action) {
         userId: action.payload.userId,
         fullName: action.payload.fullName,
       };
+    case "LOG_OUT":
+      localStorage.clear();
+      return {};
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axiosCall from "../../utils/axiosCall";
-import actionLogin from "../../redux/Actions/userActions";
+import { actionCreators } from "../../redux/Actions/userActions";
 export default function Login() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -18,26 +18,26 @@ export default function Login() {
     /* console.log(user); */
     axiosCall("/token", "post", null, null, user).then((res) => {
       console.log(res.data);
-      dispatch(actionLogin(res.data));
+      dispatch(actionCreators.login(res.data));
       history.push("/");
     });
   }
   return (
-    <div class="main">
+    <div className="main">
       <NavBar />
-      <section class="signup">
-        <div class="containerLogin">
-          <div class="signup-content">
+      <section className="signup">
+        <div className="containerLogin">
+          <div className="signup-content">
             <form
               id="signup-form"
-              class="signup-form"
+              className="signup-form"
               onSubmit={(e) => {
                 handleLogin(e);
               }}
             >
-              <h2 class="form-title">Ingresa a tu cuenta</h2>
+              <h2 className="form-title">Ingresa a tu cuenta</h2>
 
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="email"
                   className="form-input"
@@ -50,7 +50,7 @@ export default function Login() {
               <div className="form-group">
                 <input
                   type="password"
-                  class="form-input"
+                  className="form-input"
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -62,12 +62,12 @@ export default function Login() {
                 ></span>
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <input
                   type="submit"
                   name="submit"
                   id="submit"
-                  class="form-submit"
+                  className="form-submit"
                   value="Iniciar sesión"
                 />
               </div>
