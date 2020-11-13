@@ -4,10 +4,26 @@ import "./Pedidos.css";
 import { useSelector, useDispatch } from "react-redux";
 import carritoActions from "../../redux/Actions/carritoActions";
 import Footer from "../Footer/Footer";
+import HistorialPedidos from "../HistoralPedidos/HistorialPedidos"
+import axiosCall from "../../utils/axiosCall"
 
 export default function Pedidos() {
   const items = useSelector((state) => state.carrito.items);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  function handleComprar() {
+    const list_products = items.map(item =>  ({_id:item._id, cantidad:item.cantidad}))
+    const order={
+      buyer: user.userId,
+      list_products: list_products,
+      totalPrice: totalPrice
+    }
+    axiosCall("/orders", "post", user.token, null, order)
+    .then((res) => console.log(res.data))
+  }
+
+/*   const totalPrice = items.reduce( (total, item) => total += item.price * item.cantidad, 0) */
 
   /* function handleRemoveItem(e, item) {
     e.preventDefault();
@@ -76,11 +92,12 @@ export default function Pedidos() {
                   <h3> ${totalPrice()} </h3>
                 </div>
                 <div className="card-footer d-flex justify-content-center">
-                  <button type="button">AGREGAR AL CARRITO</button>
+                  <button type="button" onClick={handleComprar}>COMPRAR</button>
                 </div>
               </div>
             </div>
           </div>
+          <HistorialPedidos />
         </div>
       </main>
       <Footer />

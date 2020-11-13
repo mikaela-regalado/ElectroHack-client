@@ -12,10 +12,10 @@ export default function Login() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   async function handleLogin(e) {
     e.preventDefault();
     const user = { email: email, password: password };
-    /* console.log(user); */
     axiosCall("/token", "post", null, null, user).then((res) => {
       console.log(res.data);
       dispatch(actionCreators.login(res.data));
