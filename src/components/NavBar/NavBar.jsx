@@ -25,7 +25,6 @@ export default function NavBar() {
 
   function handleClick() {
     dispatch(actionCreators.logOut());
-    history.push("/");
   }
 
   return (
@@ -57,7 +56,7 @@ export default function NavBar() {
           )}
           {user.token && (
             <>
-              <Link to="/registro" onClick={handleClick}>
+              <Link to="/login" onClick={handleClick}>
                 <i className="fas fa-user-circle"></i> Salir
               </Link>
             </>
