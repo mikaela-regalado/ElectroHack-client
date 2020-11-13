@@ -3,10 +3,16 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import axiosCall from "../../utils/axiosCall";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { actionCreators } from "../../redux/Actions/userActions";
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
   const items = useSelector((state) => state.carrito.items);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const cantidadItems = items;
   const sumItems = (totalItems, nextItem) => totalItems + nextItem.cantidad;
@@ -16,6 +22,10 @@ export default function NavBar() {
   useEffect(() => {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
   }, []);
+
+  function handleClick() {
+    dispatch(actionCreators.logOut());
+  }
 
   return (
     <nav className="nav-bar ">
@@ -37,9 +47,21 @@ export default function NavBar() {
           })}
         </div>
         <div>
-          <Link to="/registro">
-            <i className="fas fa-user-circle"></i> Ingresar
-          </Link>
+          {!user.token && (
+            <>
+              <Link to="/registro">
+                <i className="fas fa-user-circle"></i> Ingresar
+              </Link>
+            </>
+          )}
+          {user.token && (
+            <>
+              <Link to="/login" onClick={handleClick}>
+                <i className="fas fa-user-circle"></i> Salir
+              </Link>
+            </>
+          )}
+
           <Link to="/pedidos">
             <i className="fas fa-shopping-cart">{items && totalItems}</i>
           </Link>
