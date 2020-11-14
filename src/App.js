@@ -9,6 +9,7 @@ import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import EliminarProducto from "./components/AdminProductos/EliminarProducto";
 import AdminNav from "./components/AdminNav/AdminNav";
+import AgregarProducto from "./components/AdminProductos/AgregarProducto";
 import "./App.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/admin/productos" component={AdminNav} />
         <Route exact path="/admin/eliminar" component={EliminarProducto} />
+        <Route exact path="/admin/crear" component={AgregarProducto} />
       </Switch>
     </Router>
   );

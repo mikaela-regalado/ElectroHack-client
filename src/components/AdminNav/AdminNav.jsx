@@ -90,7 +90,7 @@ export default function AdminNav() {
           ></AdminNavItem>
           <AdminNavItem
             component={AddShoppingCartIcon}
-            route={"/home/"}
+            route={"/admin/crear"}
             text={"Agregar Producto"}
           ></AdminNavItem>
           <AdminNavItem
