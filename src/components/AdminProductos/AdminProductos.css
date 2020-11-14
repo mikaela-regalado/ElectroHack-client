@@ -8,4 +8,15 @@
 #trash {
   display: flex;
   justify-content: center;
+  cursor: pointer;
+}
+#tablaEliminar {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.titlesAdmin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }

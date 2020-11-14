@@ -7,7 +7,8 @@ import Categoria from "./components/Categoria/Categoria";
 import Login from "./components/LoginRegistro/Login";
 import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
-import AdminProductos from "./components/AdminProductos/AdimProductos";
+import EliminarProducto from "./components/AdminProductos/EliminarProducto";
+import AdminNav from "./components/AdminNav/AdminNav";
 import "./App.css";
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <Route exact path="/pedidos/:id" component={DetallesPedido} />
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/admin/productos" component={AdminProductos} />
+        <Route exact path="/admin/productos" component={AdminNav} />
+        <Route exact path="/admin/eliminar" component={EliminarProducto} />
       </Switch>
     </Router>
   );
