@@ -11,7 +11,7 @@ export default function Pedidos() {
 
     useEffect(() => {
         const buyer = {buyer: user.userId};
-        axiosCall("/orders", "get", user.token, buyer )
+        axiosCall("/orders", "get",  user.token, buyer )
         .then((res) => setOrderList(res.data))
     }, [])
  
@@ -21,7 +21,7 @@ export default function Pedidos() {
           <h1 className="mt-5">Pedidos anteriores</h1>
           <div className="row fila">
             <div className="col-md-9 ">
-              <table className="table table-striped">
+              {orderList && <table className="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col-8">Pedidos ({orderList.length})</th>
@@ -51,7 +51,7 @@ export default function Pedidos() {
                     </>
                   ))}
                 </tbody>
-              </table>
+              </table>}
             </div>
           </div>
  

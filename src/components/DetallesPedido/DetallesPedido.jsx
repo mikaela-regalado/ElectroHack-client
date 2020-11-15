@@ -6,7 +6,8 @@ import Footer from "../Footer/Footer";
 import axiosCall from "../../utils/axiosCall";
 import { useParams } from "react-router-dom";
 
-export default function Pedidos() {
+export default function DetallesPedido() {
+
   const params = useParams();
   const [order, setOrder] = useState([]);
   const user = useSelector((state) => state.user);

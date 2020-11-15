@@ -3,13 +3,13 @@ import "./loginRegistro.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axiosCall from "../../utils/axiosCall";
 import { actionCreators } from "../../redux/Actions/userActions";
 export default function Login() {
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const carrito = useSelector(state => state.carrito)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
@@ -17,9 +17,13 @@ export default function Login() {
     e.preventDefault();
     const user = { email: email, password: password };
     axiosCall("/token", "post", null, null, user).then((res) => {
-      console.log(res.data);
       dispatch(actionCreators.login(res.data));
-      history.push("/");
+      if (carrito.items.length !== 0 ) {
+        history.push("/pedidos")
+      }else{
+        history.push("/");
+      }
+      
     });
   }
   return (

@@ -4,9 +4,7 @@ export default async function axiosCall(path, method, token, query, body) {
   const URL = process.env.REACT_APP_URL + path;
   const headers = token
     ? {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        Authorization: `Bearer ${token}`,
       }
     : null;
 
@@ -20,6 +18,6 @@ export default async function axiosCall(path, method, token, query, body) {
     });
     return res;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }

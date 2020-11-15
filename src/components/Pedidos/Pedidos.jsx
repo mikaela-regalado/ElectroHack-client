@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Pedidos.css";
+import {useHistory} from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import carritoActions from "../../redux/Actions/carritoActions";
 import Footer from "../Footer/Footer";
@@ -8,27 +9,31 @@ import HistorialPedidos from "../HistoralPedidos/HistorialPedidos"
 import axiosCall from "../../utils/axiosCall"
 
 export default function Pedidos() {
+  const history = useHistory()
   const items = useSelector((state) => state.carrito.items);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
   function handleComprar() {
+
     const list_products = items.map(item =>  ({_id:item._id, cantidad:item.cantidad}))
+
     const order={
       buyer: user.userId,
       list_products: list_products,
       totalPrice: totalPrice
     }
+
     axiosCall("/orders", "post", user.token, null, order)
-    .then((res) => console.log(res.data))
+    .then((res) => {
+      if (res.status !== 200) {
+        history.push("/login")
+      } else {
+        history.push(`pedidos/${res.data._id}`)
+      }
+    })
   }
 
-/*   const totalPrice = items.reduce( (total, item) => total += item.price * item.cantidad, 0) */
-
-  /* function handleRemoveItem(e, item) {
-    e.preventDefault();
-    dispatch(carritoActions.removeItem(item));
-  } */
   const totalPrice = () => {
     return Math.round(
       items
@@ -39,7 +44,6 @@ export default function Pedidos() {
         )
     );
   };
-  console.log(totalPrice());
   return (
     <>
       <NavBar />
@@ -58,7 +62,7 @@ export default function Pedidos() {
                 </thead>
                 <tbody>
                   {items.map((item, index) => (
-                    <tr key={index}>
+                    <tr key={item._id}>
                       <th scope="row">
                         <div className="item-cart">
                           <img
@@ -97,7 +101,7 @@ export default function Pedidos() {
               </div>
             </div>
           </div>
-          <HistorialPedidos />
+          {user.userId && <HistorialPedidos />}
         </div>
       </main>
       <Footer />

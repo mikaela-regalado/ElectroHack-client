@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import Banner from "../Banner/Banner";
-import Lista from "../Lista/Lista";
+import ListaProductos from "../ListaProductos/ListaProductos";
 import Footer from "../Footer/Footer";
 import axiosCall from "../../utils/axiosCall";
 import "./Home.css";
@@ -22,7 +22,7 @@ export default function Home() {
       </header>
       <main>
         <Banner />
-        <Lista productos={productos} />
+        <ListaProductos productos={productos} />
       </main>
       <Footer />
     </>

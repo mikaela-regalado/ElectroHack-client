@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "../Card/Card";
-import "./Lista.css";
+import "./ListaProductos.css";
 
-export default function Lista({ productos }) {
+export default function ListaProductos({ productos }) {
   return (
     <div className="background">
       <div className="container">

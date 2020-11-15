@@ -3,7 +3,7 @@ import "./Categoria.css";
 import axiosCall from "../../utils/axiosCall";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import Lista from "../Lista/Lista";
+import ListaProductos from "../ListaProductos/ListaProductos";
 import { useParams } from "react-router-dom";
 
 export default function Catalogo() {
@@ -40,7 +40,7 @@ export default function Catalogo() {
               <button className="link">Todos</button>
             </div>
             <div className="lista background">
-              <Lista productos={productos} />
+              <ListaProductos productos={productos} />
             </div>
           </div>
         )}
