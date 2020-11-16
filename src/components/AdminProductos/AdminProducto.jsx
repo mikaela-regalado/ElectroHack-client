@@ -21,6 +21,9 @@ export default function AdminProductos() {
       <div id="tablaEliminar">
         <header>
           <AdminNav />
+          <div>
+            <h1>Agregar Producto</h1>
+          </div>
         </header>
 
         <div id="tableDelete">
