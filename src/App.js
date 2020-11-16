@@ -7,7 +7,7 @@ import Categoria from "./components/Categoria/Categoria";
 import Login from "./components/LoginRegistro/Login";
 import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
-import EliminarProducto from "./components/AdminProductos/EliminarProducto";
+import AdminProducto from "./components/AdminProductos/AdminProducto";
 import AdminNav from "./components/AdminNav/AdminNav";
 import AgregarProducto from "./components/AdminProductos/AgregarProducto";
 import "./App.css";
@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/admin/productos" component={AdminNav} />
-        <Route exact path="/admin/producto" component={EliminarProducto} />
+        <Route exact path="/admin/producto" component={AdminProducto} />
         <Route exact path="/admin/crear" component={AgregarProducto} />
         <Route exact path="/admin/categoria" component={AgregarProducto} />
       </Switch>
