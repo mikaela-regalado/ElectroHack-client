@@ -21,6 +21,8 @@ import { makeStylesConfig } from "../../utils/makeStyles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+import CategoryIcon from "@material-ui/icons/Category";
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const useStyles = makeStylesConfig;
 
@@ -88,21 +90,32 @@ export default function AdminNav() {
             route={"/admin/productos"}
             text={"Inicio"}
           ></AdminNavItem>
-          <AdminNavItem
+          {/* <AdminNavItem
             component={AddShoppingCartIcon}
             route={"/admin/crear"}
             text={"Agregar Producto"}
-          ></AdminNavItem>
+          ></AdminNavItem> */}
           <AdminNavItem
             component={ShoppingCartIcon}
-            route={"/configuration"}
-            text={"Modificar Producto"}
+            route={"/admin/producto"}
+            text={"Producto"}
           ></AdminNavItem>
           <AdminNavItem
-            component={RemoveShoppingCartIcon}
-            route={"/admin/eliminar"}
-            text={"Eliminar Producto"}
+            component={CategoryIcon}
+            route={"/admin/categoria"}
+            text={"Categoría"}
           ></AdminNavItem>
+          <AdminNavItem
+            component={SettingsIcon}
+            route={"/admin/configuracion"}
+            text={"Configuración"}
+          ></AdminNavItem>
+
+          {/*  <AdminNavItem
+            component={RemoveShoppingCartIcon}
+            route={"/admin/producto"}
+            text={"Eliminar Producto"}
+          ></AdminNavItem> */}
           <AdminNavItem
             component={ExitToAppIcon}
             route={"/registro"}

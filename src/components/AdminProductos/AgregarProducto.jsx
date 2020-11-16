@@ -8,9 +8,8 @@ export default function AgregarProducto() {
         <AdminNav />
       </header>
 
-      <div>
-        <h2 className="form-title">Crear nuevo producto</h2>
-        <form>
+      <div className="formulario">
+        <form className="formulario2">
           <div className="form-group">
             <input
               class="form-control"
@@ -29,10 +28,7 @@ export default function AgregarProducto() {
               rows="3"
             ></textarea>
           </div>
-          {/*    <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div> */}
+
           <div className="form-group">
             <label for="exampleFormControlFile1">
               Ingrese imagen del producto

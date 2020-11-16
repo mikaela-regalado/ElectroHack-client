@@ -1,13 +1,22 @@
 #tableDelete {
+  flex-direction: column;
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  border: 3px solid orange;
+
   width: 70%;
+  margin-top: 90px;
 }
-#trash {
+.table {
+  border: 3px solid orange;
+}
+/* #trash {
   display: flex;
   justify-content: center;
+  cursor: pointer;
+} */
+#trash {
+  padding-left: 24px;
   cursor: pointer;
 }
 #tablaEliminar {
@@ -19,4 +28,31 @@
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+}
+#buttonModificar {
+  display: flex;
+  justify-content: center;
+}
+
+.makeStyles-content-9 {
+  padding: none;
+}
+.buttonAgregar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  z-index: 500;
+}
+.formulario {
+  margin-top: 70px;
+  border: 2px solid orange;
+  width: 50%;
+  padding: 20px;
+}
+.main {
+  display: flex;
+  justify-content: center;
+}
+.formulario2 {
+  height: 500px;
 }

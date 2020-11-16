@@ -24,8 +24,9 @@ function App() {
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/admin/productos" component={AdminNav} />
-        <Route exact path="/admin/eliminar" component={EliminarProducto} />
+        <Route exact path="/admin/producto" component={EliminarProducto} />
         <Route exact path="/admin/crear" component={AgregarProducto} />
+        <Route exact path="/admin/categoria" component={AgregarProducto} />
       </Switch>
     </Router>
   );
