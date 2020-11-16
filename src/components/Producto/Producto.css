@@ -1,7 +1,11 @@
+.contenedor {
+  padding-top: 40px;
+}
 .producto {
   border: none;
 }
-.img {
+.producto img {
+  height: 500px;
   border-bottom: 1px solid #2f2f2f;
 }
 .descripcion {
