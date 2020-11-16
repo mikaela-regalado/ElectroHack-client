@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../../utils/axiosCall";
 import NavBar from "../NavBar/NavBar";
-import Lista from "../Lista/Lista";
+import ListaProductos from "../ListaProductos/ListaProductos";
 import "./AdminProductos.css";
 import AdminNav from "../AdminNav/AdminNav";
 export default function AdminProductos() {

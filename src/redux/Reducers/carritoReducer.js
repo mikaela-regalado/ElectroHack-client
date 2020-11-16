@@ -44,6 +44,8 @@ export default function carritoReducer(
         };
       } else {
       }
+    case "EMPTY_CART":
+      return { items: [], status: "No Pago" };
     default:
       return state;
   }

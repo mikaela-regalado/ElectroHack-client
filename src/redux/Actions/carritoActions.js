@@ -10,6 +10,11 @@ const removeItem = (item) => {
     payload: item,
   };
 };
+const emptyCart = () => {
+  return {
+    type: "EMPTY_CART",
+  };
+};
 
-const actions = { addItem, removeItem }; //, countItems };
+const actions = { addItem, removeItem, emptyCart }; //, countItems };
 export default actions;

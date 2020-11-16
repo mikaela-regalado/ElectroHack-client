@@ -29,6 +29,8 @@ export default function Pedidos() {
       if (res.status !== 200) {
         history.push("/login")
       } else {
+        console.log("PASO POR ACA")
+        dispatch(carritoActions.emptyCart());
         history.push(`pedidos/${res.data._id}`)
       }
     })

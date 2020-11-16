@@ -30,7 +30,7 @@ export default function DetallesPedido() {
       <NavBar />
       <main className="">
         <div className="container">
-          <h1>Carrito</h1>
+          <h1>Detalles del pedido</h1>
           <small>
             Fecha del pedido: {order.createdAt} | Pedido N°: {order._id}{" "}
           </small>
