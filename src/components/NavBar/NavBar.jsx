@@ -6,6 +6,9 @@ import axiosCall from "../../utils/axiosCall";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { actionCreators } from "../../redux/Actions/userActions";
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
@@ -28,45 +31,44 @@ export default function NavBar() {
   }
 
   return (
-    <nav className="nav-bar ">
-      <div className="container fila ">
-        <div>
-          <Link to="/" className="brand">
-            <small>
-              Electro Hack <i className="fas fa-desktop"></i>
-            </small>
-          </Link>
-        </div>
-        <div>
-          {categories.map((category) => {
+    <Navbar  bg="nav-bar" className="nav-bar" variant="white" expand="lg">
+      <div className="container fila brand">
+  <Navbar.Brand as={Link} to="/" className="brand">Electro Hack <i className="fas fa-desktop"></i></Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" bg="nav-bar"/>
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+    {categories.map((category) => {
             return (
-              <Link key={category._id} to={`/categoria/${category.slug}`}>
+              <Nav.Link key={category._id} as={Link} to={`/categoria/${category.slug}`}>
                 {category.type}
-              </Link>
+              </Nav.Link>
             );
-          })}
-        </div>
-        <div>
+          })} 
           {!user.token && (
-            <>
-              <Link to="/registro">
-                <i className="fas fa-user-circle"></i> Ingresar
-              </Link>
-            </>
-          )}
-          {user.token && (
-            <>
-              <Link to="/login" onClick={handleClick}>
-                <i className="fas fa-user-circle"></i> Salir
-              </Link>
-            </>
-          )}
+            
+            <Nav.Link as={Link} to="/registro">
+              <i className="fas fa-user-circle"></i> Ingresar
+            </Nav.Link>
+          
+        )}
+        {user.token && (
+          
+            <Nav.Link as={Link} to="/login" onClick={handleClick}>
+              <i className="fas fa-user-circle"></i> Salir
+            </Nav.Link>
+          
+        )}
 
-          <Link to="/pedidos">
-            <i className="fas fa-shopping-cart">{items && totalItems}</i>
-          </Link>
-        </div>
-      </div>
-    </nav>
+        <Nav.Link as={Link} to="/pedidos">
+          <i className="fas fa-shopping-cart"><span className="cartCount">{items && totalItems}</span></i>
+        </Nav.Link>    
+    </Nav>
+    
+  </Navbar.Collapse>
+
+          
+        
+  </div>
+</Navbar>
   );
 }
