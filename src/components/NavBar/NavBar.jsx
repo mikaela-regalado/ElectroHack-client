@@ -30,19 +30,17 @@ export default function NavBar() {
   }
 
   return (
-    <Navbar bg="nav-bar" className="nav-bar" variant="white" expand="lg">
+    <Navbar className="nav-bar" variant="white" expand="lg">
       <div className="container">
         <div>
           <Navbar.Brand as={Link} to="/" className="brand">
             Electro Hack <i className="fas fa-desktop"></i>
           </Navbar.Brand>
         </div>
-        <div>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" bg="nav-bar" />
-        </div>
+
         <div>
           <Navbar.Collapse>
-            <Nav className="mr-auto">
+            <Nav className="mr-auto linksNav">
               {categories.map((category) => {
                 return (
                   <Nav.Link
@@ -50,7 +48,7 @@ export default function NavBar() {
                     as={Link}
                     to={`/categoria/${category.slug}`}
                   >
-                    {category.type}
+                    <h3>{category.type}</h3>
                   </Nav.Link>
                 );
               })}
@@ -74,6 +72,9 @@ export default function NavBar() {
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <div>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          </div>
         </div>
       </div>
     </Navbar>

@@ -29,9 +29,9 @@ export default function Producto() {
         <NavBar />
       </header>
       <main>
-        {producto.image && (
-          <div className="container contenedor">
-            <div className="row p-3">
+        <div className="container ">
+          {producto.image && (
+            <div className="row p-3 ">
               <div className="col-lg-9">
                 <div className="card mb-3 producto">
                   <img
@@ -72,8 +72,8 @@ export default function Producto() {
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </main>
       <Footer />
     </div>
