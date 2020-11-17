@@ -9,7 +9,7 @@ import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminNav from "./components/AdminNav/AdminNav";
-import AgregarProducto from "./components/AdminProductos/AgregarProducto";
+/* import AgregarProducto from "./components/AdminProductos/AgregarProducto"; */
 import AdminLoginRegistro from "./components/AdminLoginRegistro/AdminLoginRegistro";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import "./App.css";

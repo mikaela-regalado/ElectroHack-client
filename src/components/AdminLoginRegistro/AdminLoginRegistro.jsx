@@ -1,4 +1,5 @@
 import "./AdminLoginRegistro.css";
+import { Link } from "react-router-dom";
 export default function AdminLoginRegistro() {
   return (
     <div class="login-wrap loginAdmin">
@@ -38,7 +39,9 @@ export default function AdminLoginRegistro() {
             </div>
 
             <div class="group">
-              <input type="submit" class="button" value="Ingresar"></input>
+              <Link to="/admin/">
+                <input type="submit" class="button" value="Ingresar"></input>
+              </Link>
             </div>
             <div class="hr"></div>
           </div>
@@ -80,7 +83,9 @@ export default function AdminLoginRegistro() {
             </div>
 
             <div class="group">
-              <input type="submit" class="button" value="Registrarse"></input>
+              <Link to="/admin/">
+                <input type="submit" class="button" value="Registrarse"></input>
+              </Link>
             </div>
             <div class="hr"></div>
           </div>
