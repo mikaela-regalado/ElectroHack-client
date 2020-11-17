@@ -28,13 +28,13 @@ export default function Producto() {
       <header>
         <NavBar />
       </header>
-      <div id="id"> </div>
-      <main className="main">
+      <div id="id"> Texto</div>
+      <main className="main pt-2">
         <div className="container ">
           <h1 className="p-3">{producto.name}</h1>
           {producto.image && (
             <div className="row p-3">
-              <div className="col-lg-9 pt-5 pb-5 " id="left">
+              <div className="col-lg-9" id="left">
                 <div className="card mb-3 producto">
                   <img
                     src={producto.image}
@@ -47,30 +47,32 @@ export default function Producto() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3 pt-5 pb-5" id="right">
-                <div className="comprar-header">
-                  {/* <h5>PANAVOX</h5> */}
-                  <h4>{producto.name}</h4>
-                  <div className="stock">
-                    {producto.stock > 0 ? (
-                      <small> {producto.stock} Stock disponible</small>
-                    ) : (
-                      <small>No hay Stock</small>
-                    )}
+              <div className="col-lg-3 " id="right">
+                <div className="comprar">
+                  <div className="comprar-header">
+                    {/* <h5>PANAVOX</h5> */}
+                    <h3>{producto.name}</h3>
+                    <div className="stock">
+                      {producto.stock > 0 ? (
+                        <small> {producto.stock} Stock disponible</small>
+                      ) : (
+                        <small>No hay Stock</small>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="comprar-body">
-                  <h2>
-                    ${producto.price} <small>Contado</small>
-                  </h2>
-                </div>
-                <div className="comprar-footer">
-                  <button
-                    type="button"
-                    onClick={(e) => handleAddItem(e, producto._id)}
-                  >
-                    AGREGAR AL CARRITO
-                  </button>
+                  <div className="comprar-body">
+                    <h2>
+                      ${producto.price} <small>Contado</small>
+                    </h2>
+                  </div>
+                  <div className="comprar-footer">
+                    <button
+                      type="button"
+                      onClick={(e) => handleAddItem(e, producto._id)}
+                    >
+                      AGREGAR AL CARRITO
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
