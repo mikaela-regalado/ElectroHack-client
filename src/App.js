@@ -7,10 +7,11 @@ import Categoria from "./components/Categoria/Categoria";
 import Login from "./components/LoginRegistro/Login";
 import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
-import AdminProducto from "./components/AdminProductos/AdminProducto";
+import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminNav from "./components/AdminNav/AdminNav";
 import AgregarProducto from "./components/AdminProductos/AgregarProducto";
 import AdminLoginRegistro from "./components/AdminLoginRegistro/AdminLoginRegistro";
+import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import "./App.css";
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
         <Route exact path="/pedidos/:id" component={DetallesPedido} />
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/admin/productos" component={AdminNav} />
-        <Route exact path="/admin/producto" component={AdminProducto} />
-        <Route exact path="/admin/crear" component={AgregarProducto} />
-        <Route exact path="/admin/categoria" component={AgregarProducto} />
+        <Route exact path="/admin/" component={AdminNav} />
+        <Route exact path="/admin/productos" component={AdminProductos} />
+        <Route exact path="/admin/crear" component={AgregarProductos} />
+        {/*  <Route exact path="/admin/categoria" component={AgregarProducto} /> */}
         <Route exact path="/admin/registro" component={AdminLoginRegistro} />
       </Switch>
     </Router>

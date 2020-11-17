@@ -87,7 +87,7 @@ export default function AdminNav() {
         <List>
           <AdminNavItem
             component={HomeIcon}
-            route={"/admin/productos"}
+            route={"/admin/"}
             text={"Inicio"}
           ></AdminNavItem>
           {/* <AdminNavItem
@@ -97,7 +97,7 @@ export default function AdminNav() {
           ></AdminNavItem> */}
           <AdminNavItem
             component={ShoppingCartIcon}
-            route={"/admin/producto"}
+            route={"/admin/productos"}
             text={"Producto"}
           ></AdminNavItem>
           <AdminNavItem
