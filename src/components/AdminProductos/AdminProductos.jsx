@@ -15,7 +15,8 @@ export default function AdminProductos() {
 
 function handleDelete(id) {
   console.log(id)
-  axiosCall("/admin/products", "delete", token, null, {_id: id})
+  axiosCall("/admin/products", "delete", token, null, {_id: id});
+  setAdminProductos([...adminProductos].filter(producto => producto._id !== id))
 }
 
   useEffect(() => {
@@ -36,7 +37,7 @@ function handleDelete(id) {
 
         <div id="tableDelete">
           <div className="buttonAgregar ">
-            <Link to="/admin/crear" type="button" class="btn btn-outline-dark">
+            <Link to="/admin/productos/crear" type="button" class="btn btn-outline-dark">
               Agregar Producto
             </Link>
           </div>
@@ -62,16 +63,9 @@ function handleDelete(id) {
                     <td>{producto.description}</td>
                     <td>${producto.price}</td>
                     <td>{producto.stock}</td>
-                    <td id="buttonModificar">
-                      {" "}
-                      <button
-                        id="buttonModificar"
-                        type="button"
-                        class="btn btn-secondary"
-                      >
-                        Modificar
-                      </button>
-                    </td>
+                    <Link to={`/admin/productos/modificar/${producto.slug}`} type="button" className="btn btn-secondary">
+                    Modificar
+            </Link>
                     <td id="trash">
                       <i class=" mt-2 fas fa-trash-alt" onClick={()=>handleDelete(producto._id)}></i>
                     </td>

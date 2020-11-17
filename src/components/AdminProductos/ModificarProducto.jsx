@@ -1,34 +1,50 @@
 import React, {useState, useEffect} from "react";
 import {useSelector} from "react-redux"
+import {useParams} from "react-router-dom"
 import AdminNav from "../AdminNav/AdminNav";
 import axiosCall from "../../utils/axiosCall"
 
 export default function AgregarProducto() {
+  const params = useParams();
+  const [id, setId] = useState("")
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [image, setImage] = useState("")
   const [price, setPrice] = useState(0)
   const [stock, setStock] = useState(0)
   const [outstanding, setOutstanding] = useState(false)
-  const [category, setCategory] = useState(0) 
+  const [categoryId, setCategoryId] = useState(0) 
   const [categories, setCategories] = useState(0) 
   const admin = useSelector(state => state.user)
   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjJjNWIzMWMxZjA0MWY2YzcwYjA1ZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYwNTU1MjY2NH0.sd5VJBW0-yqbE-bV2YuuSyCDxLL9sYCW3rK08FX5al4"
+  //const category = categories.find(categ => categ._id==categoryId)
 
   useEffect(() => {
+    axiosCall(`/admin/products/${params.slug}`, "get", token).then((res) => {
+        setId(res.data._id)
+        setName(res.data.name);
+        setDescription(res.data.description);
+        setImage(res.data.image);
+        setPrice(res.data.price);
+        setStock(res.data.stock);
+        setOutstanding(res.data.outstanding);
+        setCategoryId(res.data.category);
+    });
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
   }, []);
 
-  async function handleStore(event) {
+  async function handleUpdate(event) {
 event.preventDefault();
-const product = {name: name,
+const product = {
+    _id: id, 
+    name: name,
   description: description,
   image:image,
   price:price ,
   stock:stock,
   outstanding:outstanding ,
-  category:category,}
-await axiosCall("/admin/products", "post", token, null, product ).then((res) => console.log(res.data));
+  category:categoryId,}
+await axiosCall(`/admin/products`, "patch", token, null, product ).then((res) => console.log(res.data))
   }
 
   
@@ -40,13 +56,14 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
       </header>
 
       <div className="formulario">
-        <form className="formulario2" onSubmit={(e) => handleStore(e)}>
+        <form className="formulario2" onSubmit={(e) => handleUpdate(e)}>
           <div className="form-group">
             <input
               class="form-control"
               type="text"
               id="name"
               name="name"
+              value={name}
               onChange={e => setName(e.target.value)}
               placeholder="Titulo del producto"
             />
@@ -57,6 +74,7 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
               class="form-control"
               id="description"
               name="description"
+              value={description}
               placeholder="Ingresa la descripción del pedido"
               onChange={e => setDescription(e.target.value)}
               rows="3"
@@ -80,6 +98,7 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
                 type="text"
                 className="form-control"
                 name="price"
+                value={price}
                 onChange={e => setPrice(e.target.value)}
                 placeholder="ingrese precio del producto"
               />
@@ -89,6 +108,7 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
                 type="text"
                 className="form-control"
                 name="stock"
+                value={stock}
                 onChange={e => setStock(e.target.value)}
                 placeholder="ingrese stock del producto"
               />
@@ -98,14 +118,14 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
           <div className="row mt-5">
           <div className="col">
           <label for="outstanding">Producto destacado: 
-              <select name="outstanding" id="outstanding" onChange={e => setOutstanding(e.target.value)}>
+              <select name="outstanding" id="outstanding" onChange={e => setOutstanding(e.target.value)} value={outstanding}>
                 <option value="true">True</option>
                 <option value="false">False</option>
               </select></label>
           </div>
           <div className="col">
           <label for="category">Categoría: </label>
-              <select name="category" id="category" onChange={e => setCategory(e.target.value)}>
+              <select name="category" id="category" onChange={e => setCategoryId(e.target.value)} value={categoryId}>
                 {categories && categories.map(category => <option key={category._id} value={category._id}>{category.type}</option> )}
               </select>
           </div>

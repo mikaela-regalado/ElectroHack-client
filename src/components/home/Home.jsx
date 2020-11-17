@@ -10,7 +10,7 @@ export default function Home() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    axiosCall("/products", "get", null, { outstanding: true }).then((res) =>
+    axiosCall("/products", "get", null, { outstanding: true}).then((res) =>
       setProductos(res.data)
     );
   }, []);
