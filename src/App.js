@@ -10,6 +10,7 @@ import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProducto from "./components/AdminProductos/AdminProducto";
 import AdminNav from "./components/AdminNav/AdminNav";
 import AgregarProducto from "./components/AdminProductos/AgregarProducto";
+import AdminLoginRegistro from "./components/AdminLoginRegistro/AdminLoginRegistro";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/admin/producto" component={AdminProducto} />
         <Route exact path="/admin/crear" component={AgregarProducto} />
         <Route exact path="/admin/categoria" component={AgregarProducto} />
+        <Route exact path="/admin/registro" component={AdminLoginRegistro} />
       </Switch>
     </Router>
   );
