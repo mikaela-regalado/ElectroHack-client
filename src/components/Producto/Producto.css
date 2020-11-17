@@ -1,3 +1,6 @@
+#id {
+  height: 80px;
+}
 .producto {
   border: none;
 }
@@ -33,4 +36,16 @@
 
 .comprar-footer button {
   width: 100%;
+}
+
+.main {
+  background-color: blueviolet;
+  color: #ffffff;
+}
+
+#left {
+  background-color: blue;
+}
+#right {
+  background-color: green;
 }

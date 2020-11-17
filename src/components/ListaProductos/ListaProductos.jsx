@@ -6,7 +6,7 @@ export default function ListaProductos({ productos }) {
   return (
     <div className="background">
       <div className="container">
-        <div class="row row-cols-1 row-cols-md-2 contenedor">
+        <div class="row row-cols-1 row-cols-md-4 contenedor">
           {productos.map((producto) => {
             return <Card key={producto._id} producto={producto} />;
           })}
