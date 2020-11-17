@@ -32,7 +32,7 @@ a {
   width: 100%;
   margin: auto;
   max-width: 525px;
-  min-height: 670px;
+  min-height: 583px;
   position: relative;
   background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg)
     no-repeat center;
@@ -115,7 +115,7 @@ a {
   font-size: 12px;
 }
 .login-form .group .button {
-  margin-top: 26px;
+  margin-top: 5px;
   background: #1161ee;
 }
 .login-form .group label .icon {
