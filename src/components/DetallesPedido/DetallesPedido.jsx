@@ -29,14 +29,14 @@ export default function DetallesPedido() {
     <>
       <NavBar />
       <main className="">
-        <div className="container">
+      {order.list_products && (<div className="container">
           <h1>Detalles del pedido</h1>
           <small>
             Fecha del pedido: {order.createdAt} | Pedido N°: {order._id}{" "}
           </small>
           <div className="row fila ">
             <div className="col-md-9 ">
-              {order.list_products && (
+              
                 <table className="table table-striped">
                   <thead>
                     <tr>
@@ -65,7 +65,7 @@ export default function DetallesPedido() {
                     ))}
                   </tbody>
                 </table>
-              )}
+              
             </div>
             <div className="col-md-3">
               <div className="card">
@@ -77,7 +77,7 @@ export default function DetallesPedido() {
               </div>
             </div>
           </div>
-        </div>
+        </div>)}
       </main>
       <Footer />
     </>
