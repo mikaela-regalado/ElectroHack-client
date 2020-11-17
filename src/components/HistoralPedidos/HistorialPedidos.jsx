@@ -15,6 +15,18 @@ export default function Pedidos() {
         .then((res) => setOrderList(res.data))
     }, [])
  
+    function totalPrice(order) {
+      console.log("ORDER: ", order)
+      return Math.round(
+        order
+          .map((item) => {console.log(item._id.price); return item._id.price * item.cantidad})
+          .reduce(
+            (sumaDetodos, itemMultiplicado) => sumaDetodos + itemMultiplicado,
+            0
+          )
+      );
+    };
+/* console.log("TOTAL: ", totalPrice) */
 
   return (
     <div className="pedidosAntContainer">
@@ -41,7 +53,7 @@ export default function Pedidos() {
                       </td>
                       <td className=" ">
                           <small>TOTAL</small><br></br>
-                          <small>${order.totalPrice}</small>                        
+                          <small>${totalPrice(order.list_products)}</small>                        
                       </td>
                       <td className=" ">
                           <small>PEDIDO N°: {order._id} </small><br></br>

@@ -24,15 +24,17 @@ export default function Producto() {
   }, []);
 
   return (
-    <div>
+    <>
       <header>
         <NavBar />
       </header>
-      <main>
-        {producto.image && (
-          <div className="container contenedor">
+      <div id="id"> </div>
+      <main className="main">
+        <div className="container ">
+          <h1 className="p-3">{producto.name}</h1>
+          {producto.image && (
             <div className="row p-3">
-              <div className="col-lg-9">
+              <div className="col-lg-9 pt-5 pb-5 " id="left">
                 <div className="card mb-3 producto">
                   <img
                     src={producto.image}
@@ -45,7 +47,7 @@ export default function Producto() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-3 pt-5 pb-5" id="right">
                 <div className="comprar-header">
                   {/* <h5>PANAVOX</h5> */}
                   <h4>{producto.name}</h4>
@@ -72,10 +74,10 @@ export default function Producto() {
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
