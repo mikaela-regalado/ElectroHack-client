@@ -24,3 +24,22 @@ a.brand {
   padding: 0 5px;
   vertical-align: top;
 }
+
+.burger-button span {
+  background-color: black;
+}
+
+#links p {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+.login-register-cart {
+  padding: 1rem;
+  color: #ffffff;
+}
+
+.navBar-contenedor {
+  display: flex;
+  justify-content: space-between;
+}

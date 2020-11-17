@@ -31,7 +31,7 @@ export default function NavBar() {
 
   return (
     <Navbar className="nav-bar" variant="white" expand="lg">
-      <div className="container">
+      <div className="container navBar-contenedor">
         <div>
           <Navbar.Brand as={Link} to="/" className="brand">
             Electro Hack <i className="fas fa-desktop"></i>
@@ -40,42 +40,46 @@ export default function NavBar() {
 
         <div>
           <Navbar.Collapse>
-            <Nav className="mr-auto linksNav">
+            <Nav className="mr-auto ">
               {categories.map((category) => {
                 return (
                   <Nav.Link
                     key={category._id}
                     as={Link}
                     to={`/categoria/${category.slug}`}
+                    id="links"
                   >
-                    <h3>{category.type}</h3>
+                    <p>{category.type}</p>
                   </Nav.Link>
                 );
               })}
 
               {!user.token && (
                 <Nav.Link as={Link} to="/registro">
-                  <i className="fas fa-user-circle"></i> Ingresar
+                  <i className="fas fa-user-circle login-register-cart">
+                    {" "}
+                    Ingresar
+                  </i>
                 </Nav.Link>
               )}
 
               {user.token && (
                 <Nav.Link as={Link} to="/login" onClick={handleClick}>
-                  <i className="fas fa-user-circle"></i> Salir
+                  <i className="fas fa-user-circle login-register-cart">
+                    Salir
+                  </i>
                 </Nav.Link>
               )}
 
               <Nav.Link as={Link} to="/pedidos">
-                <i className="fas fa-shopping-cart">
+                <i className="fas fa-shopping-cart login-register-cart">
                   <span className="cartCount">{items && totalItems}</span>
                 </i>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <div>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          </div>
         </div>
+        <Navbar.Toggle id="burger-button" />
       </div>
     </Navbar>
   );
