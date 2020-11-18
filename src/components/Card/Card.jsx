@@ -25,8 +25,6 @@ export default function Card({ producto }) {
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">
-            {/*
-             */}
             <div>
               <label>
                 <small>Descripcion : </small>
