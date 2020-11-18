@@ -7,11 +7,13 @@
 }
 
 .titulo h1 {
+  margin: 0;
   font-size: 5rem;
 }
 
 .titulo h2 {
   font-size: 5rem;
+  margin: 0;
 }
 
 .titulo h3 {
