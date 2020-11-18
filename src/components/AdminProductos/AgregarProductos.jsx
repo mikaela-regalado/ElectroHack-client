@@ -10,7 +10,7 @@ export default function AgregarProducto() {
   const [price, setPrice] = useState(0)
   const [stock, setStock] = useState(0)
   const [outstanding, setOutstanding] = useState(false)
-  const [category, setCategory] = useState(0) 
+  const [category, setCategory] = useState("5faead6f5f6c071d9c96ffd6") 
   const [categories, setCategories] = useState(0) 
   const [files, setFiles] = useState(null)
   const admin = useSelector(state => state.user)
