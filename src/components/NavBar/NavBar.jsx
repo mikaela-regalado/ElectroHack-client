@@ -72,9 +72,11 @@ export default function NavBar() {
             )}
 
             <Nav.Link as={Link} to="/pedidos" id="links">
-              <i className="fas fa-shopping-cart login-register-cart">
-                <span className="cartCount">{items && totalItems}</span>
-              </i>
+              <p>
+                <i className="fas fa-shopping-cart login-register-cart">
+                  <span className="cartCount">{items && totalItems}</span>
+                </i>
+              </p>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
