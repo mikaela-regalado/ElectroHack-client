@@ -88,29 +88,9 @@ h2 {
 .clear {
   clear: both;
 }
-
-/* body {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #222;
-  font-weight: 400;
-  font-family: "Montserrat";
-  background-repeat: no-repeat;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  background-position: center center;
-  padding: 115px 0;
-} */
-
 .containerLogin {
-  width: 660px;
-  position: relative;
-  margin: 0 auto;
+  width: 600px;
 }
-
 .display-flex {
   justify-content: space-between;
   -moz-justify-content: space-between;
@@ -146,6 +126,10 @@ h2 {
   -webkit-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+.signin {
+  height: 700px;
 }
 
 .signup-content {
@@ -372,4 +356,6 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+.main {
+  margin-top: 1rem;
+}
