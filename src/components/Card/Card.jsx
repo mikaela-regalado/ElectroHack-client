@@ -18,16 +18,15 @@ export default function Card({ producto }) {
       <div className="card contenedor">
         <Link to={`/producto/${producto.slug}`} className="link-producto">
           <img src={producto.image} alt="product" />
+          {/* <img
+            src={process.env.REACT_APP_URL_S3 + producto.image}
+            alt="product"
+          /> */}
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">
-            {/*  <img src={process.env.REACT_APP_URL_S3 + producto.image} alt="product" />
-        <div className="card-body d-flex justify-content-center">
-          <div>
-            <h5 className="card-title">{producto.name}</h5>
-            <Link to={`/producto/${producto.slug}`} className="link-producto">
-              <h5 className="card-title">{producto.name}</h5>
-            </Link> */}
+            {/*
+             */}
             <div>
               <label>
                 <small>Descripcion : </small>
