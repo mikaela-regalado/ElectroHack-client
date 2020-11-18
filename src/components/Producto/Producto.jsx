@@ -37,7 +37,7 @@ export default function Producto() {
               <div className="col-lg-9" id="left">
                 <div className="card mb-3 producto">
                   <img
-                    src={producto.image}
+                    src={process.env.REACT_APP_URL_S3 + producto.image}
                     className="card-img-top img"
                     alt="..."
                   />

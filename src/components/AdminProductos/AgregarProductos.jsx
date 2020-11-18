@@ -12,6 +12,7 @@ export default function AgregarProducto() {
   const [outstanding, setOutstanding] = useState(false)
   const [category, setCategory] = useState(0) 
   const [categories, setCategories] = useState(0) 
+  const [files, setFiles] = useState(null)
   const admin = useSelector(state => state.user)
   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjJjNWIzMWMxZjA0MWY2YzcwYjA1ZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYwNTU1MjY2NH0.sd5VJBW0-yqbE-bV2YuuSyCDxLL9sYCW3rK08FX5al4"
 
@@ -19,16 +20,32 @@ export default function AgregarProducto() {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
   }, []);
 
+  function uploadFiles(event) {
+    setFiles(event.target.files[0]);
+  }
+
   async function handleStore(event) {
 event.preventDefault();
-const product = {name: name,
+/* const product = {
+  name: name,
   description: description,
   image:image,
   price:price ,
   stock:stock,
   outstanding:outstanding ,
   category:category,}
-await axiosCall("/admin/products", "post", token, null, product ).then((res) => console.log(res.data));
+ */
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("description", description);
+  formData.append("price", price);
+  formData.append("stock", stock);
+  formData.append("outstanding", outstanding);
+  formData.append("category", category);
+// Update the formData object
+  formData.append("image", files, files.name);
+
+await axiosCall("/admin/products", "post", token, null, formData ).then((res) => console.log(res.data));
   }
 
   
@@ -40,7 +57,9 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
       </header>
 
       <div className="formulario">
-        <form className="formulario2" onSubmit={(e) => handleStore(e)}>
+        <form className="formulario2" 
+        onSubmit={(e) => handleStore(e)}
+        encType="multipart/form-data">
           <div className="form-group">
             <input
               class="form-control"
@@ -69,8 +88,14 @@ await axiosCall("/admin/products", "post", token, null, product ).then((res) => 
             </label>
             <input
               type="file"
+              multiple
+              onChange={e =>uploadFiles(e)}
               className="form-control-file"
               id="exampleFormControlFile1"
+              name="image"
+                      id="image"
+                      placeholder=""
+                      aria-describedby="fileHelpId"
             />
           </div>
 

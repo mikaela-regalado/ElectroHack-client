@@ -21,9 +21,13 @@ export default function Card({ producto }) {
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">
+            {/*  <img src={process.env.REACT_APP_URL_S3 + producto.image} alt="product" />
+        <div className="card-body d-flex justify-content-center">
+          <div>
+            <h5 className="card-title">{producto.name}</h5>
             <Link to={`/producto/${producto.slug}`} className="link-producto">
               <h5 className="card-title">{producto.name}</h5>
-            </Link>
+            </Link> */}
             <div>
               <label>
                 <small>Descripcion : </small>
