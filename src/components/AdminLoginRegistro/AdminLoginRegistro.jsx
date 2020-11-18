@@ -1,8 +1,7 @@
 import "./AdminLoginRegistro.css";
-import { Link } from "react-router-dom";
 export default function AdminLoginRegistro() {
   return (
-    <div class="login-wrap loginAdmin">
+    <div class="login-wrap">
       <div class="login-html">
         <input
           id="tab-1"
@@ -16,15 +15,15 @@ export default function AdminLoginRegistro() {
         </label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"></input>
         <label for="tab-2" class="tab">
-          Registrarse
+          Registro
         </label>
         <div class="login-form">
           <div class="sign-in-htm">
             <div class="group">
-              <label for="user" class="label">
-                Username
+              <label for="email" class="label">
+                Email
               </label>
-              <input id="user" type="text" class="input"></input>
+              <input id="email" type="text" class="input"></input>
             </div>
             <div class="group">
               <label for="pass" class="label">
@@ -39,11 +38,8 @@ export default function AdminLoginRegistro() {
             </div>
 
             <div class="group">
-              <Link to="/admin/">
-                <input type="submit" class="button" value="Ingresar"></input>
-              </Link>
+              <input type="submit" class="button" value="Ingresar"></input>
             </div>
-            <div class="hr"></div>
           </div>
           <div class="sign-up-htm">
             <div class="group">
@@ -75,19 +71,14 @@ export default function AdminLoginRegistro() {
                 data-type="password"
               ></input>
             </div>
-            <div class="group">
-              <label for="cellphone" class="label">
-                Celular
-              </label>
-              <input id="cellphone" type="number" class="input"></input>
-            </div>
 
             <div class="group">
-              <Link to="/admin/">
-                <input type="submit" class="button" value="Registrarse"></input>
-              </Link>
+              <input type="submit" class="button" value="Registrarse"></input>
             </div>
             <div class="hr"></div>
+            <div class="foot-lnk">
+              <label for="tab-1">Already Member?</label>
+            </div>
           </div>
         </div>
       </div>
