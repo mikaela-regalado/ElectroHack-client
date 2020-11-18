@@ -16,7 +16,7 @@ export default function Card({ producto }) {
   return (
     <div className="col mb-4">
       <div className="card contenedor">
-        <img src={producto.image} alt="product" />
+        <img src={process.env.REACT_APP_URL_S3 + producto.image} alt="product" />
         <div className="card-body d-flex justify-content-center">
           <div>
             <h5 className="card-title">{producto.name}</h5>

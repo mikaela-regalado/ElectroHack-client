@@ -24,7 +24,7 @@ export default function AgregarProducto() {
         setId(res.data._id)
         setName(res.data.name);
         setDescription(res.data.description);
-        setImage(res.data.image);
+        setImage(process.env.REACT_APP_URL_S3 + res.data.image);
         setPrice(res.data.price);
         setStock(res.data.stock);
         setOutstanding(res.data.outstanding);
