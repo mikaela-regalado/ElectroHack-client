@@ -69,7 +69,7 @@ export default function Pedidos() {
                       <th scope="row">
                         <div className="item-cart">
                           <img
-                            src={item.image}
+                            src={process.env.REACT_APP_URL_S3 + item.image}
                             alt="imagen"
                             className="item-img"
                           />

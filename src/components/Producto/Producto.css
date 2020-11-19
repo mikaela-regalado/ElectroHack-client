@@ -1,6 +1,6 @@
 .main {
-  background-color: #ef6c00;
-  color: #ffffff;
+  /* background-color: #ef6c00; */
+  color: #333333;
   margin-bottom: 1rem;
 }
 
@@ -23,7 +23,7 @@
   padding: 3rem;
   margin-top: 2rem;
   border-top: 1px solid #2f2f2f;
-  background-color: ;
+  /* background-color: ; */
 }
 .descripcion h2 {
   text-decoration: underline;
