@@ -1,39 +1,40 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Pedidos.css";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import carritoActions from "../../redux/Actions/carritoActions";
 import Footer from "../Footer/Footer";
-import HistorialPedidos from "../HistoralPedidos/HistorialPedidos"
-import axiosCall from "../../utils/axiosCall"
+import HistorialPedidos from "../HistoralPedidos/HistorialPedidos";
+import axiosCall from "../../utils/axiosCall";
 
 export default function Pedidos() {
-  const history = useHistory()
+  const history = useHistory();
   const items = useSelector((state) => state.carrito.items);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
   function handleComprar() {
+    const list_products = items.map((item) => ({
+      _id: item._id,
+      cantidad: item.cantidad,
+    }));
 
-    const list_products = items.map(item =>  ({_id:item._id, cantidad:item.cantidad}))
-
-    const order={
+    const order = {
       buyer: user.userId,
       list_products: list_products,
-      totalPrice: totalPrice
-    }
+      totalPrice: totalPrice,
+    };
 
-    axiosCall("/orders", "post", user.token, null, order)
-    .then((res) => {
+    axiosCall("/orders", "post", user.token, null, order).then((res) => {
       if (res.status !== 200) {
-        history.push("/login")
+        history.push("/login");
       } else {
-        console.log("PASO POR ACA")
+        console.log("PASO POR ACA");
         dispatch(carritoActions.emptyCart());
-        history.push(`pedidos/${res.data._id}`)
+        history.push(`pedidos/${res.data._id}`);
       }
-    })
+    });
   }
 
   const totalPrice = () => {
@@ -49,11 +50,11 @@ export default function Pedidos() {
   return (
     <>
       <NavBar />
-      <main className="">
+      <main className="main-pedido">
         <div className="container">
-          <h1>Carrito</h1>
           <div className="row fila ">
-            <div className="col-md-9 ">
+            <div className="col-md-9 pedido-list">
+              <h1>Carrito</h1>
               <table className="table table-striped">
                 <thead>
                   <tr>
@@ -98,7 +99,9 @@ export default function Pedidos() {
                   <h3> ${totalPrice()} </h3>
                 </div>
                 <div className="card-footer d-flex justify-content-center">
-                  <button type="button" onClick={handleComprar}>COMPRAR</button>
+                  <button type="button" onClick={handleComprar}>
+                    COMPRAR
+                  </button>
                 </div>
               </div>
             </div>

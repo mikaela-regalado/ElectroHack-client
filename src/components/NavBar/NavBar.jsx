@@ -31,51 +31,55 @@ export default function NavBar() {
 
   return (
     <Navbar className="nav-bar" variant="white" expand="lg">
-      <div className="container">
-        <div>
-          <Navbar.Brand as={Link} to="/" className="brand">
-            Electro Hack <i className="fas fa-desktop"></i>
-          </Navbar.Brand>
-        </div>
+      <div className="container navBar-contenedor">
+        <Navbar.Brand as={Link} to="/" className="brand">
+          Electro Hack <i className="fas fa-desktop"></i>
+        </Navbar.Brand>
 
-        <div>
-          <Navbar.Collapse>
-            <Nav className="mr-auto linksNav">
-              {categories.map((category) => {
-                return (
-                  <Nav.Link
-                    key={category._id}
-                    as={Link}
-                    to={`/categoria/${category.slug}`}
-                  >
-                    <h3>{category.type}</h3>
-                  </Nav.Link>
-                );
-              })}
+        <Navbar.Toggle id="burger-button" />
 
-              {!user.token && (
-                <Nav.Link as={Link} to="/registro">
-                  <i className="fas fa-user-circle"></i> Ingresar
+        <Navbar.Collapse>
+          <Nav className="ml-auto pl-3 ">
+            {categories.map((category) => {
+              return (
+                <Nav.Link
+                  key={category._id}
+                  as={Link}
+                  to={`/categoria/${category.slug}`}
+                  id="links"
+                >
+                  <p>{category.type}</p>
                 </Nav.Link>
-              )}
+              );
+            })}
 
-              {user.token && (
-                <Nav.Link as={Link} to="/login" onClick={handleClick}>
-                  <i className="fas fa-user-circle"></i> Salir
-                </Nav.Link>
-              )}
+            {!user.token && (
+              <Nav.Link as={Link} to="/registro" id="links">
+                <p className="login-registro">
+                  <i className="fas fa-user-circle login-register-cart"></i>
+                  Ingresar
+                </p>
+              </Nav.Link>
+            )}
 
-              <Nav.Link as={Link} to="/pedidos">
-                <i className="fas fa-shopping-cart">
+            {user.token && (
+              <Nav.Link as={Link} to="/login" onClick={handleClick} id="links">
+                <p className="login-registro">
+                  <i className="fas fa-user-circle login-register-cart"></i>
+                  Salir
+                </p>
+              </Nav.Link>
+            )}
+
+            <Nav.Link as={Link} to="/pedidos" id="links">
+              <p>
+                <i className="fas fa-shopping-cart login-register-cart">
                   <span className="cartCount">{items && totalItems}</span>
                 </i>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-          <div>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          </div>
-        </div>
+              </p>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </div>
     </Navbar>
   );

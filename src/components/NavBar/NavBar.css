@@ -24,3 +24,41 @@ a.brand {
   padding: 0 5px;
   vertical-align: top;
 }
+
+#burger-button {
+  border: 2px solid #ffffff;
+}
+#burger-button:hover {
+  border: 2px solid black;
+}
+
+#burger-button span {
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+#links p {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+#links i {
+  padding: 0;
+  padding-right: 1rem;
+  font-size: 2.5rem;
+}
+
+.login-register-cart {
+  padding: 1rem;
+  color: #ffffff;
+}
+
+.navBar-contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 991px) {
+  .login-registro {
+    padding-left: 5rem;
+  }
+}

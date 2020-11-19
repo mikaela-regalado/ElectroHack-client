@@ -1,3 +1,13 @@
 .item-cart img {
   height: 100px;
 }
+
+.main-pedido {
+  padding-top: 2rem;
+  height: 600px;
+}
+
+.pedido-list h1 {
+  margin-bottom: 3rem;
+  font-weight: bolder;
+}

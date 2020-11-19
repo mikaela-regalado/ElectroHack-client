@@ -20,31 +20,36 @@ export default function Catalogo() {
 
   return (
     <div>
-      <header className="background">
-        <NavBar className="container" />
+      <header>
+        <NavBar />
       </header>
-      <main>
-        {categoria.type && (
+
+      {categoria.type && (
+        <main className="background">
+          <div className="banner">
+            <img src={categoria.image} alt="Imagen de la categoria" />
+            {/* <img src={process.env.REACT_APP_URL_S3 + categoria.image} alt="Imagen de la categoria" /> */}
+          </div>
           <div className="container">
             <div className="titulo">
               <h1>Catálogo</h1>
               <h2>{categoria.type}</h2>
               <h3>{categoria.description}</h3>
-              <img src={categoria.image} alt="Imagen de la categoria" />
             </div>
-            <div className="links">
+            {/* <div className="links">
               <button className="link">Todos</button>
               <button className="link">Todos</button>
               <button className="link">Todos</button>
               <button className="link">Todos</button>
               <button className="link">Todos</button>
-            </div>
-            <div className="lista background">
+            </div> */}
+            <div className="">
               <ListaProductos productos={productos} />
             </div>
           </div>
-        )}
-      </main>
+        </main>
+      )}
+
       <Footer />
     </div>
   );
