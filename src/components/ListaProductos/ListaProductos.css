@@ -1,5 +1,5 @@
 .background {
-  background-color: #ef6c00;
+  /*   background-color: #ef6c00; */
   padding-top: 10px;
 }
 .link-producto {
@@ -8,6 +8,6 @@
   padding: 0;
 }
 .link-producto:hover {
-  color: #ef6c00;
+  /* color: #ef6c00; */
   text-decoration: none;
 }
