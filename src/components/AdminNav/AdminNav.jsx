@@ -19,8 +19,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AdminNavItem from "./AdminNavItem";
 import { makeStylesConfig } from "../../utils/makeStyles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+
 import CategoryIcon from "@material-ui/icons/Category";
 import SettingsIcon from "@material-ui/icons/Settings";
 
