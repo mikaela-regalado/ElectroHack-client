@@ -31,7 +31,7 @@ export default function NavBar() {
   }
 
   return (
-    <Navbar className="nav-bar" variant="dark" expand="lg">
+    <Navbar className="nav-bar bg-dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/" className="brand">
           Electro Hack <i className="fas fa-desktop"></i>
@@ -41,7 +41,6 @@ export default function NavBar() {
 
         <Navbar.Collapse>
           <Nav className="categories mr-auto">
-           
             {categories.map((category) => {
               return (
                 <Nav.Link
@@ -54,39 +53,35 @@ export default function NavBar() {
                 </Nav.Link>
               );
             })}
-          
-
-          
           </Nav>
           <Nav>
-          {!user.token && (
+            {!user.token && (
               <Nav.Link as={Link} to="/registro" className="link">
-                
-                  <i className="fas fa-user-circle login-register-cart"></i>
-                  Ingresar
-                
+                <i className="fas fa-user-circle login-register-cart"></i>
+                Ingresar
               </Nav.Link>
             )}
 
             {user.token && (
-              <Nav.Link as={Link} to="/login" onClick={handleClick} className="link">
-                
-                  <i className="fas fa-user-circle login-register-cart"></i>
-                  Salir
-                
+              <Nav.Link
+                as={Link}
+                to="/login"
+                onClick={handleClick}
+                className="link"
+              >
+                <i className="fas fa-user-circle login-register-cart"></i>
+                Salir
               </Nav.Link>
             )}
 
             <Nav.Link as={Link} to="/pedidos" className="link">
-              
-                <i className="fas fa-shopping-cart login-register-cart">
-                  <span className="cartCount">{items && totalItems}</span>
-                </i>
-              
+              <i className="fas fa-shopping-cart login-register-cart">
+                <span className="cartCount">{items && totalItems}</span>
+              </i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        </Container>
+      </Container>
     </Navbar>
   );
 }

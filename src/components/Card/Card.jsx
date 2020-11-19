@@ -18,10 +18,11 @@ export default function Card({ producto }) {
       <div className="card contenedor text-center">
         <Link to={`/producto/${producto.slug}`} className="link-producto">
           {/* <img src={producto.image} alt="product" /> */}
-          <img className="img img-fluid"
+          <img
+            className="img img-fluid"
             src={process.env.REACT_APP_URL_S3 + producto.image}
             alt="product"
-          /> 
+          />
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">
@@ -35,7 +36,7 @@ export default function Card({ producto }) {
               <p>...</p>
             </div> */}
 
-            <h3>$ {producto.price}</h3>
+            <h4>$ {producto.price}</h4>
 
             <small>Stock actual: {producto.stock}</small>
           </div>
@@ -45,7 +46,9 @@ export default function Card({ producto }) {
             type="button"
             onClick={(e) => handleAddItem(e, producto, cantidad)}
           >
-            AGREGAR AL CARRITO
+            <i className="fas fa-shopping-cart  login-register-cart">
+              AGREGAR AL CARRITO
+            </i>
           </button>
         </div>
       </div>
