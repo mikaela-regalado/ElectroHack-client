@@ -118,7 +118,7 @@ export default function AdminNav() {
           ></AdminNavItem> */}
           <AdminNavItem
             component={ExitToAppIcon}
-            route={"/registro"}
+            route={"/admin/login"}
             text={"Salir"}
           ></AdminNavItem>
         </List>

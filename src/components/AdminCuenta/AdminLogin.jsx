@@ -30,9 +30,9 @@ export default function AdminLogin() {
         }}
       >
         <fieldset>
-          <legend class="legend">Login</legend>
+          <legend className="legend">Login</legend>
 
-          <div class="input">
+          <div className="input">
             <input
               type="email"
               placeholder="Email"
@@ -41,7 +41,7 @@ export default function AdminLogin() {
             />
           </div>
 
-          <div class="input">
+          <div className="input">
             <input
               type="password"
               placeholder="Password"
@@ -50,8 +50,8 @@ export default function AdminLogin() {
             />
           </div>
 
-          <button type="submit" class="submit">
-            <i class="fa fa-long-arrow-right"></i>
+          <button type="submit" className="submit">
+            <i className="fa fa-long-arrow-right"></i>
           </button>
         </fieldset>
       </form>

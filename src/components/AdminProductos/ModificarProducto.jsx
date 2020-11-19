@@ -69,7 +69,7 @@ export default function AgregarProducto() {
             <div className="form-group">
               <label for="name">Título</label>
               <input
-                class="form-control"
+                className="form-control"
                 type="text"
                 id="name"
                 name="name"
@@ -78,11 +78,11 @@ export default function AgregarProducto() {
                 placeholder="Titulo del producto"
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="description">Descripción</label>
               <label for="description"></label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="description"
                 name="description"
                 value={description}

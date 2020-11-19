@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../../utils/axiosCall";
 import { useSelector } from "react-redux";
-import NavBar from "../NavBar/NavBar";
-import ListaProductos from "../ListaProductos/ListaProductos";
 import "./AdminHome.css";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AdminNav from "../AdminNav/AdminNav";
 import { Link } from "react-router-dom";
 
@@ -39,7 +36,7 @@ export default function AdminProductos() {
             <Link
               to="/admin/productos/crear"
               type="button"
-              class="btn btn-outline-dark"
+              className="btn btn-outline-dark"
             >
               Agregar Producto
             </Link>
@@ -76,7 +73,7 @@ export default function AdminProductos() {
                     </td>
                     <td id="trash">
                       <i
-                        class=" mt-2 fas fa-trash-alt"
+                        className=" mt-2 fas fa-trash-alt"
                         onClick={() => handleDelete(producto._id)}
                       ></i>
                     </td>
@@ -89,8 +86,4 @@ export default function AdminProductos() {
       </div>
     );
   }
-}
-
-{
-  /* */
 }

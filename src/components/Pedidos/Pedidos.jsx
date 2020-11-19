@@ -80,7 +80,7 @@ export default function Pedidos() {
                       <td>
                         {" "}
                         <i
-                          class=" mt-2 fas fa-trash-alt"
+                          className=" mt-2 fas fa-trash-alt"
                           onClick={() => {
                             dispatch(carritoActions.removeItem(item));
                           }}

@@ -28,14 +28,14 @@ export default function AdminRegistro() {
   return (
     <div className="imgAdmin">
       <form
-        class="login"
+        className="login"
         onSubmit={(e) => {
           handleRegistro(e);
         }}
       >
         <fieldset>
-          <legend class="legend">Registro</legend>
-          <div class="input">
+          <legend className="legend">Registro</legend>
+          <div className="input">
             <input
               type="text"
               placeholder="Nombre"
@@ -43,7 +43,7 @@ export default function AdminRegistro() {
               onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
-          <div class="input">
+          <div className="input">
             <input
               type="text"
               placeholder="Apellido"
@@ -51,7 +51,7 @@ export default function AdminRegistro() {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <div class="input">
+          <div className="input">
             <input
               type="email"
               placeholder="Email"
@@ -60,7 +60,7 @@ export default function AdminRegistro() {
             />
           </div>
 
-          <div class="input">
+          <div className="input">
             <input
               type="password"
               placeholder="Password"
@@ -69,8 +69,8 @@ export default function AdminRegistro() {
             />
           </div>
 
-          <button type="submit" class="submit">
-            <i class="fa fa-long-arrow-right"></i>
+          <button type="submit" className="submit">
+            <i className="fa fa-long-arrow-right"></i>
           </button>
         </fieldset>
       </form>
