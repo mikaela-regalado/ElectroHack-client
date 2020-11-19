@@ -3,11 +3,17 @@
 }
 .contenedor img {
   height: 250px;
+<<<<<<< Updated upstream
   width: 100%;
   border-radius: 5px;
 }
 .title-product {
   font-family: "Courier New", Courier, monospace;
+=======
+  object-fit: cover;
+  padding: 1rem;
+  border-radius: 20px;
+>>>>>>> Stashed changes
 }
 .contenedor p {
   color: black;
