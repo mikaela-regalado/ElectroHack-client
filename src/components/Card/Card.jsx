@@ -17,11 +17,11 @@ export default function Card({ producto }) {
     <div className="col mb-4">
       <div className="card contenedor">
         <Link to={`/producto/${producto.slug}`} className="link-producto">
-          <img src={producto.image} alt="product" />
-          {/* <img
+          {/* <img src={producto.image} alt="product" /> */}
+          <img
             src={process.env.REACT_APP_URL_S3 + producto.image}
             alt="product"
-          /> */}
+          />
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">

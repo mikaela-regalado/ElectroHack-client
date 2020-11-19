@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { actionCreators } from "../../redux/Actions/userActions";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
@@ -30,8 +31,8 @@ export default function NavBar() {
   }
 
   return (
-    <Navbar className="nav-bar" variant="white" expand="lg">
-      <div className="container navBar-contenedor">
+    <Navbar className="nav-bar" variant="dark" expand="lg">
+      <Container>
         <Navbar.Brand as={Link} to="/" className="brand">
           Electro Hack <i className="fas fa-desktop"></i>
         </Navbar.Brand>
@@ -39,48 +40,53 @@ export default function NavBar() {
         <Navbar.Toggle id="burger-button" />
 
         <Navbar.Collapse>
-          <Nav className="ml-auto pl-3 ">
+          <Nav className="categories mr-auto">
+           
             {categories.map((category) => {
               return (
                 <Nav.Link
                   key={category._id}
                   as={Link}
                   to={`/categoria/${category.slug}`}
-                  id="links"
+                  className="link"
                 >
-                  <p>{category.type}</p>
+                  {category.type}
                 </Nav.Link>
               );
             })}
+          
 
-            {!user.token && (
-              <Nav.Link as={Link} to="/registro" id="links">
-                <p className="login-registro">
+          
+          </Nav>
+          <Nav>
+          {!user.token && (
+              <Nav.Link as={Link} to="/registro" className="link">
+                
                   <i className="fas fa-user-circle login-register-cart"></i>
                   Ingresar
-                </p>
+                
               </Nav.Link>
             )}
 
             {user.token && (
-              <Nav.Link as={Link} to="/login" onClick={handleClick} id="links">
-                <p className="login-registro">
+              <Nav.Link as={Link} to="/login" onClick={handleClick} className="link">
+                
                   <i className="fas fa-user-circle login-register-cart"></i>
                   Salir
-                </p>
+                
               </Nav.Link>
             )}
 
-            <Nav.Link as={Link} to="/pedidos" id="links">
-              <p>
+            <Nav.Link as={Link} to="/pedidos" className="link">
+              
                 <i className="fas fa-shopping-cart login-register-cart">
                   <span className="cartCount">{items && totalItems}</span>
                 </i>
-              </p>
+              
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </div>
+        </Container>
     </Navbar>
   );
 }
