@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../../utils/axiosCall";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux";
 import NavBar from "../NavBar/NavBar";
 import ListaProductos from "../ListaProductos/ListaProductos";
 import "./AdminHome.css";
@@ -10,14 +10,15 @@ import { Link } from "react-router-dom";
 
 export default function AdminProductos() {
   const [adminProductos, setAdminProductos] = useState([]);
-  const admin = useSelector(state => state.user)
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjJjNWIzMWMxZjA0MWY2YzcwYjA1ZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYwNTU1MjY2NH0.sd5VJBW0-yqbE-bV2YuuSyCDxLL9sYCW3rK08FX5al4"
+  const token = useSelector((state) => state.user.token);
 
-function handleDelete(id) {
-  console.log(id)
-  axiosCall("/admin/products", "delete", token, null, {_id: id});
-  setAdminProductos([...adminProductos].filter(producto => producto._id !== id))
-}
+  function handleDelete(id) {
+    console.log(id);
+    axiosCall("/admin/products", "delete", token, null, { _id: id });
+    setAdminProductos(
+      [...adminProductos].filter((producto) => producto._id !== id)
+    );
+  }
 
   useEffect(() => {
     axiosCall("/products", "get", null, null).then((res) =>
@@ -37,7 +38,11 @@ function handleDelete(id) {
 
         <div id="tableDelete">
           <div className="buttonAgregar ">
-            <Link to="/admin/productos/crear" type="button" class="btn btn-outline-dark">
+            <Link
+              to="/admin/productos/crear"
+              type="button"
+              class="btn btn-outline-dark"
+            >
               Agregar Producto
             </Link>
           </div>
@@ -55,25 +60,30 @@ function handleDelete(id) {
               </tr>
             </thead>
             <tbody>
-            {adminProductos.map((producto) => {
-              return (
-                
+              {adminProductos.map((producto) => {
+                return (
                   <tr key={producto._id}>
                     <th scope="row"> {producto.name}</th>
                     <td>{producto.description}</td>
                     <td>${producto.price}</td>
                     <td>{producto.stock}</td>
-                    <Link to={`/admin/productos/modificar/${producto.slug}`} type="button" className="btn btn-secondary">
-                    Modificar
-            </Link>
+                    <Link
+                      to={`/admin/productos/modificar/${producto.slug}`}
+                      type="button"
+                      className="btn btn-secondary"
+                    >
+                      Modificar
+                    </Link>
                     <td id="trash">
-                      <i class=" mt-2 fas fa-trash-alt" onClick={()=>handleDelete(producto._id)}></i>
+                      <i
+                        class=" mt-2 fas fa-trash-alt"
+                        onClick={() => handleDelete(producto._id)}
+                      ></i>
                     </td>
                   </tr>
-               
-              );
-            })}
-             </tbody>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>

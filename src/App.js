@@ -10,9 +10,10 @@ import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminNav from "./components/AdminNav/AdminNav";
 /* import AgregarProducto from "./components/AdminProductos/AgregarProducto"; */
-import AdminLoginRegistro from "./components/AdminLoginRegistro/AdminLoginRegistro";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import ModificarProducto from "./components/AdminProductos/ModificarProducto";
+import AdminRegistro from "./components/AdminCuenta/AdminRegistro";
+import AdminLogin from "./components/AdminCuenta/AdminLogin";
 
 import "./App.css";
 
@@ -40,7 +41,8 @@ function App() {
           component={ModificarProducto}
         />
         {/*  <Route exact path="/admin/categoria" component={AgregarProducto} /> */}
-        <Route exact path="/admin/registro" component={AdminLoginRegistro} />
+        <Route exact path="/admin/login" component={AdminLogin} />
+        <Route exact path="/admin/registro" component={AdminRegistro} />
       </Switch>
     </Router>
   );
