@@ -60,18 +60,20 @@ export default function AdminProductos() {
             <tbody>
               {adminProductos.map((producto) => {
                 return (
-                  <tr key={producto._id} className="tabla">
+                  <tr key={producto._id} className="column">
                     <th scope="row"> {producto.name}</th>
                     <td>{producto.description}</td>
                     <td>${producto.price}</td>
                     <td>{producto.stock}</td>
-                    <Link
-                      to={`/admin/productos/modificar/${producto.slug}`}
-                      type="button"
-                      className="btn btn-secondary"
-                    >
-                      Modificar
-                    </Link>
+                    <td>
+                      <Link
+                        to={`/admin/productos/modificar/${producto.slug}`}
+                        type="button"
+                        className="btn btn-secondary"
+                      >
+                        Modificar
+                      </Link>
+                    </td>
                     <td id="trash">
                       <i
                         class=" mt-2 fas fa-trash-alt"
