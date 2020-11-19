@@ -56,3 +56,15 @@
 .formulario2 {
   height: 500px;
 }
+
+.producto-title {
+  font-weight: bolder;
+}
+
+.MuiList-root {
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}

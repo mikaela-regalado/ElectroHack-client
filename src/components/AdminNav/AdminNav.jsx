@@ -56,10 +56,11 @@ export default function AdminNav() {
             onClick={handleDrawerOpen}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
+            id="burgerButton"
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h3" noWrap>
             ElectroHack Administrador
           </Typography>
         </Toolbar>
@@ -111,7 +112,7 @@ export default function AdminNav() {
             text={"Configuración"}
           ></AdminNavItem>
 
-          {/*  <AdminNavItem
+          {/* <AdminNavItem
             component={RemoveShoppingCartIcon}
             route={"/admin/producto"}
             text={"Eliminar Producto"}

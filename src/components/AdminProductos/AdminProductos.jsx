@@ -31,12 +31,10 @@ export default function AdminProductos() {
       <div id="tablaEliminar">
         <header>
           <AdminNav />
-          <div>
-            <h1>Agregar Producto</h1>
-          </div>
         </header>
 
         <div id="tableDelete">
+          <h1 className="producto-title">Lista de Productos</h1>
           <div className="buttonAgregar ">
             <Link
               to="/admin/productos/crear"
@@ -62,7 +60,7 @@ export default function AdminProductos() {
             <tbody>
               {adminProductos.map((producto) => {
                 return (
-                  <tr key={producto._id}>
+                  <tr key={producto._id} className="tabla">
                     <th scope="row"> {producto.name}</th>
                     <td>{producto.description}</td>
                     <td>${producto.price}</td>
