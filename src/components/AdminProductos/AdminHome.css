@@ -8,13 +8,9 @@
   margin-top: 90px;
 }
 .table {
-  border: 3px solid orange;
+  border: 3px solid gray;
+  font-size: 1.3rem;
 }
-/* #trash {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-} */
 #trash {
   padding-left: 24px;
   cursor: pointer;
@@ -55,4 +51,21 @@
 }
 .formulario2 {
   height: 500px;
+}
+
+.producto-title {
+  font-weight: bolder;
+}
+
+.MuiList-root {
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+
+.table td,
+.table th {
+  padding-top: 20px;
 }
