@@ -28,7 +28,7 @@ export default function Catalogo() {
         <main className="background">
           <div className="banner">
            {/*  <img src={categoria.image} alt="Imagen de la categoria" /> */}
-            <img src={process.env.REACT_APP_URL_S3 + categoria.image} alt="Imagen de la categoria" />
+            <img className="img" src={process.env.REACT_APP_URL_S3 + categoria.image} alt="Imagen de la categoria" />
           </div>
           <div className="container">
             <div className="titulo">

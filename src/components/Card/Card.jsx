@@ -15,13 +15,13 @@ export default function Card({ producto }) {
 
   return (
     <div className="col mb-4">
-      <div className="card contenedor">
+      <div className="card contenedor text-center">
         <Link to={`/producto/${producto.slug}`} className="link-producto">
-          <img src={producto.image} alt="product" />
-          {/*  <img
+          {/* <img src={producto.image} alt="product" /> */}
+          <img className="img img-fluid"
             src={process.env.REACT_APP_URL_S3 + producto.image}
             alt="product"
-          /> */}
+          /> 
         </Link>
         <div className="card-body ">
           <div className="descripcion-container">

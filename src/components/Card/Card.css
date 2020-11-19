@@ -3,11 +3,14 @@
 }
 .contenedor img {
   height: 250px;
-  width: 100%;
   border-radius: 5px;
+  object-fit: contain;
 }
 .title-product {
   font-family: "Courier New", Courier, monospace;
+
+  padding: 5px;
+  border-radius: 20px;
 }
 .contenedor p {
   color: black;
