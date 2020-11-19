@@ -35,9 +35,7 @@ export default function Card({ producto }) {
               <p>...</p>
             </div> */}
 
-            <h3>
-              <small>Costo:</small> $ {producto.price}
-            </h3>
+            <h3>$ {producto.price}</h3>
 
             <small>Stock actual: {producto.stock}</small>
           </div>

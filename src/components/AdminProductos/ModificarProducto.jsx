@@ -94,7 +94,7 @@ export default function AgregarProducto() {
             </label>
             <input
               type="file"
-              className="form-control-file"
+              className="form-control-file upload-img"
               id="exampleFormControlFile1"
             />
           </div>

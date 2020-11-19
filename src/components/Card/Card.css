@@ -10,13 +10,8 @@
   font-family: "Courier New", Courier, monospace;
 }
 .contenedor p {
-  color: white;
+  color: black;
   font-weight: bolder;
-}
-
-.link-producto h5 {
-  /* font-size: 2.5rem; */
-  color: white;
 }
 
 .descripcion-container {

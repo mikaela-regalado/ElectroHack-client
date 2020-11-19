@@ -2,10 +2,10 @@
   flex-direction: column;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-
-  width: 70%;
-  margin-top: 90px;
+  width: 100vh;
+  margin-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .table {
   border: 3px solid gray;
@@ -41,16 +41,16 @@
 }
 .formulario {
   margin-top: 70px;
-  border: 2px solid orange;
+  border: 2px ridge rgb(179, 177, 177);
   width: 50%;
   padding: 20px;
+  font-size: 1.5rem;
 }
 .main {
   display: flex;
+  height: 100vh;
   justify-content: center;
-}
-.formulario2 {
-  height: 500px;
+  align-items: center;
 }
 
 .producto-title {
@@ -68,4 +68,24 @@
 .table td,
 .table th {
   padding-top: 20px;
+}
+
+.seleccion select {
+  margin-left: 0.7rem;
+  padding: 0.3rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.upload-img {
+  margin-right: 0.7rem;
+  padding: 0.3rem;
+
+  border-radius: 5px;
+}
+
+.enviar {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
