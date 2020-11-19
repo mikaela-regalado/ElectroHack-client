@@ -8,7 +8,7 @@ import Login from "./components/LoginRegistro/Login";
 import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
-import AdminNav from "./components/AdminNav/AdminNav";
+import AdminHome from "./components/AdminProductos/AdminHome";
 /* import AgregarProducto from "./components/AdminProductos/AgregarProducto"; */
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import ModificarProducto from "./components/AdminProductos/ModificarProducto";
@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/pedidos/:id" component={DetallesPedido} />
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/admin/" component={AdminNav} />
+        <Route exact path="/admin/" component={AdminHome} />
         <Route exact path="/admin/productos" component={AdminProductos} />
         <Route
           exact

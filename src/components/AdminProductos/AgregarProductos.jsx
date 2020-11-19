@@ -81,8 +81,7 @@ export default function AgregarProducto() {
               />
             </div>
             <div class="form-group">
-              <label for="description">Descriptión</label>
-              <label for="description"></label>
+              <label for="description">Descripción</label>
               <textarea
                 class="form-control"
                 id="description"

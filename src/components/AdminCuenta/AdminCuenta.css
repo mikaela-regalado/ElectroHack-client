@@ -18,14 +18,16 @@
 } */
 
 .login {
-  position: relative;
-  top: 50%;
-  width: 250px;
-  display: table;
-  margin: 0 auto 0 auto;
-  /* margin-top: 170px; */
-  background: #fff;
-  border-radius: 4px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login form {
+  width: 500px;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 
 .legend {
@@ -36,6 +38,7 @@
   padding: 15px;
   color: #fff;
   font-size: 20px;
+  border-radius: 7px;
 }
 legend:after {
   content: "";

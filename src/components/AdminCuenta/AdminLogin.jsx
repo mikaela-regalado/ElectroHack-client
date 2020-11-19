@@ -16,43 +16,45 @@ export default function AdminLogin() {
     e.preventDefault();
     const user = { email: email, password: password };
     axiosCall("/admin/token", "post", null, null, user).then((res) => {
+      console.log(res);
       dispatch(actionCreators.login(res.data));
 
       history.push("/admin");
     });
   }
   return (
-    <form
-      class="login"
-      onSubmit={(e) => {
-        handleLogin(e);
-      }}
-    >
-      <fieldset>
-        <legend class="legend">Login</legend>
+    <div className="login container">
+      <form
+        onSubmit={(e) => {
+          handleLogin(e);
+        }}
+      >
+        <fieldset>
+          <legend class="legend">Login</legend>
 
-        <div class="input">
-          <input
-            type="email"
-            placeholder="Email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+          <div class="input">
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <div class="input">
-          <input
-            type="password"
-            placeholder="Password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+          <div class="input">
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-        <button type="submit" class="submit">
-          <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </fieldset>
-    </form>
+          <button type="submit" class="submit">
+            <i class="fa fa-long-arrow-right"></i>
+          </button>
+        </fieldset>
+      </form>
+    </div>
   );
 }
