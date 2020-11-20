@@ -93,6 +93,7 @@ h2 {
 .clear {
   clear: both;
 }
+
 .containerLogin {
   max-width: min(80vw, 600px);
   min-width: 400px;
@@ -369,9 +370,20 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   }
 }
 
-/* .signup {
-  margin-left: calc(50vw - 300px);
-} */
+@media (max-width: 500px) {
+  .signup {
+    margin-left: calc(50vw - 200px);
+  }
+}
+
+@media (min-width: 500px) {
+  .signup {
+    margin-left: calc(50vw - 300px);
+  }
+}
+
 /* .main {
   margin-top: 1rem;
 } */
+/* max-width: min(80vw, 600px);
+  min-width: 400px */
