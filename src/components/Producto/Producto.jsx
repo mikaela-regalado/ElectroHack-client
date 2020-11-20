@@ -42,7 +42,7 @@ export default function Producto() {
                         alt="..."
                       />
                       <div className="card-body descripcion">
-                        <h2 className="card-title ">Características</h2>
+                        <h2 className="card-title-2 ">Características</h2>
                         <p>{producto.description}</p>
                         <p>
                           Lorem ipsum dolor sit amet consectetur adipisicing

@@ -49,72 +49,79 @@ export default function Pedidos() {
   };
   return (
     <>
-    <div className="page-container">
-    <div className="content-wrap">
-      <NavBar />
-      
-      <main className="main-pedido">
-        <div className="container">
-          <div className="row fila ">
-            <div className="col-md-9 pedido-list">
-              <h1>Carrito</h1>
-              <table className="table text-center table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col-4">Articulos ({items.length})</th>
-                    <th scope="col-3">Precio</th>
-                    <th scope="col-3">Cantidad</th>
-                    <th scope="col-2">Eliminar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {items.map((item, index) => (
-                    <tr key={item._id}>
-                      <th scope="row">
-                        <div className="item-cart">
-                          <img
-                            src={process.env.REACT_APP_URL_S3 + item.image}
-                            alt="imagen"
-                            className="item-img"
-                          />
-                        </div>
-                      </th>
-                      <td>$ {item.price * item.cantidad}</td>
-                      <td>{item.cantidad}</td>
-                      <td>
-                        {" "}
-                        <i
-                          className=" mt-2 fas fa-trash-alt"
-                          onClick={() => {
-                            dispatch(carritoActions.removeItem(item));
-                          }}
-                        ></i>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <div className="card-body">
-                  <h2 className="card-title">Resumen</h2>
-                  <p>Subtotal (X productos)</p>
-                  <h3> ${totalPrice()} </h3>
+      <div className="page-container">
+        <div className="content-wrap-2">
+          <NavBar />
+
+          <main className="main-pedido">
+            <div className="container">
+              <div className="row fila ">
+                <div className="col-md-9 pedido-list">
+                  <h1 className="d-flex justify-content-center">Carrito</h1>
+                  <table className="table text-center table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col-4">Articulos ({items.length})</th>
+                        <th scope="col-3">Precio</th>
+                        <th scope="col-3">Cantidad</th>
+                        <th scope="col-2">Eliminar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {items.map((item, index) => (
+                        <tr key={item._id}>
+                          <th scope="row">
+                            <div className="item-cart">
+                              <img
+                                src={process.env.REACT_APP_URL_S3 + item.image}
+                                alt="imagen"
+                                className="item-img"
+                              />
+                            </div>
+                          </th>
+                          <td>$ {item.price * item.cantidad}</td>
+                          <td>{item.cantidad}</td>
+                          <td>
+                            {" "}
+                            <i
+                              className=" mt-2 fas fa-trash-alt"
+                              onClick={() => {
+                                dispatch(carritoActions.removeItem(item));
+                              }}
+                            ></i>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-                <div className="card-footer d-flex justify-content-center">
-                  <button type="button" onClick={handleComprar}>
-                    COMPRAR
-                  </button>
+                <div className=" resumen col-md-3">
+                  <div className="card comprar">
+                    <div className="card-body">
+                      <div id="header-pedido ">
+                        <h2 className="card-title">Resumen</h2>
+                      </div>
+                      <p className=" d-flex justify-content-center comprar-body">
+                        Subtotal
+                      </p>
+                      <h3 className="d-flex justify-content-center">
+                        {" "}
+                        ${totalPrice()}{" "}
+                      </h3>
+                    </div>
+                    <div className="  card-footer producto-footer d-flex justify-content-center">
+                      <button type="button" onClick={handleComprar}>
+                        COMPRAR
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
+              {user.userId && <HistorialPedidos />}
             </div>
-          </div>
-          {user.userId && <HistorialPedidos />}
+          </main>
         </div>
-      </main>
-      </div>
-      <Footer />
+        <Footer />
       </div>
     </>
   );

@@ -41,8 +41,8 @@ export default function AdminNav() {
   };
 
   function handleLogOut(event) {
-    console.log("CLICK")
-    event.preventDefault()
+    console.log("CLICK");
+    event.preventDefault();
     dispatch(actionCreators.logOut());
   }
 
@@ -108,11 +108,13 @@ export default function AdminNav() {
             route={"/admin/productos"}
             text={"Producto"}
           ></AdminNavItem>
-          {/* <AdminNavItem
-            component={CategoryIcon}
-            route={"/admin/categoria"}
-            text={"Categoría"}
-          ></AdminNavItem> */}
+          {
+            <AdminNavItem
+              component={CategoryIcon}
+              route={"/admin/categoria"}
+              text={"Categoría"}
+            ></AdminNavItem>
+          }
           {/*  <AdminNavItem
             component={SettingsIcon}
             route={"/admin/configuracion"}
@@ -124,14 +126,12 @@ export default function AdminNav() {
             route={"/admin/producto"}
             text={"Eliminar Producto"}
           ></AdminNavItem> */}
-          <button className="invisible-button" onClick={e => handleLogOut(e)}>
-          <AdminNavItem
-         
-            component={ExitToAppIcon}
-            route={"/admin/login"}
-            text={"Salir"}
-            
-          ></AdminNavItem>
+          <button className="invisible-button" onClick={(e) => handleLogOut(e)}>
+            <AdminNavItem
+              component={ExitToAppIcon}
+              route={"/admin/login"}
+              text={"Salir"}
+            ></AdminNavItem>
           </button>
         </List>
         <Divider />
