@@ -33,13 +33,13 @@ export default function DetallesPedido() {
       
       <main className="">
       {order.list_products && (<div className="container">
-          <h1>Detalles del pedido</h1>
+
+          <div className="row fila mt-5">
+            <div className="col-md-9 ">
+            <h1>Detalles del pedido</h1>
           <small>
             Fecha del pedido: {order.createdAt} | Pedido N°: {order._id}{" "}
           </small>
-          <div className="row fila ">
-            <div className="col-md-9 ">
-              
                 <table className="table table-striped">
                   <thead>
                     <tr>
