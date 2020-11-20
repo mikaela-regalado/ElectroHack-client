@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
 .contenedor {
   border-radius: 5px;
 }
@@ -7,14 +9,22 @@
   object-fit: contain;
 }
 .title-product {
-  font-family: "Courier New", Courier, monospace;
-
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
   padding: 5px;
   border-radius: 20px;
 }
+hr {
+  width: 80%;
+  margin-left: 20px;
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
 .contenedor p {
+  font-family: "Poppins", sans-serif;
   color: black;
-  font-weight: bolder;
 }
 
 .descripcion-container {

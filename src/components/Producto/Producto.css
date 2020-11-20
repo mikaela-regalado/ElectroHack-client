@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 .main {
   /* background-color: #ef6c00; */
   color: #333333;
@@ -72,5 +73,6 @@
 small {
   color: black;
   margin: 0;
-  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  /* font-weight: bold; */
 }

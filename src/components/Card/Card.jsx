@@ -27,6 +27,7 @@ export default function Card({ producto }) {
         <div className="card-body ">
           <div className="descripcion-container">
             <div className="title-product">{producto.name}</div>
+            <hr />
 
             {/* <div>
               <label>
