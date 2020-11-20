@@ -28,18 +28,12 @@
   border-top: 1px solid #2f2f2f;
   /* background-color: ; */
 }
-.card-title-2 {
-  color: white;
-  padding: 20px;
-}
-
 .descripcion h2 {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   color: black;
   margin-bottom: 25px;
 }
-
 .descripcion p {
   color: black;
   font-size: 1.5rem;

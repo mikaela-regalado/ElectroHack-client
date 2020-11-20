@@ -41,8 +41,8 @@ export default function AdminNav() {
   };
 
   function handleLogOut(event) {
-    console.log("CLICK");
-    event.preventDefault();
+    console.log("CLICK")
+    event.preventDefault()
     dispatch(actionCreators.logOut());
   }
 
@@ -108,6 +108,7 @@ export default function AdminNav() {
             route={"/admin/productos"}
             text={"Producto"}
           ></AdminNavItem>
+<<<<<<< HEAD
           {/* {
             <AdminNavItem
               component={CategoryIcon}
@@ -115,6 +116,13 @@ export default function AdminNav() {
               text={"Categoría"}
             ></AdminNavItem>
           } */}
+=======
+          {/* <AdminNavItem
+            component={CategoryIcon}
+            route={"/admin/categoria"}
+            text={"Categoría"}
+          ></AdminNavItem> */}
+>>>>>>> parent of 537251f... Merge branch 'master' of https://github.com/mikaela-regalado/ElectroHack-client
           {/*  <AdminNavItem
             component={SettingsIcon}
             route={"/admin/configuracion"}
@@ -126,12 +134,14 @@ export default function AdminNav() {
             route={"/admin/producto"}
             text={"Eliminar Producto"}
           ></AdminNavItem> */}
-          <button className="invisible-button" onClick={(e) => handleLogOut(e)}>
-            <AdminNavItem
-              component={ExitToAppIcon}
-              route={"/admin/login"}
-              text={"Salir"}
-            ></AdminNavItem>
+          <button className="invisible-button" onClick={e => handleLogOut(e)}>
+          <AdminNavItem
+         
+            component={ExitToAppIcon}
+            route={"/admin/login"}
+            text={"Salir"}
+            
+          ></AdminNavItem>
           </button>
         </List>
         <Divider />
