@@ -39,7 +39,7 @@ export default function Registro() {
           <div className="containerLogin">
             <div className="signup-content">
               <form
-                id="signup-form"
+                
                 className="signup-form"
                 onSubmit={(e) => {
                   handleRegistro(e);
