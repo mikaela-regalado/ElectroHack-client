@@ -50,7 +50,7 @@ export default function Pedidos() {
   return (
     <>
       <div className="page-container">
-        <div className="content-wrap">
+        <div className="content-wrap-2">
           <NavBar />
 
           <main className="main-pedido">
@@ -99,10 +99,13 @@ export default function Pedidos() {
                   <div className="card">
                     <div className="card-body">
                       <h2 className="card-title">Resumen</h2>
-                      <p>Subtotal (X productos)</p>
-                      <h3> ${totalPrice()} </h3>
+                      <p className="d-flex justify-content-center">Subtotal</p>
+                      <h3 className="d-flex justify-content-center">
+                        {" "}
+                        ${totalPrice()}{" "}
+                      </h3>
                     </div>
-                    <div className="card-footer d-flex justify-content-center">
+                    <div className="card-footer producto-footer d-flex justify-content-center">
                       <button type="button" onClick={handleComprar}>
                         COMPRAR
                       </button>

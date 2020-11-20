@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
 .item-cart img {
   height: 100px;
 }
@@ -10,4 +12,22 @@
 .pedido-list h1 {
   margin-bottom: 3rem;
   font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1, 1 auto;
+  min-height: 1px;
+  padding: 0px;
+}
+
+.header-pedido {
+  padding: 0px;
+  color: white;
+}
+.card-title {
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
 }
