@@ -1,13 +1,14 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="footer footerLogin">
+    <footer className="footer footerLogin text-center">
       <div className="container pt-5">
         <div className="row">
-          <div className="col-md-3">
-            <h4>Casa central</h4>
+          <div className="col-md-6">
+            <h4>Hack Academy</h4>
             <small>
               Dir: Blvr. Artigas 1182 esq. Canelones - Montevideo, Uruguay.
             </small>
@@ -15,18 +16,14 @@ export default function Footer() {
 
             <small>Lun. a Vie. 9:00 - 19:00hs </small>
           </div>
-          <div className="col-md-3">
-            <h4>Nuestra empresa</h4>
-            <small>Quienes somos</small>
-            <br />
+          <div className="col-md-6">
+            <h4>Este Proyecto</h4>
+            <Link to="/about" className="about">
+              <small>Quienes somos - About Us</small>
+            </Link>
 
+            <br />
             <small>Contacto</small>
-          </div>
-          <div className="col-md-3">
-            <h4>Servicio al cliente</h4>
-          </div>
-          <div className="col-md-3">
-            <h4>Tel.: 097345678</h4>
           </div>
         </div>
         <div className="d-flex justify-content-center">
