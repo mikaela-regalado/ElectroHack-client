@@ -57,7 +57,7 @@ export default function NavBar() {
           <Nav>
             {!user.token && (
               <Nav.Link as={Link} to="/registro" className="link">
-                <i className="fas fa-user-circle login-register-cart"></i>
+                <i className="fas fa-user-circle  login-register-cart"></i>
                 Ingresar
               </Nav.Link>
             )}
@@ -75,7 +75,7 @@ export default function NavBar() {
             )}
 
             <Nav.Link as={Link} to="/pedidos" className="link">
-              <i className="fas fa-shopping-cart login-register-cart">
+              <i className="fas fa-shopping-cart carrito-button login-register-cart">
                 <span className="cartCount">{items && totalItems}</span>
               </i>
             </Nav.Link>
