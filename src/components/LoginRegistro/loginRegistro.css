@@ -64,7 +64,8 @@ input[type="radio"] {
 
 img {
   max-width: 100%;
-  height: auto;
+  height: 370px;
+  object-fit: cover;
 }
 
 figure {
@@ -93,9 +94,12 @@ h2 {
 .clear {
   clear: both;
 }
+
 .containerLogin {
-  width: 600px;
+  max-width: min(80vw, 600px);
+  min-width: 400px;
 }
+
 .display-flex {
   justify-content: space-between;
   -moz-justify-content: space-between;
@@ -363,9 +367,24 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 @media screen and (max-width: 480px) {
   .signup-content {
     padding: 50px 25px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .signup {
+    margin-left: calc(50vw - 200px);
+  }
+}
+
+@media (min-width: 500px) {
+  .signup {
+    margin-left: calc(50vw - 300px);
   }
 }
 
 /* .main {
   margin-top: 1rem;
 } */
+/* max-width: min(80vw, 600px);
+  min-width: 400px */

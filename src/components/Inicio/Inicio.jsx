@@ -10,25 +10,24 @@ export default function Inicio() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    axiosCall("/products", "get", null, { outstanding: true}).then((res) =>
+    axiosCall("/products", "get", null, { outstanding: true }).then((res) =>
       setProductos(res.data)
     );
   }, []);
 
   return (
     <>
-    <div className="page-container">
-    <div className="content-wrap">
-      <header>
-        <NavBar />
-      </header>
-      
-      <main>
-        <Banner />
-        <ListaProductos productos={productos} />
-      </main>
-      </div>
-      <Footer />
+      <div className="page-container">
+        <header>
+          <NavBar />
+        </header>
+        <div className="content-wrap">
+          <main>
+            <Banner />
+            <ListaProductos productos={productos} />
+          </main>
+        </div>
+        <Footer />
       </div>
     </>
   );
