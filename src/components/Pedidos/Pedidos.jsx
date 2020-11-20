@@ -55,12 +55,13 @@ export default function Pedidos() {
           <div className="row fila ">
             <div className="col-md-9 pedido-list">
               <h1>Carrito</h1>
-              <table className="table table-striped">
+              <table className="table text-center table-striped">
                 <thead>
                   <tr>
-                    <th scope="col-8">Articulos ({items.length})</th>
-                    <th scope="col-2">Precio</th>
-                    <th scope="col-2">Cantidad</th>
+                    <th scope="col-4">Articulos ({items.length})</th>
+                    <th scope="col-3">Precio</th>
+                    <th scope="col-3">Cantidad</th>
+                    <th scope="col-2">Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>

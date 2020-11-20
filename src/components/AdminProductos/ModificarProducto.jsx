@@ -62,7 +62,7 @@ export default function AgregarProducto() {
       <header>
         <AdminNav />
       </header>
-      <div className="main">
+      <div className="principal">
         <div className="formulario table">
           <h2>Editar producto</h2>
           <form className="formulario2" onSubmit={(e) => handleUpdate(e)}>

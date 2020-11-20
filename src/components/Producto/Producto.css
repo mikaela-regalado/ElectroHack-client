@@ -8,16 +8,15 @@
   font-size: 5rem;
   text-decoration: underline;
 }
-#id {
-  height: 70px;
-}
+
 .producto {
   border: none;
   padding: 3rem;
 }
 .producto img {
-  height: 500px;
+  height: 376px;
   padding-bottom: 5px;
+  object-fit: contain;
 }
 .all-producto {
   margin-top: 20px;

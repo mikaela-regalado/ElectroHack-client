@@ -3,3 +3,8 @@ header {
   width: 100%;
   z-index: 200;
 }
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}

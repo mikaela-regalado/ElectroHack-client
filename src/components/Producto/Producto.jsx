@@ -28,7 +28,7 @@ export default function Producto() {
       <header>
         <NavBar />
       </header>
-      <div id="id"> Texto</div>
+
       <main className="main pt-2">
         <div className="container ">
           {producto.image && (

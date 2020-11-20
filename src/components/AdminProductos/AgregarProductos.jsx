@@ -61,7 +61,7 @@ export default function AgregarProducto() {
       <header>
         <AdminNav />
       </header>
-      <div className="main">
+      <div className="principal">
         <div className="formulario table">
           <h2>Agregar un producto</h2>
           <form

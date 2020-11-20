@@ -63,12 +63,7 @@ export default function NavBar() {
             )}
 
             {user.token && (
-              <Nav.Link
-                as={Link}
-                to="/login"
-                onClick={handleClick}
-                className="link"
-              >
+              <Nav.Link as={Link} to="/" onClick={handleClick} className="link">
                 <i className="fas fa-user-circle login-register-cart"></i>
                 Salir
               </Nav.Link>
