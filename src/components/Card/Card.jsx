@@ -37,7 +37,7 @@ export default function Card({ producto }) {
               <p>...</p>
             </div> */}
 
-            <h4>$ {producto.price}</h4>
+            <h4 id="numberCard"> $ {producto.price}</h4>
             <div>
               {producto.stock > 0 ? (
                 <small> Stock disponible</small>

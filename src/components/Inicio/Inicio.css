@@ -8,3 +8,8 @@ header {
   margin-left: 0;
   margin-right: 0;
 }
+#destacadoHome {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
