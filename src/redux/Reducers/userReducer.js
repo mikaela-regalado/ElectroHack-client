@@ -3,6 +3,7 @@ function userReducer(state = {}, action) {
     case "LOGGED":
       return {
         ...state,
+        isAdmin: action.payload.isAdmin,
         token: action.payload.token,
         userId: action.payload.userId,
         fullName: action.payload.fullName,

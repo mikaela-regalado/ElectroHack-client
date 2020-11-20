@@ -3,6 +3,7 @@ export const actionCreators = {
     return {
       type: "LOGGED",
       payload: {
+        isAdmin: data.isAdmin,
         token: data.token,
         userId: data.userId,
         fullName: data.fullName,
