@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./loginRegistro.css";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axiosCall from "../../utils/axiosCall";
 import { actionCreators } from "../../redux/Actions/userActions";
@@ -36,8 +36,8 @@ export default function Login() {
         <div className="containerLogin">
           <div className="signup-content">
             <form
-              id="signup-form"
-              className="signup-form"
+              
+              className="signup-form "
               onSubmit={(e) => {
                 handleLogin(e);
               }}
@@ -79,6 +79,12 @@ export default function Login() {
                 />
               </div>
             </form>
+            <p className="loginhere">
+                ¿Aún no estás registrado?{" "}
+                <Link to="/registro" className="loginhere-link">
+                  Regístrate
+                </Link>
+              </p>
           </div>
         </div>
       </section>

@@ -58,7 +58,7 @@ export default function Pedidos() {
                       </td>
                       <td className=" ">
                           <small>PEDIDO N°: {order._id} </small><br></br>
-                           <Link to={`pedidos/${order._id}`} >Detalles del pedido</Link>                      
+                           <Link className="link-historial" to={`pedidos/${order._id}`} >Detalles del pedido</Link>                      
                       </td>
                     </tr>
                     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import clsx from "clsx";
 import { useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -19,7 +20,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AdminNavItem from "./AdminNavItem";
 import { makeStylesConfig } from "../../utils/makeStyles";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-
+import { actionCreators } from "../../redux/Actions/userActions";
 import CategoryIcon from "@material-ui/icons/Category";
 import SettingsIcon from "@material-ui/icons/Settings";
 
@@ -29,6 +30,7 @@ export default function AdminNav() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const dispatch = useDispatch();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -37,6 +39,12 @@ export default function AdminNav() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  function handleLogOut(event) {
+    console.log("CLICK")
+    event.preventDefault()
+    dispatch(actionCreators.logOut());
+  }
 
   return (
     <div className={classes.root}>
@@ -116,11 +124,15 @@ export default function AdminNav() {
             route={"/admin/producto"}
             text={"Eliminar Producto"}
           ></AdminNavItem> */}
+          <button className="invisible-button" onClick={e => handleLogOut(e)}>
           <AdminNavItem
+         
             component={ExitToAppIcon}
             route={"/admin/login"}
             text={"Salir"}
+            
           ></AdminNavItem>
+          </button>
         </List>
         <Divider />
         <List></List>

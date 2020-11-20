@@ -30,108 +30,106 @@ export default function Registro() {
   }
 
   return (
-    <>
-      <div className="main page-container">
-        <NavBar />
-        <div className="content-wrap">
-          <section className="signup">
-            <div className="containerLogin">
-              <div className="signup-content">
-                <form
-                  id="signup-form"
-                  className="signup-form"
-                  onSubmit={(e) => {
-                    handleRegistro(e);
-                  }}
-                >
-                  <h2 className="form-title">Crear Cuenta</h2>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-input"
-                      name="name"
-                      id="name"
-                      placeholder="Nombre"
-                      onChange={(e) => setFirstName(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-input"
-                      name="lastname"
-                      id="lastname"
-                      placeholder="Apellido"
-                      onChange={(e) => setLastName(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      className="form-input"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="password"
-                      className="form-input"
-                      name="password"
-                      id="password"
-                      placeholder="Password"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <span
-                      toggle="#password"
-                      className="zmdi zmdi-eye field-icon toggle-password"
-                    ></span>
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-input"
-                      name="adress"
-                      id="adress"
-                      placeholder="Dirección"
-                      onChange={(e) => setUserAddress(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="number"
-                      className="form-input"
-                      name="cellphone"
-                      id="cellphone"
-                      placeholder="Celular"
-                      onChange={(e) => setCellPhone(e.target.value)}
-                    />
-                  </div>
+    <div className="main page-container">
+      <NavBar />
+      <div className="content-wrap">
+        <section className="signup">
+          <div className="containerLogin">
+            <div className="signup-content">
+              <form
+                id="signup-form"
+                className="signup-form"
+                onSubmit={(e) => {
+                  handleRegistro(e);
+                }}
+              >
+                <h2 className="form-title">Crear Cuenta</h2>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-input"
+                    name="name"
+                    id="name"
+                    placeholder="Nombre"
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-input"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="Apellido"
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    className="form-input"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    className="form-input"
+                    name="password"
+                    id="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <span
+                    toggle="#password"
+                    className="zmdi zmdi-eye field-icon toggle-password"
+                  ></span>
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-input"
+                    name="adress"
+                    id="adress"
+                    placeholder="Dirección"
+                    onChange={(e) => setUserAddress(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="number"
+                    className="form-input"
+                    name="cellphone"
+                    id="cellphone"
+                    placeholder="Celular"
+                    onChange={(e) => setCellPhone(e.target.value)}
+                  />
+                </div>
 
-                  <div className="form-group">
-                    <input
-                      type="submit"
-                      name="submit"
-                      id="submit"
-                      className="form-submit"
-                      value="Registrarse"
-                    />
-                  </div>
-                </form>
-                <p className="loginhere">
-                  ¿Tienes una cuenta?{" "}
-                  <Link to="/login" className="loginhere-link">
-                    Ingresar
-                  </Link>
-                </p>
-              </div>
+                <div className="form-group">
+                  <input
+                    type="submit"
+                    name="submit"
+                    id="submit"
+                    className="form-submit"
+                    value="Registrarse"
+                  />
+                </div>
+              </form>
+              <p className="loginhere">
+                ¿Tienes una cuenta?{" "}
+                <Link to="/login" className="loginhere-link">
+                  Ingresar
+                </Link>
+              </p>
             </div>
-          </section>
-        </div>
-        <Footer />
+          </div>
+        </section>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }

@@ -15,8 +15,7 @@ export default function AgregarProducto() {
   const [categories, setCategories] = useState(0);
   const [files, setFiles] = useState(null);
   const admin = useSelector((state) => state.user);
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjJjNWIzMWMxZjA0MWY2YzcwYjA1ZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYwNTU1MjY2NH0.sd5VJBW0-yqbE-bV2YuuSyCDxLL9sYCW3rK08FX5al4";
+
 
   useEffect(() => {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
@@ -50,7 +49,7 @@ export default function AgregarProducto() {
     await axiosCall(
       "/admin/products",
       "post",
-      token,
+      admin.token,
       null,
       formData
     ).then((res) => console.log(res.data));

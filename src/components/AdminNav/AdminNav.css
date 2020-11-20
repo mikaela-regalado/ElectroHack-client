@@ -9,3 +9,9 @@
 .admin-nav svg {
   font-size: 2.5rem;
 }
+
+.invisible-button {
+  color: transparent;
+  background-color: transparent;
+  width: 100%;
+}
