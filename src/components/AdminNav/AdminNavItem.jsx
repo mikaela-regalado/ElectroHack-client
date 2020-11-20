@@ -11,7 +11,7 @@ export default function AdminNavItem({ component: Component, route, text }) {
       <Link to={route} style={{ color: "black" }}>
         <ListItem button key={text} className="admin-nav">
           <ListItemIcon>
-            <Component style={{ color: "#ef6c00" }} />
+            <Component style={{ color: "rgb(9, 114, 131)" }} />
           </ListItemIcon>
           <ListItemText primary={text} />
         </ListItem>

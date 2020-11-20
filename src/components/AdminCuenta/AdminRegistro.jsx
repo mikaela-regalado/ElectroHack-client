@@ -33,7 +33,7 @@ export default function AdminRegistro() {
           handleRegistro(e);
         }}
       >
-        <div className="login-register-container">
+        <div className="login-container">
           <fieldset>
             <legend className="legend">Registro</legend>
             <div className="input">

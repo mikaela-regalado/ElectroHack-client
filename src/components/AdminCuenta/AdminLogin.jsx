@@ -30,7 +30,7 @@ export default function AdminLogin() {
           handleLogin(e);
         }}
       >
-        <div className="login-register-container">
+        <div className="login-container">
           <fieldset>
             <legend className="legend">Login</legend>
 
