@@ -23,37 +23,40 @@ export default function AdminLogin() {
     });
   }
   return (
-    <div className="login container">
+    <div>
       <form
+        className="login "
         onSubmit={(e) => {
           handleLogin(e);
         }}
       >
-        <fieldset>
-          <legend className="legend">Login</legend>
+        <div className="login-register-container">
+          <fieldset>
+            <legend className="legend">Login</legend>
 
-          <div className="input">
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+            <div className="input">
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
 
-          <div className="input">
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+            <div className="input">
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
-          <button type="submit" className="submit">
-            <i className="fa fa-long-arrow-right"></i>
-          </button>
-        </fieldset>
+            <button type="submit" className="submit">
+              <i className="fa fa-long-arrow-right"></i>
+            </button>
+          </fieldset>
+        </div>
       </form>
     </div>
   );
