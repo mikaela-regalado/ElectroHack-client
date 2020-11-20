@@ -25,10 +25,11 @@ export default function Producto() {
 
   return (
     <>
+    <div className="page-container">
+    <div className="content-wrap">
       <header>
         <NavBar />
       </header>
-
       <main className="main pt-2">
         <div className="container ">
           {producto.image && (
@@ -76,8 +77,11 @@ export default function Producto() {
             </div>
           )}
         </div>
-      </main>
-      <Footer />
+        </main>
+        </div>
+        <Footer />
+     
+      </div>
     </>
   );
 }

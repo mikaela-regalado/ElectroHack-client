@@ -27,8 +27,11 @@ export default function Login() {
     });
   }
   return (
+    <div className="page-container">
+       <div className="content-wrap">
     <div className="main">
       <NavBar />
+      
       <section className="signup">
         <div className="containerLogin">
           <div className="signup-content">
@@ -79,7 +82,9 @@ export default function Login() {
           </div>
         </div>
       </section>
+      </div>
       <Footer />
-    </div>
+      </div>
+      </div>
   );
 }

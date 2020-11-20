@@ -49,7 +49,10 @@ export default function Pedidos() {
   };
   return (
     <>
+    <div className="page-container">
+    <div className="content-wrap">
       <NavBar />
+      
       <main className="main-pedido">
         <div className="container">
           <div className="row fila ">
@@ -110,7 +113,9 @@ export default function Pedidos() {
           {user.userId && <HistorialPedidos />}
         </div>
       </main>
+      </div>
       <Footer />
+      </div>
     </>
   );
 }

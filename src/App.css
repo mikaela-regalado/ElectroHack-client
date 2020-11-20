@@ -17,3 +17,18 @@ body {
 .fila.centrado {
   justify-content: center;
 }
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 300px;
+}
+
+@media (max-width: 780px) {
+  .content-wrap {
+    padding-bottom: 600px;
+  }
+}

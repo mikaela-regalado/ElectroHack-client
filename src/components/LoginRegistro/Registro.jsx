@@ -31,8 +31,10 @@ export default function Registro() {
 
   return (
     <>
+     <div className="main page-container">
+     <div className="content-wrap">
       <NavBar />
-      <div className="main">
+     
         <section className="signup">
           <div className="containerLogin">
             <div className="signup-content">
@@ -128,8 +130,10 @@ export default function Registro() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+            </div>
+      
     </>
   );
 }

@@ -20,6 +20,8 @@ export default function Catalogo() {
 
   return (
     <div>
+      <div className="page-container">
+        <div className="content-wrap">
       <header>
         <NavBar />
       </header>
@@ -49,8 +51,9 @@ export default function Catalogo() {
           </div>
         </main>
       )}
-
+</div>
       <Footer />
+      </div>
     </div>
   );
 }

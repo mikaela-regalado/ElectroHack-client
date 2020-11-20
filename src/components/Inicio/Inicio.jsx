@@ -17,14 +17,19 @@ export default function Inicio() {
 
   return (
     <>
+    <div className="page-container">
+    <div className="content-wrap">
       <header>
         <NavBar />
       </header>
+      
       <main>
         <Banner />
         <ListaProductos productos={productos} />
       </main>
+      </div>
       <Footer />
+      </div>
     </>
   );
 }

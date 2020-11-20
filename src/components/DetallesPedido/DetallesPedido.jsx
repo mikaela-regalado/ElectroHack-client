@@ -27,7 +27,10 @@ export default function DetallesPedido() {
 
   return (
     <>
+    <div className="page-container">
+    <div className="content-wrap">
       <NavBar />
+      
       <main className="">
       {order.list_products && (<div className="container">
           <h1>Detalles del pedido</h1>
@@ -79,7 +82,9 @@ export default function DetallesPedido() {
           </div>
         </div>)}
       </main>
+      </div>
       <Footer />
+      </div>
     </>
   );
 }
