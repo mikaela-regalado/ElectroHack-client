@@ -5,6 +5,7 @@ import Producto from "./components/Producto/Producto";
 import Registro from "./components/LoginRegistro/Registro";
 import Categoria from "./components/Categoria/Categoria";
 import Login from "./components/LoginRegistro/Login";
+import About from "./components/About/About";
 import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/pedidos/:id" component={DetallesPedido} />
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/about" component={About} />
         <PrivateRoute exact path="/admin/" component={AdminHome} />
         <PrivateRoute
           exact

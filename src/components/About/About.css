@@ -1,0 +1,16 @@
+.about {
+  font-family: "Poppins", sans-serif;
+}
+.perfiles {
+  display: flex;
+}
+
+.perfil {
+  width: 30vw;
+  margin: 0 2rem;
+}
+
+.perfil i {
+  color: black;
+  font-size: 3rem;
+}

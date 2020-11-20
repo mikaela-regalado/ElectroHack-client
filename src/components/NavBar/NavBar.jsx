@@ -47,7 +47,6 @@ export default function NavBar() {
                   key={category._id}
                   as={Link}
                   to={`/categoria/${category.slug}`}
-                  className="link"
                 >
                   {category.type}
                 </Nav.Link>
@@ -55,6 +54,9 @@ export default function NavBar() {
             })}
           </Nav>
           <Nav>
+            <Nav.Link as={Link} to="about">
+              About
+            </Nav.Link>
             {!user.token && (
               <Nav.Link as={Link} to="/registro" className="link">
                 <i className="fas fa-user-circle  login-register-cart"></i>
@@ -63,7 +65,7 @@ export default function NavBar() {
             )}
 
             {user.token && (
-              <Nav.Link as={Link} to="/" onClick={handleClick}>
+              <Nav.Link as={Link} to="/" onClick={handleClick} className="link">
                 <i className="fas fa-user-circle login-register-cart"></i>
                 Salir
               </Nav.Link>
