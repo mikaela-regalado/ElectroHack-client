@@ -7,7 +7,7 @@
 
 @media (min-width: 800px) {
   .banner img {
-    height: 600px;
+    height: 370px;
     object-fit: cover;
     object-position: bottom;
   }
@@ -26,4 +26,7 @@
 }
 .textCarousel {
   color: #343a40;
+}
+#firsttitleCarousel {
+  color: white;
 }
