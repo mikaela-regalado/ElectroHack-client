@@ -40,7 +40,7 @@ export default function NavBar() {
         <Navbar.Toggle id="burger-button" />
 
         <Navbar.Collapse>
-          <Nav className="categories mr-auto">
+          <Nav className="categories">
             {categories.map((category) => {
               return (
                 <Nav.Link
@@ -63,13 +63,13 @@ export default function NavBar() {
             )}
 
             {user.token && (
-              <Nav.Link as={Link} to="/" onClick={handleClick} className="link">
+              <Nav.Link as={Link} to="/" onClick={handleClick}>
                 <i className="fas fa-user-circle login-register-cart"></i>
                 Salir
               </Nav.Link>
             )}
 
-            <Nav.Link as={Link} to="/pedidos" className="link">
+            <Nav.Link as={Link} to="/pedidos">
               <i className="fas fa-shopping-cart carrito-button login-register-cart">
                 <span className="cartCount">{items && totalItems}</span>
               </i>

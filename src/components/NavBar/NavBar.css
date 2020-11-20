@@ -42,6 +42,11 @@ a.brand {
   display: flex;
   justify-content: space-between;
 }
+.categories {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 1000px) {
   a.brand {
     padding-left: 3rem;
