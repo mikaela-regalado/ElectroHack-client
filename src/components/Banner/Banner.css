@@ -20,3 +20,10 @@
     object-position: bottom;
   }
 }
+
+.titleCarousel {
+  color: #777;
+}
+.textCarousel {
+  color: #343a40;
+}
