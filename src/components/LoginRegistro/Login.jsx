@@ -28,10 +28,10 @@ export default function Login() {
   }
   return (
     <div className="page-container">
-      <div className="content-wrap-2">
-        <div className="main">
-          <NavBar />
+      <div className="main">
+        <NavBar />
 
+        <div className="content-wrap">
           <section className="signup">
             <div className="containerLogin">
               <div className="signup-content">
