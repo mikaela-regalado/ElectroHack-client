@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 import axiosCall from "../../utils/axiosCall"
 
 export default function Pedidos() {
-    const [orderList, setOrderList] = useState([])
+    const [orderList, setOrderList] = useState(null)
     const user = useSelector((state) => state.user);
 
 
@@ -29,11 +29,12 @@ export default function Pedidos() {
 /* console.log("TOTAL: ", totalPrice) */
 
   return (
-    <div className="pedidosAntContainer">
+    <>
+    {orderList && <div className="pedidosAntContainer">
           <h1 className="mt-5">Pedidos anteriores</h1>
           <div className="row fila">
             <div className="col-md-9 ">
-              {orderList && <table className="table table-striped">
+              <table className="table table-striped">
                 <thead>
                   <tr>
                     <th scope="col-8">Pedidos ({orderList.length})</th>
@@ -63,10 +64,11 @@ export default function Pedidos() {
                     </>
                   ))}
                 </tbody>
-              </table>}
+              </table>
             </div>
           </div>
  
-    </div>
+    </div>}
+    </>
   );
 }
