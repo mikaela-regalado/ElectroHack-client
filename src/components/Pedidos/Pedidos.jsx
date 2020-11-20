@@ -95,7 +95,7 @@ export default function Pedidos() {
               <div className="card">
                 <div className="card-body">
                   <h2 className="card-title">Resumen</h2>
-                  <p>Subtotal (X productios)</p>
+                  <p>Subtotal (X productos)</p>
                   <h3> ${totalPrice()} </h3>
                 </div>
                 <div className="card-footer d-flex justify-content-center">

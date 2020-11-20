@@ -71,7 +71,7 @@ export default function DetallesPedido() {
               <div className="card">
                 <div className="card-body">
                   <h2 className="card-title">Resumen</h2>
-                  <p>Subtotal (X productios)</p>
+                  <p>Subtotal (X productos)</p>
                   <p>${totalPrice}</p>
                 </div>
               </div>
