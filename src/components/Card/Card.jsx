@@ -37,18 +37,23 @@ export default function Card({ producto }) {
             </div> */}
 
             <h4>$ {producto.price}</h4>
-
-            <small>Stock actual: {producto.stock}</small>
+            <div>
+              {producto.stock > 0 ? (
+                <small> Stock disponible</small>
+              ) : (
+                <small>No hay Stock</small>
+              )}
+            </div>
           </div>
         </div>
-        <div className="card-footer d-flex justify-content-center producto-footer">
+        <div className=" row card-footer d-flex justify-content-center producto-footer">
           <button
+            className="d-flex"
             type="button"
             onClick={(e) => handleAddItem(e, producto, cantidad)}
           >
-            <i className="fas fa-shopping-cart  login-register-cart">
-              AGREGAR AL CARRITO
-            </i>
+            <i className="fas fa-shopping-cart login-register-cart"></i>
+            <div className="pl-2"> AGREGAR AL CARRITO</div>
           </button>
         </div>
       </div>

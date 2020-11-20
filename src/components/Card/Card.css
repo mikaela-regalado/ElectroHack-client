@@ -34,10 +34,10 @@
 .producto-footer {
   background-color: transparent;
 }
-.fa-shopping-cart:before {
+/* .fa-shopping-cart:before {
   content: "\f07a";
   padding-right: 9px;
-}
+} */
 .producto-footer button {
   border-radius: 8px;
   border-style: ridge;

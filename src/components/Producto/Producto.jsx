@@ -31,9 +31,8 @@ export default function Producto() {
       <div id="id"> Texto</div>
       <main className="main pt-2">
         <div className="container ">
-          <h1 className="p-3">{producto.name}</h1>
           {producto.image && (
-            <div className="row p-3">
+            <div className="row all-producto p-3">
               <div className="col-lg-9" id="left">
                 <div className="card mb-3 producto">
                   <img
@@ -54,22 +53,21 @@ export default function Producto() {
                     <h3>{producto.name}</h3>
                     <div className="stock">
                       {producto.stock > 0 ? (
-                        <small> {producto.stock} Stock disponible</small>
+                        <small> Stock disponible</small>
                       ) : (
                         <small>No hay Stock</small>
                       )}
                     </div>
                   </div>
                   <div className="comprar-body">
-                    <h2>
-                      ${producto.price} <small>Contado</small>
-                    </h2>
+                    <small>Precio:</small> ${producto.price}
                   </div>
-                  <div className="comprar-footer">
+                  <div className="producto-footer">
                     <button
                       type="button"
                       onClick={(e) => handleAddItem(e, producto._id)}
                     >
+                      <i className="fas fa-shopping-cart  login-register-cart"></i>
                       AGREGAR AL CARRITO
                     </button>
                   </div>

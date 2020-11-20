@@ -18,13 +18,16 @@ a.brand {
 
 .cartCount {
   font-size: 12px;
-  background: #000000;
+  background: rgb(192, 10, 10);
   border-radius: 50%;
   color: #fff;
-  padding: 0 5px;
+  padding: 0 3px;
   vertical-align: top;
+  z-index: 500;
 }
-
+.carrito-button {
+  padding-right: 9px;
+}
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.8);
