@@ -24,8 +24,10 @@ export default function Inicio() {
         <div className="content-wrap">
           <main>
             <Banner />
+            <div className="container">
             <h2 id="destacadoHome">Destacado</h2>
             <ListaProductos productos={productos} />
+            </div>
           </main>
         </div>
         <Footer />

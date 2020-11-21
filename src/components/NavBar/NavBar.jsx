@@ -31,8 +31,10 @@ export default function NavBar() {
   }
 
   return (
+    <div className="bg-dark">
+    <Container>
     <Navbar className="nav-bar bg-dark" variant="dark" expand="lg">
-      <Container>
+      
         <Navbar.Brand as={Link} to="/" className="brand">
           Electro Hack <i className="fas fa-desktop"></i>
         </Navbar.Brand>
@@ -78,7 +80,9 @@ export default function NavBar() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      
     </Navbar>
+    </Container>
+    </div>
   );
 }

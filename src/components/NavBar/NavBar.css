@@ -3,7 +3,7 @@ body {
 }
 a {
   color: #ffffff;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 a:hover {
   color: black;
@@ -14,7 +14,7 @@ a.brand {
   color: #ffffff;
   font-weight: bold;
   font-size: 1.6rem;
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
 }
 
 .cartCount {
@@ -26,9 +26,9 @@ a.brand {
   vertical-align: top;
   z-index: 500;
 }
-.carrito-button {
+/* .carrito-button {
   padding-right: 9px;
-}
+} */
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.8);
@@ -48,11 +48,11 @@ a.brand {
   margin-right: auto;
 }
 
-.link i {
+/* .link i {
   margin-right: 0.5rem;
-}
+} */
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   a.brand {
     padding-left: 3rem;
   }
@@ -61,4 +61,4 @@ a.brand {
   a.brand {
     padding-left: 2rem;
   }
-}
+} */

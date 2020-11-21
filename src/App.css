@@ -24,15 +24,15 @@ body {
 }
 
 .content-wrap {
-  padding-bottom: 200px;
+  padding-bottom: 300px;
   padding-top: 41px;
 }
 .content-wrap-2 {
-  padding-bottom: 200px;
+  padding-bottom: 300px;
 }
 
-@media (max-width: 780px) {
+/* @media (max-width: 780px) {
   .content-wrap {
     padding-bottom: 600px;
   }
-}
+} */
