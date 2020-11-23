@@ -1,6 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 const drawerWidth = 240;
+
 export const makeStylesConfig = makeStyles((theme) => ({
+  root1: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
   root: {
     display: "flex",
   },
