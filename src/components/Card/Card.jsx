@@ -3,14 +3,19 @@ import { Link } from "react-router-dom";
 import carritoActions from "../../redux/Actions/carritoActions";
 import { useDispatch } from "react-redux";
 import "./Card.css";
+import Button from '@material-ui/core/Button';
+import { makeStylesConfig } from "../../utils/makeStyles";
+
+const useStyles = makeStylesConfig;
 
 export default function Card({ producto }) {
   const dispatch = useDispatch();
   let cantidad = 0;
+  const classes = useStyles();
 
-  function handleAddItem(event, item, cantidad) {
+  function handleAddItem(event, item) {
     event.preventDefault();
-    dispatch(carritoActions.addItem(item, cantidad));
+    dispatch(carritoActions.addItem(item));
   }
 
   return (
@@ -47,15 +52,21 @@ export default function Card({ producto }) {
             </div>
           </div>
         </div>
-        <div className=" row card-footer d-flex justify-content-center producto-footer">
-          <button
+        <div className=" row card-footer d-flex justify-content-center ">
+        <div className={classes.root1}>
+                          <Button variant="contained" color="primary" onClick={(e) => handleAddItem(e, producto)} className="p-3 buttonCart">
+                          <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
+                          AGREGAR AL CARRITO
+                          </Button>
+                          </div>
+          {/* <button
             className="d-flex"
             type="button"
             onClick={(e) => handleAddItem(e, producto, cantidad)}
           >
             <i className="fas fa-shopping-cart login-register-cart"></i>
             <div className="pl-2"> AGREGAR AL CARRITO</div>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
