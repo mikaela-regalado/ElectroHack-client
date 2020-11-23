@@ -50,7 +50,7 @@ export default function AdminNav() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        style={{ background: "#000" }}
+        style={{ background: "rgb(9, 114, 131)" }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
