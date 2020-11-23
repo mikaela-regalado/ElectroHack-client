@@ -31,10 +31,11 @@ export default function Pedidos() {
   return (
     <>
     {orderList && <div className="pedidosAntContainer">
-          <h1 className="mt-5">Pedidos anteriores</h1>
+          
           <div className="row fila">
-            <div className="col-md-9 ">
-              <table className="table table-striped">
+            <div className="col-lg-8 ">
+            <h1 className="mt-5">Pedidos anteriores</h1>
+              <table className="table text-center table-striped">
                 <thead>
                   <tr>
                     <th scope="col-8">Pedidos ({orderList.length})</th>

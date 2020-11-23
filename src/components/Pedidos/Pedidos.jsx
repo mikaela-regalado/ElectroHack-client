@@ -56,7 +56,7 @@ export default function Pedidos() {
           <main className="main-pedido">
             <div className="container">
               <div className="row fila ">
-                <div className="col-md-9 pedido-list">
+                <div className="col-lg-8 pedido-list">
                   <h1>Carrito</h1>
                   <table className="table text-center table-striped">
                     <thead>
@@ -95,17 +95,21 @@ export default function Pedidos() {
                     </tbody>
                   </table>
                 </div>
-                <div className="col-md-3">
-                  <div className="card">
+                <div className="col-lg-3">
+                  <div className="card text-center">
                     <div className="card-body">
-                      <h2 className="card-title">Resumen</h2>
-                      <p className="d-flex justify-content-center">Subtotal</p>
-                      <h3 className="d-flex justify-content-center">
+                    <h2 className="card-title">Resumen</h2>
+                      <div className="subtotal">
+                      <p className="">Subtotal</p>
+                      <h3 className="">
                         {" "}
                         ${totalPrice()}{" "}
                       </h3>
+                      </div>
+                      
+                      
                     </div>
-                    <div className="card-footer producto-footer d-flex justify-content-center">
+                    <div className="card-footer producto-footer ">
                       <button type="button" onClick={handleComprar}>
                         COMPRAR
                       </button>
@@ -113,8 +117,10 @@ export default function Pedidos() {
                   </div>
                 </div>
               </div>
-              {user.userId && <HistorialPedidos />}
+              {user.userId && 
+              <HistorialPedidos />}         
             </div>
+            
           </main>
         </div>
         <Footer />

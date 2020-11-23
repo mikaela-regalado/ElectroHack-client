@@ -18,7 +18,7 @@ export default function Registro() {
     e.preventDefault();
     const user = {
       firstName: firstName,
-      lastname: lastName,
+      lastName: lastName,
       email: email,
       password: password,
       userAddress: userAddress,

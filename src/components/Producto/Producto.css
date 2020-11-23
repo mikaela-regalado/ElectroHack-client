@@ -12,7 +12,7 @@
 
 .producto {
   border: none;
-  padding: 3rem;
+  /* padding: 3rem; */
 }
 .producto img {
   height: 376px;
@@ -31,7 +31,7 @@
 .descripcion h2 {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  color: black;
+  /* color: black; */
   margin-bottom: 25px;
 }
 .descripcion p {

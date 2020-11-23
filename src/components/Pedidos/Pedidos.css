@@ -6,9 +6,13 @@
 
 .main-pedido {
   padding-top: 2rem;
-  height: 600px;
+  min-height: 600px;
 }
 
+/* .pedido-list {
+  margin: 20px auto;
+}
+ */
 .pedido-list h1 {
   margin-bottom: 3rem;
   font-weight: bolder;
@@ -16,10 +20,15 @@
   font-size: 2rem;
 }
 .card-body {
-  -ms-flex: 1 1 auto;
-  flex: 1, 1 auto;
-  min-height: 1px;
+  /* -ms-flex: 1 1 auto;
+  flex: 1, 1 auto; */
+  min-height: 150px;
   padding: 0px;
+}
+
+.subtotal {
+  min-height: 100px;
+  padding-top: 2rem;
 }
 
 .header-pedido {
