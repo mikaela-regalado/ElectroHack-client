@@ -10,7 +10,8 @@ import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminHome from "./components/AdminProductos/AdminHome";
-/* import AgregarProducto from "./components/AdminProductos/AgregarProducto"; */
+import AdminCategorias from "./components/AdminProductos/AdminCategorias";
+import AgregarCategorias from "./components/AdminProductos/AgregarCategorias";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import ModificarProducto from "./components/AdminProductos/ModificarProducto";
 import AdminRegistro from "./components/AdminCuenta/AdminRegistro";
@@ -47,7 +48,12 @@ function App() {
           path="/admin/productos/modificar/:slug"
           component={ModificarProducto}
         />
-        {/*  <Route exact path="/admin/categoria" component={AgregarProducto} /> */}
+        <Route exact path="/admin/categoria" component={AdminCategorias} />
+        <Route
+          exact
+          path="/admin/categorias/crear"
+          component={AgregarCategorias}
+        />
         <Route exact path="/admin/login" component={AdminLogin} />
         <PrivateRoute exact path="/admin/registro" component={AdminRegistro} />
       </Switch>

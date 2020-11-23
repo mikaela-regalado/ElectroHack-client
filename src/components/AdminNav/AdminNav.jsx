@@ -108,13 +108,13 @@ export default function AdminNav() {
             route={"/admin/productos"}
             text={"Producto"}
           ></AdminNavItem>
-          {/* {
+          {
             <AdminNavItem
               component={CategoryIcon}
               route={"/admin/categoria"}
               text={"Categoría"}
             ></AdminNavItem>
-          } */}
+          }
           {/*  <AdminNavItem
             component={SettingsIcon}
             route={"/admin/configuracion"}
