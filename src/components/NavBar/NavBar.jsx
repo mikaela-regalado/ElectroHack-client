@@ -11,7 +11,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 
 export default function NavBar() {
-  const [categories, setCategories] = useState(null);
+  const [categories, setCategories] = useState([]);
   const items = useSelector((state) => state.carrito.items);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -42,18 +42,17 @@ export default function NavBar() {
 
           <Navbar.Collapse>
             <Nav className="categories">
-              {categories &&
-                categories.map((category) => {
-                  return (
-                    <Nav.Link
-                      key={category._id}
-                      as={Link}
-                      to={`/categoria/${category.slug}`}
-                    >
-                      {category.type}
-                    </Nav.Link>
-                  );
-                })}
+              {categories.map((category) => {
+                return (
+                  <Nav.Link
+                    key={category._id}
+                    as={Link}
+                    to={`/categoria/${category.slug}`}
+                  >
+                    {category.type}
+                  </Nav.Link>
+                );
+              })}
             </Nav>
             <Nav>
               <Nav.Link as={Link} to="about">
