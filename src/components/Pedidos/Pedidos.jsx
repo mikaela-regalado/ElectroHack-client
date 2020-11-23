@@ -7,12 +7,17 @@ import carritoActions from "../../redux/Actions/carritoActions";
 import Footer from "../Footer/Footer";
 import HistorialPedidos from "../HistoralPedidos/HistorialPedidos";
 import axiosCall from "../../utils/axiosCall";
+import Button from '@material-ui/core/Button';
+import { makeStylesConfig } from "../../utils/makeStyles";
+
+const useStyles = makeStylesConfig;
 
 export default function Pedidos() {
   const history = useHistory();
   const items = useSelector((state) => state.carrito.items);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const classes = useStyles();
 
   function handleComprar() {
     const list_products = items.map((item) => ({
@@ -58,8 +63,8 @@ export default function Pedidos() {
               <div className="row fila ">
                 <div className="col-lg-8 pedido-list">
                   <h1>Carrito</h1>
-                  <table className="table text-center table-striped">
-                    <thead>
+                  <table className="table text-center">
+                    <thead className="thead-light">
                       <tr>
                         <th scope="col-4">Articulos ({items.length})</th>
                         <th scope="col-3">Precio</th>
@@ -95,26 +100,31 @@ export default function Pedidos() {
                     </tbody>
                   </table>
                 </div>
-                <div className="col-lg-3">
-                  <div className="card text-center">
-                    <div className="card-body">
-                    <h2 className="card-title">Resumen</h2>
-                      <div className="subtotal">
-                      <p className="">Subtotal</p>
-                      <h3 className="">
-                        {" "}
-                        ${totalPrice()}{" "}
-                      </h3>
-                      </div>
+
+
+                <div className="col-6 col-lg-3">
+                  <div className="comprarCart">
+                    <div className="comprarCart-header">
+                      <h3>Resumen</h3>      
+                      <div className="comprarCart-body">
+                      <small className="small-producto">Subtotal:</small> ${totalPrice()}                        
+                      </div>                     
+                    </div>
                       
                       
-                    </div>
-                    <div className="card-footer producto-footer ">
-                      <button type="button" onClick={handleComprar}>
-                        COMPRAR
-                      </button>
-                    </div>
+                  
+                    <div className={classes.root1}>
+                  <div className="buttonCart">
+                    <Button variant="contained" color="primary" onClick={handleComprar} className="py-3  text-center">
+                      <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
+                          COMPRAR
+                    </Button>
                   </div>
+                  </div>
+                  </div>
+          
+                   
+                  
                 </div>
               </div>
               {user.userId && 

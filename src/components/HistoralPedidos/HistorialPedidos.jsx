@@ -35,8 +35,8 @@ export default function Pedidos() {
           <div className="row fila">
             <div className="col-lg-8 ">
             <h1 className="mt-5">Pedidos anteriores</h1>
-              <table className="table text-center table-striped">
-                <thead>
+              <table className="table text-center">
+                <thead className="thead-light">
                   <tr>
                     <th scope="col-8">Pedidos ({orderList.length})</th>
                     <th scope="col-2">Precio</th>

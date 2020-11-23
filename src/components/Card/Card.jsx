@@ -19,7 +19,7 @@ export default function Card({ producto }) {
   }
 
   return (
-    <div className="col mb-4">
+    <div className="col mb-4 mt-4">
       <div className="card contenedor text-center">
         <Link to={`/producto/${producto.slug}`} className="link-producto">
 

@@ -40,8 +40,8 @@ export default function DetallesPedido() {
           <small>
             Fecha del pedido: {order.createdAt} | Pedido N°: {order._id}{" "}
           </small>
-                <table className="table table-striped">
-                  <thead>
+                <table className="table">
+                  <thead className="thead-light">
                     <tr>
                       <th scope="col-8">
                         Articulos ({order.list_products.length})
