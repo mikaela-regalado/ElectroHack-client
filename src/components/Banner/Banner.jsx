@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../img/climatizacion1.jpg";
+import image from "../../img/Frame 1.jpg";
 import image1 from "../../img/entretenimiento.jpg";
 import image2 from "../../img/cleaning.jpg";
 import { Link } from "react-router-dom";
