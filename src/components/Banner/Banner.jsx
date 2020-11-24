@@ -11,7 +11,7 @@ export default function Banner() {
       <Carousel.Item>
         <img className="d-block w-100" src={image} alt="First slide" />
         <Carousel.Caption>
-          <h3 id="firsttitleCarousel">¡Amodados a tus necesidades!</h3>
+          <h3 id="firsttitleCarousel">¡Acomodados a tus necesidades!</h3>
           <p className="textCarousel">Envios sin cargo a todos el pais</p>
         </Carousel.Caption>
       </Carousel.Item>
