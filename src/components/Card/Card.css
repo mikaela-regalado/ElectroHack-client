@@ -2,7 +2,13 @@
 
 .contenedor {
   border-radius: 5px;
+  padding-top: 15px;
 }
+
+.contenedor:hover {
+  transform: scale(1.02);
+}
+
 .contenedor img {
   height: 209px;
   border-radius: 5px;

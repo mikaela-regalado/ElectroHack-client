@@ -72,6 +72,8 @@ small {
   color: black;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 90%;
 }
 
 .buttonCart {
@@ -82,4 +84,5 @@ small {
 
 .login-register-cart {
   align-items: baseline;
+  margin-right: 5px;
 }

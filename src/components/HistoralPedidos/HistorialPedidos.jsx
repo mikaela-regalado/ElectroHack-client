@@ -32,9 +32,9 @@ export default function Pedidos() {
     <>
     {orderList && <div className="pedidosAntContainer">
           
-          <div className="row fila">
+          <div className="row fila mt-5">
             <div className="col-lg-8 ">
-            <h1 className="mt-5">Pedidos anteriores</h1>
+            <h1 className="my-5">Pedidos anteriores</h1>
               <table className="table text-center">
                 <thead className="thead-light">
                   <tr>

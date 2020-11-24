@@ -72,16 +72,11 @@ export default function Producto() {
                       
                           <div className={classes.root1} buttonCart>
                       <div className="buttonCart">
-                        {/* <button
-                          type="button"
-                          onClick={(e) => handleAddItem(e, producto._id)}
-                        > */}
                           <Button variant="contained" color="primary" onClick={(e) => handleAddItem(e, producto)} className="py-3  text-center">
                           <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
                           AGREGAR AL CARRITO
                           </Button>
                           </div>
-                        {/* </button> */}
                       </div>
                       
                     </div>
