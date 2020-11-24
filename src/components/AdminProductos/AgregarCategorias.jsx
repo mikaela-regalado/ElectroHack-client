@@ -5,20 +5,19 @@ import axiosCall from "../../utils/axiosCall";
 import "./AdminHome.css";
 
 export default function AgregarProducto() {
-  const [name, setName] = useState("");
+  const [type, setType] = useState("");
+  const [slug, setSlug] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
-  const [price, setPrice] = useState(0);
-  const [stock, setStock] = useState(0);
-  const [outstanding, setOutstanding] = useState(false);
-  const [category, setCategory] = useState("5faead6f5f6c071d9c96ffd6");
-  const [categories, setCategories] = useState(0);
+  const [categories, setCategories] = useState("");
+  const [productList, setProductList] = useState([]);
   const [files, setFiles] = useState(null);
   const admin = useSelector((state) => state.user);
 
   useEffect(() => {
     axiosCall("/categories", "get").then((res) => setCategories(res.data));
   }, []);
+
+  const codigo = categories.length + 1;
 
   function uploadFiles(event) {
     setFiles(event.target.files[0]);
@@ -36,17 +35,16 @@ export default function AgregarProducto() {
   category:category,}
  */
     const formData = new FormData();
-    formData.append("name", name);
+    formData.append("code", codigo);
+    formData.append("type", type);
+    formData.append("slug", slug);
     formData.append("description", description);
-    formData.append("price", price);
-    formData.append("stock", stock);
-    formData.append("outstanding", outstanding);
-    formData.append("category", category);
+    formData.append("productList", productList);
     // Update the formData object
     formData.append("image", files, files.name);
 
     await axiosCall(
-      "/admin/products",
+      "/admin/categories",
       "post",
       admin.token,
       null,
@@ -59,23 +57,34 @@ export default function AgregarProducto() {
       <header>
         <AdminNav />
       </header>
-      {/* <div className="principal">
+      <div className="principal">
         <div className="formulario table">
-          <h2>Agregar un producto</h2>
+          <h2>Agregar una Categoria</h2>
           <form
             className="formulario2"
             onSubmit={(e) => handleStore(e)}
             encType="multipart/form-data"
           >
             <div className="form-group">
-              <label for="name">Título</label>
+              <label for="name">Nombre de la Categoría</label>
               <input
                 className="form-control"
-                type="text"
-                id="name"
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Titulo del producto"
+                type="type"
+                id="type"
+                name="type"
+                onChange={(e) => setType(e.target.value)}
+                placeholder="Titulo de la Categoría"
+              />
+            </div>
+            <div className="form-group">
+              <label for="slug">Slug</label>
+              <input
+                className="form-control"
+                type="slug"
+                id="slug"
+                name="slug"
+                onChange={(e) => setSlug(e.target.value)}
+                placeholder="Titulo de la Categoría"
               />
             </div>
             <div className="form-group">
@@ -84,7 +93,7 @@ export default function AgregarProducto() {
                 className="form-control"
                 id="description"
                 name="description"
-                placeholder="Ingresa la descripción del pedido"
+                placeholder="Ingresa la descripción de la categoría"
                 onChange={(e) => setDescription(e.target.value)}
                 rows="3"
               ></textarea>
@@ -92,7 +101,7 @@ export default function AgregarProducto() {
 
             <div className="form-group">
               <label for="exampleFormControlFile1">
-                Ingrese imagen del producto
+                Ingrese imagen de la Categoría
               </label>
               <input
                 type="file"
@@ -107,60 +116,10 @@ export default function AgregarProducto() {
               />
             </div>
 
-            <div className="row">
-              <div className="col">
-                <label for="price">Costo</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="price"
-                  onChange={(e) => setPrice(e.target.value)}
-                  placeholder="ingrese precio del producto"
-                />
-              </div>
-              <div className="col">
-                <label for="stock">Stock</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="stock"
-                  onChange={(e) => setStock(e.target.value)}
-                  placeholder="ingrese stock del producto"
-                />
-              </div>
-            </div>
-            <div className="row mt-5">
-              <div className="col seleccion">
-                <label for="outstanding">Producto destacado: </label>
-                <select
-                  name="outstanding"
-                  id="outstanding"
-                  onChange={(e) => setOutstanding(e.target.value)}
-                >
-                  <option value="true">True</option>
-                  <option value="false">False</option>
-                </select>
-              </div>
-              <div className="col seleccion">
-                <label for="category">Categoría: </label>
-                <select
-                  name="category"
-                  id="category"
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  {categories &&
-                    categories.map((category) => (
-                      <option key={category._id} value={category._id}>
-                        {category.type}
-                      </option>
-                    ))}
-                </select>
-              </div>
-            </div>
             <button className="btn btn-secondary enviar">Agregar</button>
           </form>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

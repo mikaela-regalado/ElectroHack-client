@@ -52,7 +52,9 @@ export default function AdminCategorias() {
             {categorias.map((categoria) => {
               return (
                 <tr key={categoria._id} className="column">
-                  <th scope="row"> {categoria.code}</th>
+                  <th scope="row">
+                    <p className="pl-1">{categoria.code}</p>
+                  </th>
                   <td>{categoria.type}</td>
                   <td>{categoria.slug}</td>
                   <td>
