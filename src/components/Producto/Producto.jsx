@@ -70,11 +70,11 @@ export default function Producto() {
                         </div>
                       </div>
                       
-                          <div className={classes.root1} buttonCart>
+                          <div className={classes.root1}>
                       <div className="buttonCart">
-                          <Button variant="contained" color="primary" onClick={(e) => handleAddItem(e, producto)} className="py-3  text-center">
-                          <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
-                          AGREGAR AL CARRITO
+                          <Button variant="outlined" color="primary" onClick={(e) => handleAddItem(e, producto)} className="py-3  text-center">
+                          <i className="fas fa-shopping-cart fa-2x login-register-cart pr-2"></i>
+                          <span className="agregarSpan">AGREGAR AL CARRITO</span>
                           </Button>
                           </div>
                       </div>

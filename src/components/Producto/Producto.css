@@ -80,6 +80,7 @@ small {
   align-items: baseline !important;
   margin-left: 0px !important;
   margin-top: 20px;
+  font-size: 2rem;
 }
 
 .login-register-cart {

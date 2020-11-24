@@ -26,6 +26,7 @@ export default function Footer() {
             <small>Contacto</small>
           </div>
         </div>
+        <hr></hr>
         <div className="my-5 d-flex justify-content-center">
           <small>Electro Hack© Todos los derechos reservados</small>
         </div>

@@ -13,3 +13,7 @@
 .about {
   padding: 0rem !important;
 }
+
+hr {
+  background-color: white;
+}

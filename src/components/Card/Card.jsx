@@ -34,14 +34,6 @@ export default function Card({ producto }) {
             <div className="title-product">{producto.name}</div>
             <hr />
 
-            {/* <div>
-              <label>
-                <small>Descripcion : </small>
-              </label>
-              <p className="descripcion-producto">{producto.description}</p>
-              <p>...</p>
-            </div> */}
-
             <h4 id="numberCard"> $ {producto.price}</h4>
             <div>
               {producto.stock > 0 ? (
@@ -53,20 +45,14 @@ export default function Card({ producto }) {
           </div>
         </div>
         <div className=" row card-footer d-flex justify-content-center ">
-        <div className={classes.root1}>
-                          <Button variant="contained" color="primary" onClick={(e) => handleAddItem(e, producto)} className="p-3 buttonCart">
-                          <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
-                          AGREGAR AL CARRITO
+        <div className={`${classes.root1}`}>
+        <div className="buttonCart">
+                          <Button variant="outlined" color="primary" onClick={(e) => handleAddItem(e, producto)} className="p-3 buttonCart">
+                          <i className="fas fa-shopping-cart fa-2x login-register-cart pr-2 "></i>
+                          <span className="agregarSpan">AGREGAR AL CARRITO</span>
                           </Button>
                           </div>
-          {/* <button
-            className="d-flex"
-            type="button"
-            onClick={(e) => handleAddItem(e, producto, cantidad)}
-          >
-            <i className="fas fa-shopping-cart login-register-cart"></i>
-            <div className="pl-2"> AGREGAR AL CARRITO</div>
-          </button> */}
+                          </div>
         </div>
       </div>
     </div>

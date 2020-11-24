@@ -113,11 +113,11 @@ export default function Pedidos() {
                       
                       
                   
-                    <div className={classes.root1}>
+                    <div className={`${classes.root1} w-100`}>
                   <div className="buttonCart">
-                    <Button variant="contained" color="primary" onClick={handleComprar} className="py-3  text-center">
-                      <i className="fas fa-shopping-cart  login-register-cart pr-2"></i>
-                          COMPRAR
+                    <Button variant="contained" color="primary" onClick={handleComprar} className="py-3 w-100 text-center">
+                      <i className="fas fa-shopping-cart fa-2x login-register-cart pr-2"></i>
+                      <span className="agregarSpan">COMPRAR</span>
                     </Button>
                   </div>
                   </div>
