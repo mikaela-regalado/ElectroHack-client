@@ -5,7 +5,7 @@ import AdminNav from "../AdminNav/AdminNav";
 import axiosCall from "../../utils/axiosCall";
 import "./AdminHome.css";
 
-export default function AgregarProducto() {
+export default function ModificarProducto() {
   const params = useParams();
   const [id, setId] = useState("");
   const [name, setName] = useState("");

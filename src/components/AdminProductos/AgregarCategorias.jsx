@@ -4,20 +4,24 @@ import AdminNav from "../AdminNav/AdminNav";
 import axiosCall from "../../utils/axiosCall";
 import "./AdminHome.css";
 
-export default function AgregarProducto() {
-  const [type, setType] = useState("");
-  const [slug, setSlug] = useState("");
-  const [description, setDescription] = useState("");
-  const [categories, setCategories] = useState("");
-  const [productList, setProductList] = useState([]);
+export default function AgregarCategoria() {
+  const [type, setType] = useState(null);
+  const [code, setCode] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [categories, setCategories] = useState(null);
   const [files, setFiles] = useState(null);
+  
   const admin = useSelector((state) => state.user);
 
-  useEffect(() => {
-    axiosCall("/categories", "get").then((res) => setCategories(res.data));
+  useEffect( () => {
+    axiosCall("/categories", "get")
+    .then((res) => {
+      setCategories(res.data);
+      setCode(res.data.length + 1)});
+    
   }, []);
 
-  const codigo = categories.length + 1;
+  
 
   function uploadFiles(event) {
     setFiles(event.target.files[0]);
@@ -25,21 +29,11 @@ export default function AgregarProducto() {
 
   async function handleStore(event) {
     event.preventDefault();
-    /* const product = {
-  name: name,
-  description: description,
-  image:image,
-  price:price ,
-  stock:stock,
-  outstanding:outstanding ,
-  category:category,}
- */
+ 
     const formData = new FormData();
-    formData.append("code", codigo);
+    formData.append("code", code);
     formData.append("type", type);
-    formData.append("slug", slug);
     formData.append("description", description);
-    formData.append("productList", productList);
     // Update the formData object
     formData.append("image", files, files.name);
 
@@ -76,7 +70,7 @@ export default function AgregarProducto() {
                 placeholder="Titulo de la Categoría"
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label for="slug">Slug</label>
               <input
                 className="form-control"
@@ -86,7 +80,7 @@ export default function AgregarProducto() {
                 onChange={(e) => setSlug(e.target.value)}
                 placeholder="Titulo de la Categoría"
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <label for="description">Descripción</label>
               <textarea

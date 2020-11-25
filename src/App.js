@@ -52,7 +52,11 @@ function App() {
           component={ModificarProducto}
         />
         <Route exact path="/admin/categorias" component={AdminCategories} />
-        {/* <Route exact path="/admin/categorias/crear" component={EditCategory} /> */}
+        <Route
+          exact
+          path="/admin/categorias/crear"
+          component={AgregarCategorias}
+        />
         <Route
           exact
           path="/admin/categoria/modificar/:slug"
