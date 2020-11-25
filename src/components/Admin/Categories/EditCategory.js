@@ -162,12 +162,19 @@ export default function EditCategory() {
           <Grid container spacing={3} justify="center">
             <Grid item xs={6}>
               <Paper className={classes.paper}>
+                <form
+                  onSubmit={(e) => handleUpdate(e)}
+                  encType="multipart/form-data"
+                ></form>
                 <FormControl>
                   <InputLabel htmlFor="type"></InputLabel>
                   <Input
                     id="type"
                     type="type"
+                    name="type"
                     arial-aria-describedby="type-helper"
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
                   />
                   <FormHelperText id="type-helper">
                     Type of this category
@@ -179,7 +186,11 @@ export default function EditCategory() {
                   <Input
                     id="description"
                     type="description"
+                    name="description"
                     arial-aria-describedby="description-helper"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    rows="3"
                   />
                   <FormHelperText id="description-helper">
                     Description of this category
@@ -187,20 +198,29 @@ export default function EditCategory() {
                 </FormControl>
                 <FormControl>
                   <input
-                    accept="image/*"
                     className={classes.input}
-                    id="contained-button-file"
-                    multiple
+                    accept="image/*"
                     type="file"
+                    multiple
+                    onChange={(e) => uploadFiles(e)}
+                    className="form-control-file upload-img"
+                    id="exampleFormControlFile1"
+                    name="image"
+                    id="image"
+                    placeholder=""
+                    aria-describedby="fileHelpId"
                   />
                 </FormControl>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.button}
-                >
-                  Send
-                </Button>
+                <FormControl>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    type="submit"
+                  >
+                    Send
+                  </Button>
+                </FormControl>
               </Paper>
             </Grid>
           </Grid>
