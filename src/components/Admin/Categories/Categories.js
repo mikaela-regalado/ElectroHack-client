@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
 import Box from "@material-ui/core/Box";
-
 import Typography from "@material-ui/core/Typography";
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Title from "../Dashboard/Title";
 
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
+import axiosCall from "../../../utils/axiosCall";
+import { useSelector } from "react-redux";
+
+import Orders from "../Dashboard/Orders";
 
 import AdminNAvBar from "../AdminNavBar/AdminNavBar";
 
@@ -110,13 +114,34 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  seeMore: {
+    marginTop: theme.spacing(3),
+  },
 }));
 
-export default function Dashboard() {
-  const classes = useStyles();
-  const title = "Dashboard";
+function preventDefault(event) {
+  event.preventDefault();
+}
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+export default function Dashboard() {
+  const title = "Categories";
+  const classes = useStyles();
+
+  const [categorias, setCategorias] = useState([]);
+  const token = useSelector((state) => state.user.token);
+
+  function handleDelete(id) {
+    axiosCall("/admin/categories", "delete", token, null, { _id: id });
+    setCategorias([...categorias].filter((categoria) => categoria._id !== id));
+  }
+
+  useEffect(() => {
+    axiosCall("/categories", "get", null, null).then((res) =>
+      setCategorias(res.data)
+    );
+  }, []);
+
+  console.log(categorias);
 
   return (
     <div className={classes.root}>
@@ -126,22 +151,53 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            {/* <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid> */}
-            {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <React.Fragment>
+                  <Title>Categories</Title>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Code</TableCell>
+                        <TableCell>Type</TableCell>
+                        <TableCell>Slug</TableCell>
+                        <TableCell>Edit</TableCell>
+                        <TableCell align="right">Delete</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {categorias.map((categoria) => {
+                        return (
+                          <TableRow key={categoria._id}>
+                            <TableCell>{categoria.code}</TableCell>
+                            <TableCell>{categoria.type}</TableCell>
+                            <TableCell>{categoria.slug}</TableCell>
+                            <TableCell>
+                              <Link
+                                to={`/admin/categoria/modificar/${categoria.slug}`}
+                                type="button"
+                                className="text-primary "
+                              >
+                                <i class="fas fa-edit"></i>
+                              </Link>
+                            </TableCell>
+                            <TableCell align="right">
+                              <i
+                                className=" mt-2 fas fa-trash-alt"
+                                onClick={() => handleDelete(categoria._id)}
+                              ></i>
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                  <div className={classes.seeMore}>
+                    <Link color="primary" href="#" onClick={preventDefault}>
+                      See more orders
+                    </Link>
+                  </div>
+                </React.Fragment>
               </Paper>
             </Grid>
           </Grid>

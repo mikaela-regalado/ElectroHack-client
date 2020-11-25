@@ -1,20 +1,17 @@
-import React from "react";
-import clsx from "clsx";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
 import Box from "@material-ui/core/Box";
-
 import Typography from "@material-ui/core/Typography";
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
+import TextField from "@material-ui/core/TextField";
 
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
+import { useParams } from "react-router-dom";
+import axiosCall from "../../../utils/axiosCall";
+import { useSelector } from "react-redux";
 
 import AdminNAvBar from "../AdminNavBar/AdminNavBar";
 
@@ -110,13 +107,39 @@ const useStyles = makeStyles((theme) => ({
   fixedHeight: {
     height: 240,
   },
+  seeMore: {
+    marginTop: theme.spacing(3),
+  },
 }));
 
-export default function Dashboard() {
-  const classes = useStyles();
-  const title = "Dashboard";
+function preventDefault(event) {
+  event.preventDefault();
+}
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+export default function EditoCategory() {
+  const title = "Edit Category";
+  const classes = useStyles();
+  const params = useParams();
+
+  console.log(params);
+
+  const [categorias, setCategorias] = useState([]);
+  const token = useSelector((state) => state.user.token);
+
+  function handleDelete(id) {
+    axiosCall("/admin/categories", "delete", token, null, { _id: id });
+    setCategorias([...categorias].filter((categoria) => categoria._id !== id));
+  }
+
+  useEffect(() => {
+    axiosCall(`/admin/categories/${params.slug}`, "get", token, null).then(
+      (res) => {
+        setCategorias(res.data);
+      }
+    );
+  }, []);
+
+  console.log(categorias);
 
   return (
     <div className={classes.root}>
@@ -126,22 +149,11 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            {/* <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
-            </Grid> */}
-            {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <form className={classes.root} noValidate autoComplete="off">
+                  <TextField id="standard-basic" label="Standard" />
+                </form>
               </Paper>
             </Grid>
           </Grid>
