@@ -12,6 +12,7 @@ import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminHome from "./components/AdminProductos/AdminHome";
 import DashBoard from "./components/Admin/Dashboard/Dashboard";
 import AdminCategories from "./components/Admin/Categories/Categories";
+import AdminProducts from "./components/Admin/Products/Products";
 import EditCategory from "./components/Admin/Categories/EditCategory";
 import AdminCategorias from "./components/AdminProductos/AdminCategorias";
 import AgregarCategorias from "./components/AdminProductos/AgregarCategorias";
@@ -37,11 +38,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/about" component={About} />
         <PrivateRoute exact path="/admin/" component={DashBoard} />
-        <PrivateRoute
-          exact
-          path="/admin/productos"
-          component={AdminProductos}
-        />
+        <PrivateRoute exact path="/admin/productos" component={AdminProducts} />
         <PrivateRoute
           exact
           path="/admin/productos/crear"
