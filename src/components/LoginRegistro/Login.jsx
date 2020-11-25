@@ -6,6 +6,9 @@ import { useHistory, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axiosCall from "../../utils/axiosCall";
 import { actionCreators } from "../../redux/Actions/userActions";
+import Button from "@material-ui/core/Button";
+import { makeStylesConfig } from "../../utils/makeStyles";
+const useStyles = makeStylesConfig;
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -13,6 +16,7 @@ export default function Login() {
   const carrito = useSelector((state) => state.carrito);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const classes = useStyles();
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -68,7 +72,7 @@ export default function Login() {
                     ></span>
                   </div>
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <input
                       type="submit"
                       name="submit"
@@ -76,6 +80,24 @@ export default function Login() {
                       className="form-submit"
                       value="Iniciar sesión"
                     />
+                  </div> */}
+                  <div className={classes.root1}>
+                    <div
+                      className="MuiButton-outlinedPrimary"
+                      className="buttonCarta"
+                    >
+                      <Button
+                        variant="outlined"
+                        color="primary"
+                        type="submit"
+                        name="submit"
+                        id="submit"
+                        className="form-submit"
+                        className="py-3  text-center"
+                      >
+                        <span className="agregarSpan">INICIAR SESIÓN</span>
+                      </Button>
+                    </div>
                   </div>
                 </form>
                 <p className="loginhere">

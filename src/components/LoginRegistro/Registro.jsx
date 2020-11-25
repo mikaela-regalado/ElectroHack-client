@@ -4,6 +4,9 @@ import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { useHistory, Link } from "react-router-dom";
 import axiosCall from "../../utils/axiosCall";
+import Button from "@material-ui/core/Button";
+import { makeStylesConfig } from "../../utils/makeStyles";
+const useStyles = makeStylesConfig;
 export default function Registro() {
   const history = useHistory();
 
@@ -13,7 +16,7 @@ export default function Registro() {
   const [password, setPassword] = useState("");
   const [userAddress, setUserAddress] = useState("");
   const [cellPhone, setCellPhone] = useState("");
-
+  const classes = useStyles();
   async function handleRegistro(e) {
     e.preventDefault();
     const user = {
@@ -109,7 +112,7 @@ export default function Registro() {
                   />
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <input
                     type="submit"
                     name="submit"
@@ -117,6 +120,25 @@ export default function Registro() {
                     className="form-submit"
                     value="Registrarse"
                   />
+                </div> */}
+                <div className={classes.root1}>
+                  <div
+                    className="MuiButton-outlinedPrimary"
+                    className="buttonCarta"
+                  >
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      type="submit"
+                      name="submit"
+                      id="submit"
+                      className="form-submit"
+                      value="Registrarse"
+                      className="py-3  text-center"
+                    >
+                      <span className="agregarSpan">REGISTRARSE</span>
+                    </Button>
+                  </div>
                 </div>
               </form>
               <p className="loginhere">
