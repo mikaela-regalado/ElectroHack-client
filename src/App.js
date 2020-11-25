@@ -61,7 +61,7 @@ function App() {
         <Route
           exact
           path="/admin/categorias/modificar/:slug"
-          component={ModificarCategoria}
+          component={EditCategory}
         />
         <Route exact path="/admin/login" component={AdminLogin} />
         <PrivateRoute exact path="/admin/registro" component={AdminRegistro} />

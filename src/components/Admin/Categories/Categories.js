@@ -174,7 +174,7 @@ export default function Dashboard() {
                             <TableCell>{categoria.slug}</TableCell>
                             <TableCell>
                               <Link
-                                to={`/admin/categoria/modificar/${categoria.slug}`}
+                                to={`/admin/categorias/modificar/${categoria.slug}`}
                                 type="button"
                                 className="text-primary "
                               >

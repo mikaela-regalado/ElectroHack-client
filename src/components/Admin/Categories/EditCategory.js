@@ -116,7 +116,7 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-export default function EditoCategory() {
+export default function EditCategory() {
   const title = "Edit Category";
   const classes = useStyles();
   const params = useParams();
@@ -151,6 +151,12 @@ export default function EditoCategory() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={classes.paper}>
+                <form className={classes.root} noValidate autoComplete="off">
+                  <TextField id="standard-basic" label="Standard" />
+                </form>
+                <form className={classes.root} noValidate autoComplete="off">
+                  <TextField id="standard-basic" label="Standard" />
+                </form>
                 <form className={classes.root} noValidate autoComplete="off">
                   <TextField id="standard-basic" label="Standard" />
                 </form>
