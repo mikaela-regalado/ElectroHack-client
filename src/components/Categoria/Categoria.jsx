@@ -27,13 +27,13 @@ export default function Catalogo() {
         <div className="content-wrap">
           {categoria.type && (
             <main className="background">
-              <div className="banner">
+              {/*  <div className="banner">
                 <img
                   className="img"
                   src={process.env.REACT_APP_URL_S3 + categoria.image}
                   alt="Imagen de la categoria"
                 />
-              </div>
+              </div> */}
               <div className="container">
                 <div className="titulo">
                   <h2>{categoria.type}</h2>
