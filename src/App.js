@@ -10,7 +10,7 @@ import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
 // import AdminHome from "./components/AdminProductos/AdminHome";
-import AdminHome from "./components/Admin/Home/Home";
+import DashBoard from "./components/Admin/Dashboard/Dashboard";
 import AdminCategorias from "./components/AdminProductos/AdminCategorias";
 import AgregarCategorias from "./components/AdminProductos/AgregarCategorias";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/about" component={About} />
-        <PrivateRoute exact path="/admin/" component={AdminHome} />
+        <PrivateRoute exact path="/admin/" component={DashBoard} />
         <PrivateRoute
           exact
           path="/admin/productos"
