@@ -17,6 +17,7 @@ import AdminCategorias from "./components/AdminProductos/AdminCategorias";
 import AgregarCategorias from "./components/AdminProductos/AgregarCategorias";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
 import ModificarProducto from "./components/AdminProductos/ModificarProducto";
+import ModificarCategoria from "./components/AdminProductos/ModificarCategoria";
 import AdminRegistro from "./components/AdminCuenta/AdminRegistro";
 import AdminLogin from "./components/AdminCuenta/AdminLogin";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
@@ -59,8 +60,8 @@ function App() {
         />
         <Route
           exact
-          path="/admin/categoria/modificar/:slug"
-          component={EditCategory}
+          path="/admin/categorias/modificar/:slug"
+          component={ModificarCategoria}
         />
         <Route exact path="/admin/login" component={AdminLogin} />
         <PrivateRoute exact path="/admin/registro" component={AdminRegistro} />

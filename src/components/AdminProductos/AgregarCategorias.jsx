@@ -17,7 +17,7 @@ export default function AgregarCategoria() {
     axiosCall("/categories", "get")
     .then((res) => {
       setCategories(res.data);
-      setCode(res.data.length + 1)});
+      setCode(res.data.length )});
     
   }, []);
 
