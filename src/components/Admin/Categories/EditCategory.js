@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
 export default function EditCategory() {
   const title = "Edit Category";
   const classes = useStyles();
-  const [category, setCategory] = useState([]);
+
   const params = useParams();
   const [type, setType] = useState(null);
   const [code, setCode] = useState(null);
@@ -152,8 +152,6 @@ export default function EditCategory() {
     ).then((res) => console.log(res.data));
   }
 
-  console.log(category);
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -165,7 +163,7 @@ export default function EditCategory() {
             <Grid item xs={6}>
               <Paper className={classes.paper}>
                 <FormControl>
-                  <InputLabel htmlFor="type">{category.type}</InputLabel>
+                  <InputLabel htmlFor="type"></InputLabel>
                   <Input
                     id="type"
                     type="type"
@@ -177,9 +175,7 @@ export default function EditCategory() {
                 </FormControl>
 
                 <FormControl>
-                  <InputLabel htmlFor="description">
-                    {category.description}
-                  </InputLabel>
+                  <InputLabel htmlFor="description"></InputLabel>
                   <Input
                     id="description"
                     type="description"
@@ -203,7 +199,7 @@ export default function EditCategory() {
                   color="primary"
                   className={classes.button}
                 >
-                  Send Edit
+                  Send
                 </Button>
               </Paper>
             </Grid>
