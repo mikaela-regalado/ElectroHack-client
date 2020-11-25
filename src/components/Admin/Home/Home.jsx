@@ -46,13 +46,12 @@ export default function Home() {
           </Typography>
           <div>
             <IconButton
-              edge="start"
-              className={classes.menuButton}
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
               color="inherit"
-              aria-label="menu"
-              onClick={handleMenu}
             >
-              <MenuIcon />
+              <AccountCircle />
             </IconButton>
             <Menu
               id="menu-appbar"
