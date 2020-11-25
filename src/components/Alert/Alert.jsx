@@ -1,10 +1,10 @@
 import React from "react";
 import Alert from 'react-bootstrap/Alert'
 
-export default function Alert(variant, msg) {
+export default function AlertMsg(variant, msg) {
 
     return(
-                   <Alert key={idx} variant={variant}>
+                   <Alert variant={variant}>
               {msg}
             </Alert>
          

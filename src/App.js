@@ -10,6 +10,9 @@ import Pedidos from "./components/Pedidos/Pedidos";
 import DetallesPedido from "./components/DetallesPedido/DetallesPedido";
 import AdminProductos from "./components/AdminProductos/AdminProductos";
 import AdminHome from "./components/AdminProductos/AdminHome";
+import DashBoard from "./components/Admin/Dashboard/Dashboard";
+import AdminCategories from "./components/Admin/Categories/Categories";
+import EditCategory from "./components/Admin/Categories/EditCategory";
 import AdminCategorias from "./components/AdminProductos/AdminCategorias";
 import AgregarCategorias from "./components/AdminProductos/AgregarCategorias";
 import AgregarProductos from "./components/AdminProductos/AgregarProductos";
@@ -32,7 +35,7 @@ function App() {
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/about" component={About} />
-        <PrivateRoute exact path="/admin/" component={AdminHome} />
+        <PrivateRoute exact path="/admin/" component={DashBoard} />
         <PrivateRoute
           exact
           path="/admin/productos"
@@ -48,11 +51,12 @@ function App() {
           path="/admin/productos/modificar/:slug"
           component={ModificarProducto}
         />
-        <Route exact path="/admin/categoria" component={AdminCategorias} />
+        <Route exact path="/admin/categorias" component={AdminCategories} />
+        {/* <Route exact path="/admin/categorias/crear" component={EditCategory} /> */}
         <Route
           exact
-          path="/admin/categorias/crear"
-          component={AgregarCategorias}
+          path="/admin/categoria/modificar/:slug"
+          component={EditCategory}
         />
         <Route exact path="/admin/login" component={AdminLogin} />
         <PrivateRoute exact path="/admin/registro" component={AdminRegistro} />

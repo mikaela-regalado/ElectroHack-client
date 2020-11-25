@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -70,6 +71,13 @@ export default function AdminNav() {
           <Typography variant="h3" noWrap>
             ElectroHack Administrador
           </Typography>
+          <div className="admin-user">
+            <div>
+              <Link>
+                <img src="" alt="#"></img>
+              </Link>
+            </div>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
