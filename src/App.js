@@ -46,7 +46,6 @@ function App() {
           component={AgregarProductos}
         />
         <PrivateRoute
-          exact
           path="/admin/productos/modificar/:slug"
           component={EditProducts}
         />

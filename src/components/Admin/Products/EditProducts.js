@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EditProduct() {
+export default function EditProductS() {
   const title = "Edit Product";
   const classes = useStyles();
 
@@ -107,8 +107,8 @@ export default function EditProduct() {
   const [price, setPrice] = useState(0);
   const [stock, setStock] = useState(0);
   const [outstanding, setOutstanding] = useState(false);
-  const [categoryId, setCategoryId] = useState(0);
-  const [categories, setCategories] = useState(0);
+  const [categoryId, setCategoryId] = useState(null);
+  const [categories, setCategories] = useState(null);
   const token = useSelector((state) => state.user.token);
   const [files, setFiles] = useState(null);
 
@@ -120,7 +120,7 @@ export default function EditProduct() {
         setId(res.data._id);
         setName(res.data.name);
         setDescription(res.data.description);
-        setImage(process.env.REACT_APP_URL_S3 + res.data.image);
+        setImage(res.data.image);
         setPrice(res.data.price);
         setStock(res.data.stock);
         setOutstanding(res.data.outstanding);
@@ -132,28 +132,33 @@ export default function EditProduct() {
 
   async function handleUpdate(event) {
     event.preventDefault();
-    const product = {
-      _id: id,
-      name: name,
-      description: description,
-      image: image,
-      price: price,
-      stock: stock,
-      outstanding: outstanding,
-      category: categoryId,
-    };
+    const formData = new FormData();
+    formData.append("_id", id);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("stock", stock);
+    formData.append("outstanding", outstanding);
+    formData.append("category", categoryId);
+
+    // Update the formData object
+    formData.append("image", files, files.name);
+
+    console.log("FORMDATA: ", formData);
     await axiosCall(
       `/admin/products`,
       "patch",
       token,
       null,
-      product
+      formData
     ).then((res) => console.log(res.data));
   }
 
   function uploadFiles(event) {
     setFiles(event.target.files[0]);
   }
+
+  console.log("CATEGORIES: ", categories);
 
   return (
     <div className={classes.root}>
@@ -168,136 +173,145 @@ export default function EditProduct() {
                 <form
                   onSubmit={(e) => handleUpdate(e)}
                   encType="multipart/form-data"
-                ></form>
-                <FormControl>
-                  <InputLabel htmlFor="name"></InputLabel>
-                  <Input
-                    id="name"
-                    type="text"
-                    name="name"
-                    arial-aria-describedby="name-helper"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  <FormHelperText id="name-helper">
-                    Name of the product
-                  </FormHelperText>
-                </FormControl>
+                >
+                  <FormControl>
+                    <InputLabel htmlFor="name"></InputLabel>
+                    <Input
+                      id="name"
+                      type="text"
+                      name="name"
+                      arial-aria-describedby="name-helper"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <FormHelperText id="name-helper">
+                      Name of the product
+                    </FormHelperText>
+                  </FormControl>
 
-                <FormControl>
-                  <InputLabel htmlFor="description"></InputLabel>
-                  <Input
-                    id="description"
-                    type="description"
-                    name="description"
-                    arial-aria-describedby="description-helper"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    rows="3"
-                  />
-                  <FormHelperText id="description-helper">
-                    Description of this product
-                  </FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <input
-                    className={classes.input}
-                    accept="image/*"
-                    type="file"
-                    multiple
-                    onChange={(e) => uploadFiles(e)}
-                    className="form-control-file upload-img"
-                    id="exampleFormControlFile1"
-                    name="image"
-                    id="image"
-                    placeholder=""
-                    aria-describedby="fileHelpId"
-                  />
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="price"></InputLabel>
-                  <Input
-                    id="price"
-                    type="number"
-                    name="price"
-                    arial-aria-describedby="price-helper"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                  />
-                  <FormHelperText id="price-helper">
-                    Price of the product
-                  </FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="stock"></InputLabel>
-                  <Input
-                    id="stock"
-                    type="text"
-                    name="stock"
-                    arial-aria-describedby="stock-helper"
-                    value={stock}
-                    onChange={(e) => setStock(e.target.value)}
-                  />
-                  <FormHelperText id="stock-helper">
-                    Stock of the product
-                  </FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="outstanding"></InputLabel>
-                  <Input
-                    id="outstanding"
-                    type="text"
-                    name="outstanding"
-                    arial-aria-describedby="outstanding-helper"
-                    value={outstanding}
-                    onChange={(e) => setOutstanding(e.target.value)}
-                  />
-                  <FormHelperText id="outstanding-helper">
-                    Product is outstanding
-                  </FormHelperText>
-                </FormControl>
-                <FormControl className={classes.formControl}>
-                  <InputLabel id="categoryId">Category</InputLabel>
-                  <Select
-                    labelId="categoryId"
-                    name="categoryId"
-                    id="categoryId"
-                    value={categoryId}
-                    onChange={(e) => setCategoryId(e.target.value)}
-                  >
-                    {categories &&
-                      categories.map((category) => (
-                        <MenuItem key={category._id} value={category._id}>
-                          {category.type}
-                        </MenuItem>
-                      ))}
-                  </Select>
-                  <FormHelperText>Some important helper text</FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <InputLabel htmlFor="category"></InputLabel>
-                  <Input
-                    id="category"
-                    type="text"
-                    name="category"
-                    arial-aria-describedby="category-helper"
-                    value={categoryId}
-                    onChange={(e) => setCategoryId(e.target.value)}
-                  />
-                  <FormHelperText id="category-helper">
-                    Category of the product
-                  </FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    type="submit"
-                  >
-                    Send
-                  </Button>
-                </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="description"></InputLabel>
+                    <Input
+                      id="description"
+                      type="text"
+                      name="description"
+                      arial-aria-describedby="description-helper"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      rows="3"
+                    />
+                    <FormHelperText id="description-helper">
+                      Description of this product
+                    </FormHelperText>
+                  </FormControl>
+                  <FormControl>
+                    <input
+                      className={classes.input}
+                      accept="image/*"
+                      type="file"
+                      multiple
+                      onChange={(e) => uploadFiles(e)}
+                      name="image"
+                      id="image"
+                      placeholder=""
+                      aria-describedby="fileHelpId"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="price"></InputLabel>
+                    <Input
+                      id="price"
+                      type="number"
+                      name="price"
+                      arial-aria-describedby="price-helper"
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                    />
+                    <FormHelperText id="price-helper">
+                      Price of the product
+                    </FormHelperText>
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="stock"></InputLabel>
+                    <Input
+                      id="stock"
+                      type="number"
+                      name="stock"
+                      arial-aria-describedby="stock-helper"
+                      value={stock}
+                      onChange={(e) => setStock(e.target.value)}
+                    />
+                    <FormHelperText id="stock-helper">
+                      Stock of the product
+                    </FormHelperText>
+                  </FormControl>
+                  <br></br>
+                  <FormControl>
+                    <InputLabel id="outstanding"></InputLabel>
+                    <Select
+                      labelId="outstanding"
+                      name="outstanding"
+                      id="outstanding"
+                      type="boolean"
+                      value={outstanding}
+                      onChange={(e) => setOutstanding(e.target.value)}
+                    >
+                      <MenuItem value="true">True</MenuItem>
+                      <MenuItem value="false">False</MenuItem>
+                      ))
+                    </Select>
+                    <FormHelperText id="outstanding-helper">
+                      Product is outstanding
+                    </FormHelperText>
+                  </FormControl>
+
+                  <br></br>
+                  <FormControl>
+                    <InputLabel id="categoryId"></InputLabel>
+                    <Select
+                      labelId="categoryId"
+                      name="categoryId"
+                      id="categoryId"
+                      value={categoryId}
+                      onChange={(e) => setCategoryId(e.target.value)}
+                    >
+                      {categories &&
+                        categories.map((category) => (
+                          <MenuItem key={category._id} value={category._id}>
+                            {category.type}
+                          </MenuItem>
+                        ))}
+                    </Select>
+                    <FormHelperText id="category-helper">
+                      Category of the product
+                    </FormHelperText>
+                  </FormControl>
+                  <br></br>
+                  {/* <FormControl>
+                    <InputLabel htmlFor="category"></InputLabel>
+                    <Input
+                      id="category"
+                      type="text"
+                      name="category"
+                      arial-aria-describedby="category-helper"
+                      value={categoryId}
+                      onChange={(e) => setCategoryId(e.target.value)}
+                    />
+                    <FormHelperText id="category-helper">
+                      Category of the product
+                    </FormHelperText>
+                  </FormControl> */}
+                  <FormControl>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+                  </FormControl>
+                </form>
               </Paper>
             </Grid>
           </Grid>

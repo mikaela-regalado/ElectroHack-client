@@ -120,7 +120,7 @@ export default function EditCategory() {
         setType(res.data.type);
         setCode(res.data.code);
         setDescription(res.data.description);
-        setImage(process.env.REACT_APP_URL_S3 + res.data.image);
+        setImage(res.data.image);
         /*  setProductList(...res.data.productList); */
         setCategoryId(res.data._id);
       }
@@ -165,62 +165,63 @@ export default function EditCategory() {
                 <form
                   onSubmit={(e) => handleUpdate(e)}
                   encType="multipart/form-data"
-                ></form>
-                <FormControl>
-                  <InputLabel htmlFor="type"></InputLabel>
-                  <Input
-                    id="type"
-                    type="type"
-                    name="type"
-                    arial-aria-describedby="type-helper"
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
-                  />
-                  <FormHelperText id="type-helper">
-                    Type of this category
-                  </FormHelperText>
-                </FormControl>
+                >
+                  <FormControl>
+                    <InputLabel htmlFor="type"></InputLabel>
+                    <Input
+                      id="type"
+                      type="type"
+                      name="type"
+                      arial-aria-describedby="type-helper"
+                      value={type}
+                      onChange={(e) => setType(e.target.value)}
+                    />
+                    <FormHelperText id="type-helper">
+                      Type of this category
+                    </FormHelperText>
+                  </FormControl>
 
-                <FormControl>
-                  <InputLabel htmlFor="description"></InputLabel>
-                  <Input
-                    id="description"
-                    type="description"
-                    name="description"
-                    arial-aria-describedby="description-helper"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    rows="3"
-                  />
-                  <FormHelperText id="description-helper">
-                    Description of this category
-                  </FormHelperText>
-                </FormControl>
-                <FormControl>
-                  <input
-                    className={classes.input}
-                    accept="image/*"
-                    type="file"
-                    multiple
-                    onChange={(e) => uploadFiles(e)}
-                    className="form-control-file upload-img"
-                    id="exampleFormControlFile1"
-                    name="image"
-                    id="image"
-                    placeholder=""
-                    aria-describedby="fileHelpId"
-                  />
-                </FormControl>
-                <FormControl>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    type="submit"
-                  >
-                    Send
-                  </Button>
-                </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="description"></InputLabel>
+                    <Input
+                      id="description"
+                      type="description"
+                      name="description"
+                      arial-aria-describedby="description-helper"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      rows="3"
+                    />
+                    <FormHelperText id="description-helper">
+                      Description of this category
+                    </FormHelperText>
+                  </FormControl>
+                  <FormControl>
+                    <input
+                      className={classes.input}
+                      accept="image/*"
+                      type="file"
+                      multiple
+                      onChange={(e) => uploadFiles(e)}
+                      className="form-control-file upload-img"
+                      id="exampleFormControlFile1"
+                      name="image"
+                      id="image"
+                      placeholder=""
+                      aria-describedby="fileHelpId"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+                  </FormControl>
+                </form>
               </Paper>
             </Grid>
           </Grid>

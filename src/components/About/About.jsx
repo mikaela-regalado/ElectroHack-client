@@ -20,50 +20,50 @@ export default function About() {
               <h2>Sobre este proyecto</h2>
               <h2>Nuestro Equipo</h2>
               <div className="perfiles">
-                <div class="card perfil">
+                <div className="card perfil">
                   <img
                     src={andres}
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="Andrés Menchaca"
                   />
-                  <div class="card-body ">
-                    <h4 class="card-title">Contacto</h4>
+                  <div className="card-body ">
+                    <h4 className="card-title">Contacto</h4>
 
                     <a href="https://www.linkedin.com/in/christian-andr%C3%A9s-lopez-menchaca-9a2a54bb/">
-                      <i class="fab fa-linkedin"></i>
+                      <i className="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/valinor33">
-                      <i class="fab fa-github"></i>
+                      <i className="fab fa-github"></i>
                     </a>
                   </div>
                 </div>
-                <div class="card perfil">
-                  <img src={mikaela} class="img-fit" alt="Mikaela Regalado" />
-                  <div class="card-body">
-                    <h4 class="card-title">Contacto</h4>
+                <div className="card perfil">
+                  <img src={mikaela} className="img-fit" alt="Mikaela Regalado" />
+                  <div className="card-body">
+                    <h4 className="card-title">Contacto</h4>
 
                     <a href="https://www.linkedin.com/in/mikaela-regalado/">
-                      <i class="fab fa-linkedin"></i>
+                      <i className="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/mikaela-regalado">
-                      <i class="fab fa-github"></i>
+                      <i className="fab fa-github"></i>
                     </a>
                   </div>
                 </div>
-                <div class="card perfil">
+                <div className="card perfil">
                   <img
                     src={ignacio}
-                    class="card-img-top"
+                    className="card-img-top"
                     alt="Ignacio Abadie"
                   />
-                  <div class="card-body">
-                    <h4 class="card-title">Contacto</h4>
+                  <div className="card-body">
+                    <h4 className="card-title">Contacto</h4>
 
                     <a href="https://www.linkedin.com/in/ignacio-abadie/">
-                      <i class="fab fa-linkedin"></i>
+                      <i className="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/MateSeco">
-                      <i class="fab fa-github"></i>
+                      <i className="fab fa-github"></i>
                     </a>
                   </div>
                 </div>

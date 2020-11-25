@@ -178,7 +178,7 @@ export default function Dashboard() {
                                 type="button"
                                 className="text-primary "
                               >
-                                <i class="fas fa-edit"></i>
+                                <i className="fas fa-edit"></i>
                               </Link>
                             </TableCell>
                             <TableCell align="right">
