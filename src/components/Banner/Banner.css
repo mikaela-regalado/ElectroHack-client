@@ -7,7 +7,7 @@
 
 @media (min-width: 800px) {
   .banner img {
-    height: 370px;
+    /* height: 370px; */
     object-fit: cover;
     object-position: bottom;
   }
