@@ -163,6 +163,7 @@ export default function EditCategory() {
             <Grid item xs={6}>
               <Paper className={classes.paper}>
                 <form
+                  className={classes.paper}
                   onSubmit={(e) => handleUpdate(e)}
                   encType="multipart/form-data"
                 >
