@@ -12,6 +12,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useParams } from "react-router-dom";
@@ -216,6 +218,15 @@ export default function EditProductS() {
                       placeholder=""
                       aria-describedby="fileHelpId"
                     />
+                    <label htmlFor="icon-button-file">
+                      <IconButton
+                        color="primary"
+                        aria-label="upload picture"
+                        component="span"
+                      >
+                        <PhotoCamera />
+                      </IconButton>
+                    </label>
                   </FormControl>
                   <FormControl>
                     <InputLabel htmlFor="price"></InputLabel>

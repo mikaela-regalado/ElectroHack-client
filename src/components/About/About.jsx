@@ -37,8 +37,12 @@ export default function About() {
                     </a>
                   </div>
                 </div>
-                <div className="card perfil">
-                  <img src={mikaela} className="img-fit" alt="Mikaela Regalado" />
+                <div className="card perfil card-body">
+                  <img
+                    src={mikaela}
+                    className="img-fit"
+                    alt="Mikaela Regalado"
+                  />
                   <div className="card-body">
                     <h4 className="card-title">Contacto</h4>
 

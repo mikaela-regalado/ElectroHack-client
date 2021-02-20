@@ -9,7 +9,7 @@ import { actionCreators } from "../../redux/Actions/userActions";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import AlertMsg from "../Alert/Alert"
+import AlertMsg from "../Alert/Alert";
 
 export default function NavBar() {
   const [categories, setCategories] = useState([]);
@@ -56,7 +56,7 @@ export default function NavBar() {
               })}
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to="about">
+              <Nav.Link as={Link} to="/about">
                 About
               </Nav.Link>
               {!user.token && (
