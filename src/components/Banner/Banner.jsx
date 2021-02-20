@@ -14,9 +14,9 @@ export default function Banner() {
 
           {/*  <h3 id="firsttitleCarousel">¡Amodados a tus necesidades!</h3>
           <p className="textCarousel">Envios sin cargo a todos el pais</p> */}
-
+{/* 
           <h3 id="firsttitleCarousel">¡Acomodados a tus necesidades!</h3>
-          <p className="textCarousel">Envios sin cargo a todos el pais</p>
+          <p className="textCarousel">Envios sin cargo a todos el pais</p> */}
 
         </Carousel.Caption>
       </Carousel.Item>
